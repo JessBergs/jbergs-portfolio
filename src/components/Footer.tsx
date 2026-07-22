@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
   const year = new Date().getFullYear()
   return (
@@ -9,6 +11,13 @@ const Footer = () => {
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-4 md:justify-between">
         <p className="m-0">© {year} Jessica Bergs</p>
         <p className="m-0 flex flex-wrap items-center gap-4">
+          <Link
+            to="/workflows"
+            className="no-underline hover:underline"
+            style={{ color: 'var(--color-ink-mute)' }}
+          >
+            workflows
+          </Link>
           <a
             href="mailto:contact@jbergs.eu"
             className="no-underline hover:underline"
