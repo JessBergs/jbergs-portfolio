@@ -15,7 +15,7 @@ const Hero = () => {
         >
           Human-AI Interaction @ UK AISI – Research Unit
           <br />
-          R&amp;D Innovation Engineer
+          R&amp;D Software Engineer
         </p>
 
         <ul
