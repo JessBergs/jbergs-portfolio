@@ -17,44 +17,60 @@ const About = () => {
             UK AI Security Institute
           </a>{' '}
           for our human-in-the-loop research tools enabling our scientists to source empirical
-          data for their groundbreaking AI security research experiments at scale.
+          data for their groundbreaking AI security research experiments at scale. Currently,
+          I&apos;m focusing on how we can balance Research Automation with Scalable Human
+          Oversight.
         </p>
         <p
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
           style={{ color: '#3a4050' }}
         >
-          I'm currently also a Research Fellow at{' '}
+          My career so far has been a wild mix of R&amp;D, public sector innovation and
+          creative tech; spanning EU Horizon R&amp;D projects, research on Explainable AI at
+          BBC R&amp;D and since 2024 technical AI safety within British Government.
+        </p>
+        <p
+          className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
+          style={{ color: '#3a4050' }}
+        >
+          I&apos;m mentoring at{' '}
           <a
-            href="https://sparai.org/projects/sp26/recgehdY1Ms47N1XU"
+            href="https://bluedot.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold underline hover:no-underline"
+          >
+            BlueDot Impact
+          </a>{' '}
+          (Technical AI Safety Project Sprint),{' '}
+          <a
+            href="https://algoverseairesearch.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold underline hover:no-underline"
+          >
+            Algoverse
+          </a>{' '}
+          and from this Autumn also{' '}
+          <a
+            href="https://sparai.org/"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold underline hover:no-underline"
           >
             SPAR
           </a>
-          , investigating{' '}
-          <a
-            href="https://sparai.org/projects/sp26/recgehdY1Ms47N1XU"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold underline hover:no-underline"
-          >
-            Agentic Situational Awareness
-          </a>
-          &nbsp;– developing benchmarks to evaluate whether AI agents understand their
-          operational context and capabilities. My broader interest is in how humans and
-          machines interact, particularly as LLMs and agents reshape our relationship with
-          artificial intelligence.
+          . You can talk to me about technical AI safety, how software engineering is
+          changing, and human-in-the-loop / human-AI interaction and scalable oversight. My
+          plan for reducing AI risk: keeping humans meaningfully in the loop via Scalable
+          Human Oversight.
         </p>
         <p
           className="text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
           style={{ color: '#3a4050' }}
         >
-          My career so far has been a wild mix of R&amp;D, public sector work and creative
-          tech – from AI Security to creative prototyping at BBC R&amp;D to EU Horizon
-          projects on energy citizenship. I'm a proud generalist and love bringing people
-          together via events &amp; conferences I organise. Outside work, I design and
-          playtest board games!
+          I&apos;m a proud generalist and love bringing people together via events &amp;
+          conferences I organise. Outside work, I design and playtest board games!
         </p>
       </div>
     </section>
