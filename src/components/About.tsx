@@ -19,7 +19,7 @@ const About = () => {
           for our human-in-the-loop research tools enabling our scientists to source empirical
           data for their groundbreaking AI security research experiments at scale. Currently,
           I&apos;m focusing on how we can balance Research Automation with Scalable Human
-          Oversight.
+          Oversight: keeping humans meaningfully in the loop.
         </p>
         <p
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
@@ -60,17 +60,14 @@ const About = () => {
           >
             SPAR
           </a>
-          . You can talk to me about technical AI safety, how software engineering is
-          changing, and human-in-the-loop / human-AI interaction and scalable oversight. My
-          plan for reducing AI risk: keeping humans meaningfully in the loop via Scalable
-          Human Oversight.
+          .
         </p>
         <p
           className="text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
           style={{ color: '#3a4050' }}
         >
           I&apos;m a proud generalist and love bringing people together via events &amp;
-          conferences I organise. Outside work, I design and playtest board games!
+          conferences I (co-)organise. Outside work, I design and playtest board games!
         </p>
       </div>
     </section>
