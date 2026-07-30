@@ -19,7 +19,7 @@ const About = () => {
           for our human-in-the-loop research tools enabling our scientists to source empirical
           data for their groundbreaking AI security research experiments at scale. Currently,
           I&apos;m focusing on how we can balance Research Automation with Scalable Human
-          Oversight: keeping humans meaningfully in the loop.
+          Oversight to keep humans meaningfully in the loop.
         </p>
         <p
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
