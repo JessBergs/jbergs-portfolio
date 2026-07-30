@@ -2,7 +2,7 @@
   {
     "id": "aisi-future-of-work",
     "title": "AI and the Future of Work – Study",
-    "description": "Collaborated with researchers to build data collection app for pilot study measuring AI-driven productivity gains across workplace tasks. Study with 500 participants found 25% higher quality and 61% faster completion with AI assistance.",
+    "description": "UK AISI pilot study measuring AI-driven productivity gains across workplace tasks. The study with 500 participants found 25% higher quality and 61% faster completion with AI assistance.",
     "image": "/images/aisi-ai-and-the-future-of-work.png",
     "link": "https://www.aisi.gov.uk/blog/ai-and-the-future-of-work-measuring-ai-driven-productivity-gains-for-workplace-tasks",
     "year": "2026",
@@ -11,7 +11,7 @@
   {
     "id": "arxiv-ai-advice",
     "title": "AI Advice-Giving – Study",
-    "description": "Expanded our experiment apps platform for supporting longitudinal controlled study examining how people follow AI advice. Found 75% of participants followed GPT-4o advice on personal matters, though with no sustained well-being improvements.",
+    "description": "UK AISI longitudinal controlled study examining how people follow AI advice. Found 75% of participants followed GPT-4o advice on personal matters, though with no sustained well-being improvements.",
     "image": "/images/arxiv.png",
     "link": "https://arxiv.org/abs/2511.15352v2",
     "year": "2025",
@@ -20,7 +20,7 @@
   {
     "id": "arxiv-political-knowledge",
     "title": "AI and Political Knowledge – Study",
-    "description": "Worked closely with researchers to build web app and infrastructure for the data collection for empirical study with 2,858 participants examining AI chatbot usage for political information. Demonstrated AI increases political knowledge as effectively as internet search.",
+    "description": "UK AISI empirical study with 2,858 participants examining AI chatbot usage for political information. Demonstrated AI increases political knowledge as effectively as internet search.",
     "image": "/images/arxiv.png",
     "link": "https://arxiv.org/abs/2509.05219v2",
     "year": "2025",
