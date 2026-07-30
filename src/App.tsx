@@ -5,6 +5,8 @@ import Fonts from './pages/Fonts'
 import Workflows from './pages/Workflows'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
+import TaispTips from './pages/TaispTips'
+import TaisReadingRecs from './pages/TaisReadingRecs'
 // import ProjectDetail from './pages/ProjectDetail'
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           <Route path="/workflows" element={<Workflows />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/taisp-tips" element={<TaispTips />} />
+          <Route path="/tais-reading-recs" element={<TaisReadingRecs />} />
           {/* Example route for future use - uncomment when needed:
           <Route path="/project/:id" element={<ProjectDetail />} />
           */}
