@@ -147,55 +147,6 @@ body::before {
   body::before { inset: 8px; }
 }
 
-/* ---------- Hero blob (rotate + breathe) ---------- */
-.hero-blob {
-  position: absolute;
-  top: -210px;
-    right: -5%;
-    left: auto;
-    width: 45%;
-    aspect-ratio: 1 / 2.5;
-  z-index: -1;
-  background:
-    radial-gradient(55% 80% at 12% 40%, #ffdfa3 0%, rgba(255, 223, 163, 0) 70%),
-      radial-gradient(85% 60% at 25% 60%, #c5cbfd 0%, rgba(197, 218, 253, 0) 86%),
-      radial-gradient(85% 55% at 55% 30%, #ffc8dd 0%, rgba(255, 200, 221, 0) 82%),
-      radial-gradient(85% 65% at 62% 80%, #e6ccf3 0%, rgba(230, 204, 243, 0) 85%);
-      background-size: 100% 100%;
-      background-position: 80% 50%;
-      filter: blur(60px);
-      opacity: 0.87;
-  pointer-events: none;
-  transform: rotate(22deg);
-  transform-origin: 50% 50%;
-  animation:
-    heroBlobPrism 28s ease-in-out infinite alternate,
-      heroBlobBreathe 16s ease-in-out infinite;
-      will-change: background-position, scale;
-}
-@keyframes heroBlobPrism {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  100% {
-    background-position: 100% 50%;
-  }
-}
-@keyframes heroBlobBreathe {
-  0%,
-    100% {
-      scale: 0.97;
-    }
-  
-    50% {
-      scale: 1.0;
-    }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-blob { animation: none; }
-}
-
 /* ---------- Hero serif headline ---------- */
 .hero-h1 {
   font-family: var(--font-serif);
