@@ -3,7 +3,6 @@ import { Mail, GraduationCap, Linkedin } from 'lucide-react'
 const Hero = () => {
   return (
     <section className="relative isolate flex min-h-full items-center" aria-labelledby="hero-title">
-      <div className="hero-blob" aria-hidden="true" />
       <div className="relative z-10 flex w-full flex-col items-start gap-3">
         <h1 id="hero-title" className="hero-h1" style={{ marginBottom: 0 }}>
           Jess Bergs
