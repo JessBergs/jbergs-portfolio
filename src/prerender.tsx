@@ -22,6 +22,15 @@ const TITLES: Record<string, string> = {
   '/tais-reading-recs': 'Jess’ Reading Recommendations | Jess Bergs',
 }
 
+// Routes that redirect to an external doc: the page component redirects via
+// JS, and a meta-refresh in the prerendered head covers no-JS visitors.
+const REDIRECTS: Record<string, string> = {
+  '/taisp-tips':
+    'https://docs.google.com/document/d/1VIXrgibCpWo_oR76f89rDLGLjA3XT_FwZ8sAXGYXyoY/edit',
+  '/tais-reading-recs':
+    'https://docs.google.com/document/d/16mgteN0F91wML5sPbwCWzgaNhK3IQLUn3G2h-fthH7I/edit',
+}
+
 export async function prerender(data: { url?: string } = {}) {
   const url = data.url || '/'
   const html = renderToString(
@@ -42,6 +51,17 @@ export async function prerender(data: { url?: string } = {}) {
   return {
     html,
     links: PRERENDER_LINKS,
-    head: { lang: 'en', title: TITLES[url] ?? TITLES['/'] },
+    head: {
+      lang: 'en',
+      title: TITLES[url] ?? TITLES['/'],
+      elements: REDIRECTS[url]
+        ? new Set([
+            {
+              type: 'meta',
+              props: { 'http-equiv': 'refresh', content: `0;url=${REDIRECTS[url]}` },
+            },
+          ])
+        : undefined,
+    },
   }
 }
