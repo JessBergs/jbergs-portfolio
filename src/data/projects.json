@@ -2,7 +2,7 @@
   {
     "id": "spar-auditing-games-debate",
     "title": "Auditing Games for Debate: Can Models Learn Human Spot-Checking Patterns?",
-    "description": "Human oversight of AI systems relies on spot-checks, whose value rests on their unpredictability. However, decades of cognitive science research show that human...",
+    "description": "Mentoring a Fall 2026 AI safety research project through the SPAR (Supervised Program for Alignment Research) fellowship, studying whether models can learn the patterns behind human spot-checks used for AI oversight.",
     "image": "/images/spar-auditing-games-for-debate.png",
     "link": "https://sparai.org/projects/f26/recyQRpX2HbOZfHYp/",
     "year": "2026",
