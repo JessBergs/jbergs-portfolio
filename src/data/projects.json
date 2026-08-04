@@ -1,5 +1,14 @@
 [
   {
+    "id": "spar-auditing-games-debate",
+    "title": "Auditing Games for Debate: Can Models Learn Human Spot-Checking Patterns?",
+    "description": "Mentoring a Fall 2026 AI safety research project through the SPAR (Supervised Program for Alignment Research) fellowship, studying whether models can learn the patterns behind human spot-checks used for AI oversight.",
+    "image": "/images/spar-auditing-games-for-debate.png",
+    "link": "https://sparai.org/projects/f26/recyQRpX2HbOZfHYp/",
+    "year": "2026",
+    "categories": ["Mentorship", "AI Security", "Scalable Oversight"]
+  },
+  {
     "id": "aisi-future-of-work",
     "title": "AI and the Future of Work – Study",
     "description": "UK AISI pilot study measuring AI-driven productivity gains across workplace tasks. The study with 500 participants found 25% higher quality and 61% faster completion with AI assistance.",
