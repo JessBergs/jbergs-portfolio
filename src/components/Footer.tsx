@@ -16,24 +16,6 @@ const Footer = () => {
           >
             Contact
           </a>
-          <a
-            href="https://www.linkedin.com/in/jbergs/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="no-underline hover:underline"
-            style={{ color: 'var(--color-ink-mute)' }}
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://scholar.google.com/citations?user=jUpxHmsAAAAJ&hl=en"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="no-underline hover:underline"
-            style={{ color: 'var(--color-ink-mute)' }}
-          >
-            Google Scholar
-          </a>
         </p>
       </div>
     </footer>
