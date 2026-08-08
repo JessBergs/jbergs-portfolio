@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom'
 interface DocRedirectProps {
   title: string
   docUrl: string
+  destinationLabel?: string
 }
 
 // Client-side half of the redirect; the prerendered HTML also carries a
 // meta-refresh fallback for no-JS visitors (see prerender.tsx).
-const DocRedirect = ({ title, docUrl }: DocRedirectProps) => {
+const DocRedirect = ({ title, docUrl, destinationLabel = 'the Google Doc' }: DocRedirectProps) => {
   useEffect(() => {
     window.location.replace(docUrl)
   }, [docUrl])
@@ -34,7 +35,7 @@ const DocRedirect = ({ title, docUrl }: DocRedirectProps) => {
         className="mt-8 text-[0.9rem] font-medium leading-relaxed md:text-[0.98rem]"
         style={{ color: '#3a4050' }}
       >
-        Taking you to the Google Doc&hellip; If nothing happens,{' '}
+        Taking you to {destinationLabel}&hellip; If nothing happens,{' '}
         <a href={docUrl} className="font-semibold underline hover:no-underline">
           open it here
         </a>
