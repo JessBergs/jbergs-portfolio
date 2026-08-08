@@ -5,7 +5,6 @@ type NavItem = { label: string; href: string }
 const NAV: NavItem[] = [
   { label: 'About', href: '#about' },
   { label: 'Work', href: '#work' },
-  { label: 'Coffee chat', href: '/coffee-chat-with-jess' },
   { label: 'Contact', href: '#contact' },
 ]
 
