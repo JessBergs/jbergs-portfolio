@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Fonts from './pages/Fonts'
-import Workflows from './pages/Workflows'
+import CoffeeChat from './pages/CoffeeChat'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import TaispTips from './pages/TaispTips'
@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/fonts" element={<Fonts />} />
-          <Route path="/workflows" element={<Workflows />} />
+          <Route path="/coffee-chat-with-jess" element={<CoffeeChat />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/taisp-tips" element={<TaispTips />} />

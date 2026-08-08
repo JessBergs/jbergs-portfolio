@@ -3,7 +3,7 @@ import { StaticRouter } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
-import Workflows from './pages/Workflows'
+import CoffeeChat from './pages/CoffeeChat'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import TaispTips from './pages/TaispTips'
@@ -11,20 +11,22 @@ import TaisReadingRecs from './pages/TaisReadingRecs'
 
 // Routes to emit as static HTML so bots (e.g. Google's OAuth branding review)
 // and direct loads get real content, not an empty SPA shell.
-const PRERENDER_LINKS = new Set(['/', '/workflows', '/privacy', '/terms', '/taisp-tips', '/tais-reading-recs'])
+const PRERENDER_LINKS = new Set(['/', '/coffee-chat-with-jess', '/privacy', '/terms', '/taisp-tips', '/tais-reading-recs'])
 
 const TITLES: Record<string, string> = {
   '/': 'Jess Bergs | Portfolio',
-  '/workflows': 'workflows — a personal automation project | Jess Bergs',
+  '/coffee-chat-with-jess': 'Coffee chat with Jess | Jess Bergs',
   '/privacy': 'Privacy policy — workflows | Jess Bergs',
   '/terms': 'Terms of service — workflows | Jess Bergs',
   '/taisp-tips': 'Jess’ TAISP Tips | Jess Bergs',
   '/tais-reading-recs': 'Jess’ Reading Recommendations | Jess Bergs',
 }
 
-// Routes that redirect to an external doc: the page component redirects via
-// JS, and a meta-refresh in the prerendered head covers no-JS visitors.
+// Routes that redirect to an external destination: the page component
+// redirects via JS, and a meta-refresh in the prerendered head covers
+// no-JS visitors.
 const REDIRECTS: Record<string, string> = {
+  '/coffee-chat-with-jess': 'https://cal.com/jess-bergs-dnx5up/coffee-chat-with-jess',
   '/taisp-tips':
     'https://docs.google.com/document/d/1VIXrgibCpWo_oR76f89rDLGLjA3XT_FwZ8sAXGYXyoY/edit',
   '/tais-reading-recs':
@@ -38,7 +40,7 @@ export async function prerender(data: { url?: string } = {}) {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/workflows" element={<Workflows />} />
+          <Route path="/coffee-chat-with-jess" element={<CoffeeChat />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/taisp-tips" element={<TaispTips />} />
