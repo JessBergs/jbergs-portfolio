@@ -7,11 +7,11 @@ const Privacy = () => {
   return (
     <article className="mx-auto max-w-2xl py-14 md:py-20">
       <Link
-        to="/workflows"
+        to="/"
         className="text-[0.78rem] no-underline hover:underline"
         style={{ color: 'var(--color-ink-mute)' }}
       >
-        ← workflows
+        ← jbergs.eu
       </Link>
 
       <p
