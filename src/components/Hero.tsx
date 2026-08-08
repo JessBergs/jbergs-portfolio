@@ -1,4 +1,4 @@
-import { Mail, GraduationCap, Linkedin } from 'lucide-react'
+import { Mail, GraduationCap, Linkedin, Coffee } from 'lucide-react'
 
 const Hero = () => {
   return (
@@ -53,6 +53,18 @@ const Hero = () => {
               style={{ color: 'var(--color-ink)' }}
             >
               Google Scholar
+            </a>
+          </li>
+          <li className="flex items-center gap-2 leading-none">
+            <Coffee size={18} aria-hidden="true" />
+            <a
+              href="https://cal.com/jess-bergs-dnx5up/coffee-chat-with-jess"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm no-underline hover:underline"
+              style={{ color: 'var(--color-ink)' }}
+            >
+              Coffee chat
             </a>
           </li>
         </ul>
