@@ -16,3 +16,10 @@ development, spanning EU Horizon projects, ..." (rest unchanged).
 ## Next action
 
 Jess merges the PR.
+
+## Follow-up (same session)
+
+- Superseded by Jess before merge: sentence is now "My career so far has been
+  spanning R&D and public sector innovation, from EU Horizon projects to
+  Explainable AI at BBC R&D and since 2024 technical AI safety in the British
+  government." Verified in dist (2×, prior wording gone).
