@@ -26,7 +26,7 @@ const About = () => {
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
           style={{ color: '#3a4050' }}
         >
-          My career so far has been spanning R&amp;D and public sector innovation, from EU
+          My career so far has been in R&amp;D and public sector innovation, from EU
           Horizon projects to Explainable AI at BBC R&amp;D and since 2024 technical AI
           safety in the British government.
         </p>
