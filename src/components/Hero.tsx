@@ -14,7 +14,7 @@ const Hero = () => {
         >
           R&amp;D Engineering Lead
           <br />
-          Human-AI Interaction @ UK AI Security Institute
+          Human-AI Interaction @ UK AISI, Research Unit
         </p>
 
         <ul
