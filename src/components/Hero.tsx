@@ -12,9 +12,9 @@ const Hero = () => {
           className="text-[1.12rem] leading-[1.5]"
           style={{ color: 'var(--color-ink-soft)', fontFamily: 'var(--font-sans)' }}
         >
-          Human-AI Interaction @ UK AISI – Research Unit
+          R&amp;D Engineering Lead
           <br />
-          R&amp;D Software Engineer
+          Human-AI Interaction @ UK AI Security Institute
         </p>
 
         <ul

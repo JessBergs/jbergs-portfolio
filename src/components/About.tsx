@@ -17,9 +17,9 @@ const About = () => {
             UK AI Security Institute
           </a>{' '}
           for our human-in-the-loop research tools enabling our scientists to source empirical
-          data for their groundbreaking AI security research experiments at scale. Currently,
-          I&apos;m focusing on how we can balance Research Automation with Scalable Human
-          Oversight to keep humans meaningfully in the loop.
+          data for their groundbreaking AI security research experiments at scale. I&apos;m
+          currently working on human oversight for automated R&amp;D to keep humans
+          meaningfully in the loop.
         </p>
         <p
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
@@ -33,23 +33,23 @@ const About = () => {
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
           style={{ color: '#3a4050' }}
         >
-          I&apos;m mentoring at{' '}
+          I&apos;m mentoring at BlueDot Impact&apos;s{' '}
           <a
-            href="https://bluedot.org/"
+            href="https://bluedot.org/courses/technical-ai-safety-project"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold underline hover:no-underline"
           >
-            BlueDot Impact
+            Technical AI Safety Project
           </a>{' '}
-          (Technical AI Safety Project Sprint),{' '}
+          programme,{' '}
           <a
             href="https://algoverseairesearch.org/"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold underline hover:no-underline"
           >
-            Algoverse
+            Algoverse AI Research
           </a>{' '}
           and from this Autumn also{' '}
           <a
