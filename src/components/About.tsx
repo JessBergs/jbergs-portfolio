@@ -12,7 +12,7 @@ const About = () => {
           AI security research experiments at scale.
           <br />
           I&apos;m currently working on human oversight for our increasingly automated
-          research workflows, and keeping researchers meaningfully involved in those.
+          research workflows, and keeping researchers meaningfully in the loop.
         </p>
         <p
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
