@@ -25,7 +25,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
       )}
       <div className="project-card__body">
         <h3 className="project-card__title">{project.title}</h3>
-        {project.year && <span className="project-card__year">{project.year}</span>}
         <p className="project-card__desc">{project.description}</p>
         {project.categories && project.categories.length > 0 && (
           <div className="project-card__tags">
