@@ -20,7 +20,7 @@ const About = () => {
           empirical data for their groundbreaking AI security research at scale.
           <br />
           I&apos;m currently working on human oversight for our increasingly automated
-          research workflows &ndash; my goal is to keep researchers meaningfully in the loop.
+          research workflows &ndash; my goal is to keep researchers meaningfully in the loop!
         </p>
         <p
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
