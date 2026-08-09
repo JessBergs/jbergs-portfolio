@@ -20,7 +20,7 @@ const About = () => {
           empirical research experiments at scale.
           <br />
           I&apos;m currently working on human oversight for our increasingly automated
-          research workflows to keep researchers meaningfully in the loop!
+          research workflows.
         </p>
         <p
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
