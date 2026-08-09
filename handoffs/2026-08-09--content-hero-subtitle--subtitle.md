@@ -14,3 +14,10 @@ Interaction @ UK AISI, Research Unit".
 ## Next action
 
 Jess merges the PR.
+
+## Follow-up (same session)
+
+- About opener: "I lead engineering and product strategy for human-in-the-loop
+  research tools at the [UK AI Security Institute](aisi.gov.uk), enabling our
+  scientists to run empirical experiments on frontier AI systems at scale."
+  (AISI link restored). Verified in dist (2×).
