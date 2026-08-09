@@ -13,3 +13,9 @@ meaningfully involved in these." (typos fixed: "working on", "increasingly").
 ## Next action
 
 Jess merges the PR.
+
+## Follow-up (same session)
+
+- Oversight sentence tweaked pre-merge: "for our … involved in those."
+- Opener reverted to "I lead engineering & product strategy…" (was "Leading
+  engineering…"). Both verified in dist (2× each, old wordings gone).
