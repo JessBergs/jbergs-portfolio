@@ -7,8 +7,7 @@ const About = () => {
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
           style={{ color: '#3a4050' }}
         >
-          I lead engineering and product strategy for human-in-the-loop research tools at
-          the{' '}
+          I lead engineering &amp; product strategy at the{' '}
           <a
             href="https://www.aisi.gov.uk/"
             target="_blank"
@@ -16,9 +15,9 @@ const About = () => {
             className="font-semibold underline hover:no-underline"
           >
             UK AI Security Institute
-          </a>
-          , enabling our scientists to run empirical experiments on frontier AI systems at
-          scale.
+          </a>{' '}
+          for our human-in-the-loop research tools which enable our scientists to source
+          empirical data for their groundbreaking AI security research at scale.
           <br />
           I&apos;m currently working on human oversight for our increasingly automated
           research workflows &ndash; my goal is to keep researchers meaningfully in the loop.
