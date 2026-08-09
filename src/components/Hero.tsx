@@ -64,7 +64,7 @@ const Hero = () => {
               className="text-sm no-underline hover:underline"
               style={{ color: 'var(--color-ink)' }}
             >
-              Coffee chat
+              Let&rsquo;s have a coffee chat!
             </a>
           </li>
         </ul>
