@@ -24,11 +24,11 @@ const Hero = () => {
           <li className="flex items-center gap-2 leading-none">
             <Mail size={18} aria-hidden="true" />
             <a
-              href="mailto:contact@jbergs.eu"
+              href="mailto:hello@jbergs.eu"
               className="text-sm no-underline hover:underline"
               style={{ color: 'var(--color-ink)' }}
             >
-              contact@jbergs.eu
+              hello@jbergs.eu
             </a>
           </li>
           <li className="flex items-center gap-2 leading-none">
