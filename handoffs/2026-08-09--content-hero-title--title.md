@@ -25,3 +25,7 @@ was still open when this branched — no conflict (different Hero.tsx lines).
   can balance Research Automation with Scalable Human Oversight…" → "I'm
   currently working on human oversight for automated R&D to keep humans
   meaningfully in the loop." Verified in dist (2 occurrences, old copy gone).
+- Mentoring sentence: now "BlueDot Impact's Technical AI Safety Project
+  programme" (link on Technical AI Safety Project → bluedot.org/courses/
+  technical-ai-safety-project, no bare bluedot.org link) and "Algoverse AI
+  Research". Updated About.tsx + noscript; verified in dist.
