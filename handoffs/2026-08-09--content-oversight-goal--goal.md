@@ -13,3 +13,10 @@ to keep researchers meaningfully in the loop." (en dash, hers).
 ## Next action
 
 Jess merges the PR.
+
+## Follow-up (same session)
+
+- Opener reworded again: "I lead engineering & product strategy at the
+  [UK AI Security Institute] for our human-in-the-loop research tools which
+  enable our scientists to source empirical data for their groundbreaking AI
+  security research at scale." Verified in dist (2×).
