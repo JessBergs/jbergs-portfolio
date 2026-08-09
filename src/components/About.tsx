@@ -16,18 +16,19 @@ const About = () => {
           >
             UK AI Security Institute
           </a>{' '}
-          for our human-in-the-loop research tools enabling our scientists to source empirical
-          data for their groundbreaking AI security research experiments at scale. I&apos;m
-          currently working on human oversight for automated R&amp;D to keep humans
-          meaningfully in the loop.
+          for our human-in-the-loop research tools that enable our scientists to source
+          empirical data for their groundbreaking AI security research experiments at scale.
+          <br />
+          I&apos;m currently working on all things human oversight, and how we can balance
+          this with research automation.
         </p>
         <p
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
           style={{ color: '#3a4050' }}
         >
-          My career so far has centred on R&amp;D for the public sector, spanning EU Horizon
-          R&amp;D projects to Explainable AI at BBC R&amp;D and since 2024 technical AI
-          safety in the British government.
+          In my career so far, I&apos;ve been mainly working in R&amp;D for the public
+          sector, spanning EU Horizon R&amp;D projects to Explainable AI at BBC R&amp;D and
+          since 2024 technical AI safety in the British government.
         </p>
         <p
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
@@ -66,7 +67,7 @@ const About = () => {
           className="text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
           style={{ color: '#3a4050' }}
         >
-          I&apos;m a proud generalist and love bringing people together via events &amp;
+          I&apos;m a proud generalist and love bringing people together through events &amp;
           conferences I (co-)organise. Outside work, I design and playtest board games!
         </p>
       </div>
