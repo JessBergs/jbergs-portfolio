@@ -14,3 +14,10 @@ Jess: change contact@jbergs.eu to hello@jbergs.eu.
 ## Next action
 
 Jess merges the PR; Pages deploys automatically.
+
+## Follow-up (same session)
+
+- Career sentence (About + noscript): now "My career so far has centred on
+  R&D for the public sector, spanning EU Horizon R&D projects to Explainable
+  AI at BBC R&D and since 2024 technical AI safety in the British
+  government." Verified in dist (2 occurrences, old copy gone).
