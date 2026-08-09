@@ -16,8 +16,8 @@ const About = () => {
           >
             UK AI Security Institute
           </a>{' '}
-          for our human-in-the-loop research tools which enable our scientists to source
-          empirical data for their groundbreaking AI security research at scale.
+          for our human-in-the-loop research tools, enabling our scientists to run their
+          empirical research experiments at scale.
           <br />
           I&apos;m currently working on human oversight for our increasingly automated
           research workflows to keep researchers meaningfully in the loop!
