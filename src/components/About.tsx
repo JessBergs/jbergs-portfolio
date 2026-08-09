@@ -18,9 +18,9 @@ const About = () => {
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
           style={{ color: '#3a4050' }}
         >
-          In my career so far, I&apos;ve been mainly working in R&amp;D for the public
-          sector, spanning EU Horizon R&amp;D projects to Explainable AI at BBC R&amp;D and
-          since 2024 technical AI safety in the British government.
+          My career so far has been spanning R&amp;D and public sector innovation, from EU
+          Horizon projects to Explainable AI at BBC R&amp;D and since 2024 technical AI
+          safety in the British government.
         </p>
         <p
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
