@@ -29,8 +29,6 @@ const TITLES: Record<string, string> = {
 // redirects via JS, and a meta-refresh in the prerendered head covers
 // no-JS visitors.
 const REDIRECTS: Record<string, string> = {
-  '/coffee-chat': 'https://cal.com/jess-bergs-dnx5up/coffee-chat-with-jess',
-  '/coffee-chat-with-jess': 'https://cal.com/jess-bergs-dnx5up/coffee-chat-with-jess',
   '/cv':
     'https://docs.google.com/document/d/1pFuWez08mhMMGp9NBi0TfemA9tonkY_ESp4qmpFv550/edit',
   '/taisp-tips':
