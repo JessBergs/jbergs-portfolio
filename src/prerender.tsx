@@ -12,10 +12,11 @@ import TaisReadingRecs from './pages/TaisReadingRecs'
 
 // Routes to emit as static HTML so bots (e.g. Google's OAuth branding review)
 // and direct loads get real content, not an empty SPA shell.
-const PRERENDER_LINKS = new Set(['/', '/coffee-chat-with-jess', '/cv', '/privacy', '/terms', '/taisp-tips', '/tais-reading-recs'])
+const PRERENDER_LINKS = new Set(['/', '/coffee-chat', '/coffee-chat-with-jess', '/cv', '/privacy', '/terms', '/taisp-tips', '/tais-reading-recs'])
 
 const TITLES: Record<string, string> = {
   '/': 'Jess Bergs | Portfolio',
+  '/coffee-chat': 'Coffee chat with Jess | Jess Bergs',
   '/coffee-chat-with-jess': 'Coffee chat with Jess | Jess Bergs',
   '/cv': 'Jess Bergs — CV',
   '/privacy': 'Privacy policy — workflows | Jess Bergs',
@@ -28,6 +29,7 @@ const TITLES: Record<string, string> = {
 // redirects via JS, and a meta-refresh in the prerendered head covers
 // no-JS visitors.
 const REDIRECTS: Record<string, string> = {
+  '/coffee-chat': 'https://cal.com/jess-bergs-dnx5up/coffee-chat-with-jess',
   '/coffee-chat-with-jess': 'https://cal.com/jess-bergs-dnx5up/coffee-chat-with-jess',
   '/cv':
     'https://docs.google.com/document/d/1pFuWez08mhMMGp9NBi0TfemA9tonkY_ESp4qmpFv550/edit',
@@ -44,6 +46,7 @@ export async function prerender(data: { url?: string } = {}) {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="/coffee-chat" element={<CoffeeChat />} />
           <Route path="/coffee-chat-with-jess" element={<CoffeeChat />} />
           <Route path="/cv" element={<Cv />} />
           <Route path="/privacy" element={<Privacy />} />
