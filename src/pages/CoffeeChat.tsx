@@ -14,7 +14,7 @@ const CoffeeChat = () => {
   }, [])
 
   return (
-    <article className="mx-auto max-w-5xl py-14 md:py-20">
+    <article className="mx-auto max-w-6xl py-14 md:py-20">
       <Link
         to="/"
         className="text-[0.78rem] no-underline hover:underline"
@@ -26,7 +26,7 @@ const CoffeeChat = () => {
       <div className="mt-8">
         <Cal
           calLink={CAL_LINK}
-          style={{ width: '100%', overflow: 'scroll' }}
+          style={{ width: '100%' }}
           config={{ layout: 'month_view', theme: 'light' }}
         />
       </div>
