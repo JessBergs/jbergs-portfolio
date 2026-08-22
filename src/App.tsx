@@ -17,6 +17,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/fonts" element={<Fonts />} />
+          <Route path="/coffee-chat" element={<CoffeeChat />} />
           <Route path="/coffee-chat-with-jess" element={<CoffeeChat />} />
           <Route path="/cv" element={<Cv />} />
           <Route path="/privacy" element={<Privacy />} />
