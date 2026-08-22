@@ -58,7 +58,7 @@ const Hero = () => {
           <li className="flex items-center gap-2 leading-none">
             <Coffee size={18} aria-hidden="true" />
             <a
-              href="https://cal.com/jess-bergs-dnx5up/coffee-chat-with-jess"
+              href="/coffee-chat"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm no-underline hover:underline"
