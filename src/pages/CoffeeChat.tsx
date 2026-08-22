@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Cal, { getCalApi } from '@calcom/embed-react'
 
@@ -6,10 +6,13 @@ const CAL_LINK = 'jess-bergs-dnx5up/coffee-chat-with-jess'
 const CAL_URL = `https://cal.com/${CAL_LINK}`
 
 const CoffeeChat = () => {
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     ;(async () => {
       const cal = await getCalApi()
       cal('ui', { theme: 'light', layout: 'month_view' })
+      cal('on', { action: 'linkReady', callback: () => setLoading(false) })
     })()
   }, [])
 
@@ -22,6 +25,22 @@ const CoffeeChat = () => {
       >
         ← jbergs.eu
       </Link>
+
+      <h1
+        className="m-0 mt-8 text-[2.4rem] leading-none md:text-[3rem]"
+        style={{ fontFamily: 'var(--font-serif-display)', fontWeight: 500, letterSpacing: '-0.02em' }}
+      >
+        Coffee Chat with Jess
+      </h1>
+
+      {loading && (
+        <p
+          className="mt-8 animate-pulse text-[0.9rem] font-medium md:text-[0.98rem]"
+          style={{ color: '#3a4050' }}
+        >
+          Loading the calendar&hellip;
+        </p>
+      )}
 
       <div className="mt-8">
         <Cal
