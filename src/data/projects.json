@@ -9,6 +9,15 @@
     "categories": ["Mentorship", "AI Security", "Scalable Oversight"]
   },
   {
+    "id": "bluedot-taisp-mentor",
+    "title": "BlueDot Technical AI Safety Project – Mentor & Facilitator",
+    "description": "Guiding technical talent in producing their first impactful contribution to AI safety on BlueDot Impact's Technical AI Safety Project course: advising on experiment design and scoping, challenging participants to stress-test assumptions, and driving projects to completion through group sessions and 1:1 check-ins. Standout projects receive continued 1:1 support, with coaching towards submissions to AI conferences including ICML and NeurIPS.",
+    "image": "/images/bluedot-taisp.png",
+    "link": "https://bluedot.org/courses/technical-ai-safety-project",
+    "year": "2026",
+    "categories": ["Mentorship", "AI Security"]
+  },
+  {
     "id": "aisi-future-of-work",
     "title": "AI and the Future of Work – Study",
     "description": "UK AISI pilot study measuring AI-driven productivity gains across workplace tasks. The study with 500 participants found 25% higher quality and 61% faster completion with AI assistance.",
