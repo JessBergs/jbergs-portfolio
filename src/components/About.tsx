@@ -19,8 +19,8 @@ const About = () => {
           for our human-in-the-loop research tools, enabling our scientists to run their
           empirical research experiments at scale.
           <br />
-          I&apos;m currently working on meaningful human oversight mechanisms for our
-          increasingly automated research workflows.
+          At the moment I am working on how to design effective scalable human oversight
+          mechanisms.
         </p>
         <p
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
