@@ -7,6 +7,21 @@ HERE = Path(__file__).parent
 base = Image.open(HERE.parent / "C-site-og-image.png").convert("RGBA")
 W, H = base.size
 
+# Lift the baked-in text block (wordmark, tagline, date line) up by TEXT_LIFT px.
+# The block sits on soft haze, so a feathered shifted copy blends without a seam.
+TEXT_LIFT = 10
+def lift_text(im, box=(748, 130, 1200, 596), feather=10):
+    """Composite a copy of `im` shifted up by TEXT_LIFT inside `box`, with feathered edges."""
+    x0, y0, x1, y1 = box
+    rgb = im.convert("RGB")
+    shifted = rgb.copy()
+    shifted.paste(rgb.crop((x0, y0 + TEXT_LIFT, x1, min(y1 + TEXT_LIFT, rgb.height))), (x0, y0))
+    m = Image.new("L", rgb.size, 0)
+    ImageDraw.Draw(m).rectangle((x0 + feather, y0 + feather, x1, y1 - feather), fill=255)
+    m = m.filter(ImageFilter.GaussianBlur(feather))
+    return Image.composite(shifted, rgb, m).convert("RGBA")
+base = lift_text(base)
+
 def logo(name, h):
     im = Image.open(HERE / name).convert("RGBA"); im = im.crop(im.getbbox())
     return im.resize((int(im.width * h / im.height), h), Image.LANCZOS)
