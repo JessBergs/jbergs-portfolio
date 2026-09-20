@@ -6,7 +6,7 @@ Jess, after merging PR #43: "you can remove the first sentence, as that's alread
 
 ## What was done
 
-- Copy: first sentence removed; description now starts "Invited as one of the workshop's experts, ...".
+- Copy: opening sentence shortened to "Three-day workshop in Berkeley for experienced professionals moving into AI safety." (Jess: first removed it, then asked for this shorter form).
 - Logos fetched from lateralworkshop.org (`partner_logos/kairos.png`, `partner_logos/bluedot_dark.svg`) and constellation.org (2025 cropped SVG). Three previews at `~/dev/reports/lateral-tile-previews/v2/` (served on port 8111 at /v2/): C1 colour logos on cream panel (default in PR), C2 dark-pine logos on panel, C3 dark-pine logos no panel.
 - Tile JPEG re-exported from C1. C2/C3 and the logo-free C exported as JPEG backups under `docs/assets/lateral-workshop-tile-candidates/` with the script and logo sources; README updated.
 
