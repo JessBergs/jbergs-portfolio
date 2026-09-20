@@ -21,8 +21,9 @@ Jess's private working context does not go in it:
   description.
 - **No raw chat logs or internal notes** anywhere in the tree, including code
   comments and PR text.
-- **`docs/REQUESTS.md` is tracked, so it is public too.** Keep each entry to the
-  ask and the outcome, paraphrased — not a transcript.
+- **`docs/REQUESTS.md` is gitignored too.** Keep logging Jess's asks there as the
+  global `feature-request-log` note requires — the file stays local. Never commit
+  it, and never quote it in a commit message or PR body.
 - Say nothing about Jess's employer, unannounced plans, or third parties beyond
   what the published site already states.
 
