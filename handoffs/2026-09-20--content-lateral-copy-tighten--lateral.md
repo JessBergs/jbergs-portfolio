@@ -2,6 +2,6 @@
 
 Jess, after PR #44 shipped: "on what the work involves -humanise and shorten, still too slo[w]".
 
-Changed the tail of the Lateral description from "on what the work involves in practice and how participants' existing experience applies" to "on what the day-to-day looks like and where participants' experience fits". Nothing else touched.
+Changed the tail of the Lateral description from "on what the work involves in practice and how participants' existing experience applies" to "on what the day-to-day looks like and where participants' experience fits". Also moved the logos on the tile image down another 5px (10px below the underlay centre in total); underlay unchanged.
 
 Next: merge, remove worktree `l.worktrees/jbergs-portfolio-lateral-copy`.
