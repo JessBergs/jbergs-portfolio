@@ -76,7 +76,7 @@ src/
 
 - **Colors**: Tailwind CSS v4 theme configuration in [src/index.css](src/index.css)
 - **Font**: Using Montserrat from Google Fonts (closest alternative to Proxima Nova)
-- **Projects**: Edit the projects data in [src/components/Projects.tsx](src/components/Projects.tsx)
+- **Projects**: Edit the projects data in [src/data/projects.json](src/data/projects.json)
 - **Content**: Update text in component files in [src/components/](src/components/) and [src/pages/](src/pages/)
 - **Types**: Project types and schemas defined in [src/types/Project.ts](src/types/Project.ts)
 
