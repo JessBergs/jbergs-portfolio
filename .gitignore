@@ -29,3 +29,6 @@ TODO.md
 
 # Session handoffs — this repo is public; handoffs stay local (see AGENTS.md)
 handoffs/
+
+# Feature-request log — local only, this repo is public (see AGENTS.md)
+docs/REQUESTS.md
