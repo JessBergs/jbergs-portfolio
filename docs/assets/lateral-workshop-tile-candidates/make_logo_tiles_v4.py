@@ -34,7 +34,7 @@ def render(underlay_alpha=150, blur=48, bottom_blur=36, out="C8.png"):
     im = Image.alpha_composite(im, white)
     x = x0
     for l in logos:
-        im.alpha_composite(l, (x, cy - l.height // 2)); x += l.width + gap
+        im.alpha_composite(l, (x, cy + 5 - l.height // 2)); x += l.width + gap  # logos sit 5px below the underlay centre
     im.convert("RGB").save(HERE / out, optimize=True)
 
 render(out="C8-blue-fade-to-white.png")
