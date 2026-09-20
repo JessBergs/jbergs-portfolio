@@ -3,7 +3,7 @@
 The live tile (`public/images/lateral-workshop-2026.jpg`) uses variant C7: the
 workshop site's own social preview (Berkeley watercolour + wordmark) with the
 Kairos, BlueDot Impact and Constellation logos in brand colours (BlueDot in its
-blue, #0037ff), bottom right, over a wide feathered semi-transparent white glow.
+button blue from bluedot.org, #1144cc), bottom right, over a wide feathered semi-transparent white glow.
 
 These are the other 16:9 candidates prepared on 2026-09-19, kept as backups:
 

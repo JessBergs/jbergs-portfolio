@@ -1,4 +1,4 @@
-"""C7: coloured logos (BlueDot in brand blue #0037ff), bottom right, wider feathered white glow.
+"""C7: coloured logos (BlueDot in button blue #1144cc), bottom right, wider feathered white glow.
 Usage: uv run --no-project --with pillow python make_logo_tiles_v3.py
 """
 from PIL import Image, ImageDraw, ImageFilter
