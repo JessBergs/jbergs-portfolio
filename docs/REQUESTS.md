@@ -6,5 +6,5 @@ Append-only log of asks from Jess, oldest first. See `~/dev/dotfiles/claudeCode/
 
 **Requested by:** Jess (chat)
 **Ask:** "the tags on the tiles should be selectable jsut like the ones in the filters row"
-**Status:** in progress — branch `content/lateral-copy-tighten`
+**Status:** done
 **Outcome:** PR #45
