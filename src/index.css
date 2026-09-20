@@ -340,6 +340,19 @@ body::before {
   background: rgba(10, 10, 10, 0.04);
   padding: 0.18rem 0.55rem;
   border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.project-card__tag:hover,
+.project-card__tag:focus-visible {
+  background: rgba(10, 10, 10, 0.08);
+  color: var(--color-ink);
+  outline: none;
+}
+.project-card__tag--on,
+.project-card__tag--on:hover {
+  background: var(--color-ink);
+  color: #ffffff;
 }
 .project-card__year {
   font-size: 0.78rem;
