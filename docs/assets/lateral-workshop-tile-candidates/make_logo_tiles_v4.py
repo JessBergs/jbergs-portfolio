@@ -10,7 +10,7 @@ W, H = base.size
 # Lift the baked-in text block (wordmark, tagline, date line) up by TEXT_LIFT px.
 # The block sits on soft haze, so a feathered shifted copy blends without a seam.
 TEXT_LIFT = 10
-def lift_text(im, box=(748, 130, 1200, 596), feather=10):
+def lift_text(im, box=(700, 130, 1200, 596), feather=10):
     """Composite a copy of `im` shifted up by TEXT_LIFT inside `box`, with feathered edges."""
     x0, y0, x1, y1 = box
     rgb = im.convert("RGB")
