@@ -1,3 +1,4 @@
+import type React from 'react'
 import { useState } from 'react'
 import { Project, ProjectsArraySchema } from '../types/Project'
 import projectsData from '../data/projects.json'
@@ -11,7 +12,13 @@ const validateProjects = (data: unknown): Project[] => {
   }
 }
 
-const ProjectCard = ({ project }: { project: Project }) => {
+type ProjectCardProps = {
+  project: Project
+  selectedCategories: string[]
+  onToggleCategory: (category: string) => void
+}
+
+const ProjectCard = ({ project, selectedCategories, onToggleCategory }: ProjectCardProps) => {
   const imageSrc = project.image
     ? `${import.meta.env.BASE_URL}${project.image.replace(/^\//, '')}`
     : undefined
@@ -28,9 +35,31 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <p className="project-card__desc">{project.description}</p>
         {project.categories && project.categories.length > 0 && (
           <div className="project-card__tags">
-            {project.categories.map((c, i) => (
-              <span key={i} className="project-card__tag">{c}</span>
-            ))}
+            {project.categories.map((c) => {
+              const on = selectedCategories.includes(c)
+              const toggle = (e: React.SyntheticEvent) => {
+                // The card itself may be a link; keep tag clicks from following it.
+                e.preventDefault()
+                e.stopPropagation()
+                onToggleCategory(c)
+              }
+              return (
+                <span
+                  key={c}
+                  role="button"
+                  tabIndex={0}
+                  aria-pressed={on}
+                  title={on ? `Remove ${c} filter` : `Filter by ${c}`}
+                  className={`project-card__tag${on ? ' project-card__tag--on' : ''}`}
+                  onClick={toggle}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') toggle(e)
+                  }}
+                >
+                  {c}
+                </span>
+              )
+            })}
           </div>
         )}
       </div>
@@ -113,7 +142,11 @@ const Projects = () => {
       <ul className="grid list-none grid-cols-1 gap-6 p-0 md:grid-cols-2 lg:grid-cols-3">
         {filtered.map((p) => (
           <li key={p.id} className="m-0 p-0">
-            <ProjectCard project={p} />
+            <ProjectCard
+              project={p}
+              selectedCategories={selectedCategories}
+              onToggleCategory={toggleCategory}
+            />
           </li>
         ))}
       </ul>
