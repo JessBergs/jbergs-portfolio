@@ -13,3 +13,7 @@ Jess, after merging PR #43: "you can remove the first sentence, as that's alread
 ## Next
 
 - Jess picks a variant; if not C4, re-export from the chosen PNG over `public/images/lateral-workshop-2026.jpg`. Merge, remove worktree `l.worktrees/jbergs-portfolio-lateral-logos`, stop the 8111 preview server (pid 714024) once no longer needed.
+
+## Also in this PR
+
+- BlueDot TAISP tile (`bluedot-taisp-mentor`): removed the "advising on experiment design and scoping, stress-testing assumptions, and driving projects to completion" clause; "Standout projects ..." sentence kept.
