@@ -99,7 +99,7 @@ def A_logo_br_on_tarmac(photo):
     """House style, as the Lateral tile: colour wordmark over a soft cream
     glow. Sits on the tarmac below the group, clear of everyone's feet."""
     img = softened(photo.copy())
-    lg = logo(LOGO_COLOUR, round(W * 0.165))
+    lg = logo(LOGO_COLOUR, round(W * 0.21))
     pad = round(W * 0.014)
     x, y = W - lg.size[0] - pad * 1.6, H - lg.size[1] - pad
     img.paste(Image.new('RGB', img.size, CREAM), (0, 0),
@@ -111,7 +111,7 @@ def A_logo_br_on_tarmac(photo):
 def B_logo_bl_on_tarmac(photo):
     """As A, mirrored to the bottom left."""
     img = softened(photo.copy())
-    lg = logo(LOGO_COLOUR, round(W * 0.165))
+    lg = logo(LOGO_COLOUR, round(W * 0.21))
     pad = round(W * 0.014)
     x, y = pad * 1.6, H - lg.size[1] - pad
     img.paste(Image.new('RGB', img.size, CREAM), (0, 0),
@@ -133,7 +133,7 @@ def D_cream_strip_right(_photo):
 def E_panel_br(photo):
     """Crisp rounded cream panel on the tarmac, bottom right."""
     img = softened(photo.copy())
-    lg = logo(LOGO_COLOUR, round(W * 0.155))
+    lg = logo(LOGO_COLOUR, round(W * 0.19))
     pad = round(W * 0.012)
     inset = round(W * 0.012)
     pw, ph = lg.size[0] + inset * 2, lg.size[1] + inset * 2
@@ -151,7 +151,7 @@ def F_white_on_tarmac(photo):
     """White wordmark straight onto the tarmac, which is dark and even enough
     to carry it without any scrim at all."""
     img = softened(photo.copy())
-    lg = logo(LOGO_WHITE, round(W * 0.165))
+    lg = logo(LOGO_WHITE, round(W * 0.21))
     pad = round(W * 0.014)
     paste_logo(img, lg, (W - lg.size[0] - pad * 1.6, H - lg.size[1] - pad))
     return img
