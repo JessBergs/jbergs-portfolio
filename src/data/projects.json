@@ -9,15 +9,6 @@
     "categories": ["Public Speaking", "Mentorship", "AI Security"]
   },
   {
-    "id": "successif-womens-retreat",
-    "title": "Successif Women's Programme \u2013 Invited Participant",
-    "description": "Invited to Successif's women's programme: a three-day residential retreat at Pendley Manor for women with established careers in technical AI safety, AI governance and organisational leadership, followed by ongoing coaching and peer network access.",
-    "image": "/images/successif-womens-retreat-2026.jpg",
-    "link": "https://www.successif.org/womens-retreat",
-    "year": "2026",
-    "categories": ["AI Security", "Conference"]
-  },
-  {
     "id": "spar-auditing-games-debate",
     "title": "Auditing Games for Debate: Can Models Learn Human Spot-Checking Patterns?",
     "description": "Mentoring a Fall 2026 AI safety research project through the SPAR (Supervised Program for Alignment Research) fellowship by Kairos, studying whether models can learn the patterns behind human spot-checks used for AI oversight.",
@@ -61,6 +52,15 @@
     "link": "https://bluedot.org/courses/technical-ai-safety-project",
     "year": "2026",
     "categories": ["Mentorship", "AI Security"]
+  },
+  {
+    "id": "successif-womens-retreat",
+    "title": "Successif Women in AI Safety Retreat \u2013 Invitee",
+    "description": "A three-day residential retreat at Pendley Manor for around 35 women with established careers in technical AI safety, AI governance and organisational leadership, followed by ongoing coaching and peer network access.",
+    "image": "/images/successif-womens-retreat-2026.jpg",
+    "link": "https://www.successif.org/womens-retreat",
+    "year": "2026",
+    "categories": ["AI Security", "Public Speaking", "Conference"]
   },
   {
     "id": "public-design-conference",

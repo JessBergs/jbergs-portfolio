@@ -1,29 +1,31 @@
-# Successif Women's Programme tile — candidates
+# Successif Women in AI Safety Retreat tile — candidates
 
 The live tile (`public/images/successif-womens-retreat-2026.jpg`) uses variant
-**A**: Jess's photo of Pendley Manor with the Successif wordmark in brand colours
-bottom right, over a soft oval of cream (`#fefcf9`, the card background) so the
-logo sits in light rather than on a panel. Same treatment as the Lateral
-Workshop tile, so the two invited-participant tiles read as a pair.
+**A**: the cohort photo outside Pendley Manor with the Successif wordmark in
+brand colours bottom right, over a soft oval of cream (`#fefcf9`, the card
+background) sitting on the tarmac. Same treatment as the Lateral Workshop tile,
+so the two invited-participant tiles read as a pair.
 
-## Source photo caveat
+The subject is the group, so every candidate keeps the whole row of people in
+frame and puts the wordmark somewhere that covers nobody — either the tarmac
+foreground or a cream strip below the photo.
 
-The source (`IMG_6020.jpg`, 8000x5336) **arrived truncated at exactly 15 MiB** —
-only the top 2985 rows contain scan data, the rest decodes as flat grey. Every
-crop here is therefore taken from that intact upper strip, which is why they are
-all facade detail rather than the full building. If the complete photo is
-re-supplied, re-run `make_tiles.py` with a lower crop for a wider shot.
+## The candidates (all 1200x675, ~186–215 KB)
 
-## The candidates (all 1200x675, ~125–205 KB)
+- `A-logo-br-on-tarmac.jpg` — **live tile.** Colour logo bottom right on a soft cream oval
+- `B-logo-bl-on-tarmac.jpg` — as A, mirrored to the bottom left
+- `C-cream-strip.jpg` — the group as a panorama above a cream strip, logo left
+- `D-cream-strip-right.jpg` — as C, logo right-aligned
+- `E-panel-br.jpg` — crisp rounded cream panel on the tarmac, bottom right
+- `F-white-on-tarmac.jpg` — white wordmark straight onto the tarmac, no scrim;
+  the ground is dark and even enough to carry it
+- `G-wider-manor.jpg` — A's treatment on a wider window: more manor, smaller group
 
-- `A-logo-br-feathered.jpg` — **live tile.** Colour logo bottom right on a soft cream oval
-- `B-logo-bl-feathered.jpg` — as A, mirrored to the bottom left
-- `C-cream-band.jpg` — cream band across the bottom quarter, logo seated in it
-- `D-split.jpg` — cream panel left, photo right, soft vertical seam
-- `E-white-scrim.jpg` — white logo bottom right over a dark gradient; the pale
-  brick fights it, kept only for completeness
-- `F-panel-br.jpg` — crisp rounded cream panel bottom right (the Lateral C1 treatment)
-- `G-panel-tight.jpg` — as F, on a tighter crop that makes the arched gable the subject
+## Crop
+
+`GROUP_16_9 = (820, 1725, 7240, 5336)` holds the whole group (which spans
+x 1169–6892, heads at y 3477, feet at y 4769) with margin, plus the entrance
+arch, the stained-glass bay above, and a band of tarmac for the logo.
 
 ## Regenerating
 
