@@ -19,13 +19,20 @@ S = 2                    # supersample, downscaled at the end
 W, H = TILE[0] * S, TILE[1] * S
 CREAM = (254, 252, 249)  # --color-bg-top / .project-card hover background
 
-# The group spans x 1169-6892, heads at y 3477, feet at y 4769. This window
-# holds all of it with margin, plus the entrance arch, the stained-glass bay
-# above, and a band of tarmac at the bottom to sit the logo on.
-GROUP_16_9 = (820, 1725, 7240, 5336)
-# A shallower panorama of the same view, for the variants that pair the photo
-# with a cream strip rather than overlaying it.
-GROUP_PANORAMA = (820, 2122, 7240, 5150)
+# The group spans x 1169-6892, heads at y 3477, feet and shadows ending at
+# y 4720.
+#
+# Full frame width — the widest a 16:9 window of this photo can be, so this is
+# as far out as it zooms without letterboxing. At this scale the faces are a
+# few pixels across at the size a tile renders.
+#
+# The bottom sits at y 5120, which leaves a 60px band of tarmac on the finished
+# tile: about half what the previous framing had, and the least that still fits
+# the wordmark underneath the group without touching anyone.
+GROUP_16_9 = (0, 620, 8000, 5120)
+# The variants that pair the photo with a cream strip carry the logo outside
+# the image, so they can cut at y 4830 — just under the feet, no tarmac at all.
+GROUP_PANORAMA = (0, 330, 8000, 4830)
 
 LOGO_COLOUR = 'successif_logo.png'
 LOGO_WHITE = 'successif_logo_white.png'
@@ -50,15 +57,18 @@ def logo(path, width):
     return lg.resize((width, round(width * lg.size[1] / lg.size[0])), Image.LANCZOS)
 
 
-def elliptical_wash(size, logo_box, pad, strength=250):
+def elliptical_wash(size, logo_box, pad, strength=250, inboard=0.6):
     """A soft oval of cream centred on the logo, so it reads as light on the
-    ground rather than a patch of fog."""
+    ground rather than a patch of fog. `inboard` tightens the edge that faces
+    into the frame, keeping the glow off whoever is standing nearest to it."""
     x0, y0, x1, y1 = logo_box
+    lead = pad * inboard if x0 > size[0] / 2 else pad * 1.9
+    trail = pad * 1.9 if x0 > size[0] / 2 else pad * inboard
     mask = Image.new('L', size, 0)
     ImageDraw.Draw(mask).ellipse(
-        (x0 - pad * 1.9, y0 - pad * 1.6, x1 + pad * 1.9, y1 + pad * 1.6), fill=strength
+        (x0 - lead, y0 - pad * 1.3, x1 + trail, y1 + pad * 1.6), fill=strength
     )
-    return mask.filter(ImageFilter.GaussianBlur(pad * 1.5))
+    return mask.filter(ImageFilter.GaussianBlur(pad * 1.35))
 
 
 def paste_logo(img, lg, xy):

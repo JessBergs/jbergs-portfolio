@@ -23,11 +23,15 @@ foreground or a cream strip below the photo.
 
 ## Crop
 
-`GROUP_16_9 = (0, 600, 8000, 5100)` — the full frame width, cut off just below
-the group's feet (the group spans x 1169–6892, heads at y 3477, feet at y 4769).
-The manor fills the top of the tile, the group sits low in it, and only a thin
-band of tarmac remains. Zoomed this far out the faces are a few pixels across at
-the size a tile actually renders, which is deliberate.
+`GROUP_16_9 = (0, 620, 8000, 5120)` — the full frame width, which is the widest
+a 16:9 window of this photo can be and so as far out as it zooms without
+letterboxing. The bottom sits just past the feet and shadows (which end at
+y 4720), leaving a 60px band of tarmac on the finished tile: about half the
+previous framing, and the least that still fits the wordmark underneath the
+group without touching anyone.
+
+`GROUP_PANORAMA = (0, 330, 8000, 4830)` is used by the cream-strip variants,
+which carry the logo outside the image and so need no tarmac at all.
 
 ## Regenerating
 
