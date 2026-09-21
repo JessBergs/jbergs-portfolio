@@ -10,7 +10,7 @@ The subject is the group, so every candidate keeps the whole row of people in
 frame and puts the wordmark somewhere that covers nobody — either the tarmac
 foreground or a cream strip below the photo.
 
-## The candidates (all 1200x675, ~190–220 KB)
+## The candidates (all 1200x675, capped at 150 KB)
 
 - `A-logo-br-on-tarmac.jpg` — **live tile.** Colour logo bottom right on a soft cream oval
 - `B-logo-bl-on-tarmac.jpg` — as A, mirrored to the bottom left

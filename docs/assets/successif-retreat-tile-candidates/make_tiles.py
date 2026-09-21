@@ -9,6 +9,7 @@ covers nobody — the tarmac foreground, or a cream strip below the photo.
 Needs Pillow. Run from this folder with the source photo path as argv[1]
 (default ~/dev/IMG_6020.jpg). Nothing in this folder is served by the site.
 """
+import io
 import sys
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageOps
 
@@ -33,6 +34,12 @@ GROUP_16_9 = (0, 620, 8000, 5120)
 # The variants that pair the photo with a cream strip carry the logo outside
 # the image, so they can cut at y 4830 — just under the feet, no tarmac at all.
 GROUP_PANORAMA = (0, 330, 8000, 4830)
+
+# The wordmark rides 15px above the bottom edge of the finished tile rather
+# than sitting hard against it.
+LIFT = 15 * S
+# Byte budget per tile, so this photo stays in line with the graphic tiles.
+BUDGET_KB = 150
 
 LOGO_COLOUR = 'successif_logo.png'
 LOGO_WHITE = 'successif_logo_white.png'
@@ -101,7 +108,7 @@ def A_logo_br_on_tarmac(photo):
     img = softened(photo.copy())
     lg = logo(LOGO_COLOUR, round(W * 0.21))
     pad = round(W * 0.014)
-    x, y = W - lg.size[0] - pad * 1.6, H - lg.size[1] - pad
+    x, y = W - lg.size[0] - pad * 1.6, H - lg.size[1] - pad - LIFT
     img.paste(Image.new('RGB', img.size, CREAM), (0, 0),
               elliptical_wash(img.size, (x, y, x + lg.size[0], y + lg.size[1]), pad))
     paste_logo(img, lg, (x, y))
@@ -113,7 +120,7 @@ def B_logo_bl_on_tarmac(photo):
     img = softened(photo.copy())
     lg = logo(LOGO_COLOUR, round(W * 0.21))
     pad = round(W * 0.014)
-    x, y = pad * 1.6, H - lg.size[1] - pad
+    x, y = pad * 1.6, H - lg.size[1] - pad - LIFT
     img.paste(Image.new('RGB', img.size, CREAM), (0, 0),
               elliptical_wash(img.size, (x, y, x + lg.size[0], y + lg.size[1]), pad))
     paste_logo(img, lg, (x, y))
@@ -153,7 +160,7 @@ def F_white_on_tarmac(photo):
     img = softened(photo.copy())
     lg = logo(LOGO_WHITE, round(W * 0.21))
     pad = round(W * 0.014)
-    paste_logo(img, lg, (W - lg.size[0] - pad * 1.6, H - lg.size[1] - pad))
+    paste_logo(img, lg, (W - lg.size[0] - pad * 1.6, H - lg.size[1] - pad - LIFT))
     return img
 
 
@@ -166,11 +173,37 @@ def G_closer(_photo):
 CANDIDATES = [A_logo_br_on_tarmac, B_logo_bl_on_tarmac, C_cream_strip,
               D_cream_strip_right, E_panel_br, F_white_on_tarmac, G_closer]
 
+
+def save_within(img, path, budget_kb=BUDGET_KB):
+    """Write the highest JPEG quality that still fits the byte budget.
+
+    A crowd in front of brickwork is all fine detail, so this photo costs more
+    per pixel than the graphic tiles. Searching for the quality rather than
+    fixing one keeps the tile in line with the rest of the set by weight.
+    """
+    lo, hi, best = 55, 92, None
+    while lo <= hi:
+        q = (lo + hi) // 2
+        buf = io.BytesIO()
+        img.save(buf, 'JPEG', quality=q, optimize=True, progressive=True)
+        if buf.tell() <= budget_kb * 1024:
+            best, lo = (q, buf.getvalue()), q + 1
+        else:
+            hi = q - 1
+    if best is None:                     # budget unreachable; take the floor
+        buf = io.BytesIO()
+        img.save(buf, 'JPEG', quality=lo, optimize=True, progressive=True)
+        best = (lo, buf.getvalue())
+    quality, data = best
+    with open(path, 'wb') as fh:
+        fh.write(data)
+    return quality, len(data)
+
+
 if __name__ == '__main__':
     photo = base_photo()
     for fn in CANDIDATES:
         letter, rest = fn.__name__.split('_', 1)
         path = f'{letter}-{rest.replace("_", "-")}.jpg'
-        fn(photo).resize(TILE, Image.LANCZOS).save(
-            path, quality=82, optimize=True, progressive=True)
-        print('wrote', path)
+        q, size = save_within(fn(photo).resize(TILE, Image.LANCZOS), path)
+        print(f'wrote {path}  quality {q}  {size // 1024} KB')
