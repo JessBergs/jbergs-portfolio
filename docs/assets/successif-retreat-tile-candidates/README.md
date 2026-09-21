@@ -10,7 +10,7 @@ The subject is the group, so every candidate keeps the whole row of people in
 frame and puts the wordmark somewhere that covers nobody — either the tarmac
 foreground or a cream strip below the photo.
 
-## The candidates (all 1200x675, ~186–215 KB)
+## The candidates (all 1200x675, ~190–215 KB)
 
 - `A-logo-br-on-tarmac.jpg` — **live tile.** Colour logo bottom right on a soft cream oval
 - `B-logo-bl-on-tarmac.jpg` — as A, mirrored to the bottom left
@@ -19,13 +19,15 @@ foreground or a cream strip below the photo.
 - `E-panel-br.jpg` — crisp rounded cream panel on the tarmac, bottom right
 - `F-white-on-tarmac.jpg` — white wordmark straight onto the tarmac, no scrim;
   the ground is dark and even enough to carry it
-- `G-wider-manor.jpg` — A's treatment on a wider window: more manor, smaller group
+- `G-closer.jpg` — A's treatment on a closer window: bigger group, less manor
 
 ## Crop
 
-`GROUP_16_9 = (820, 1725, 7240, 5336)` holds the whole group (which spans
-x 1169–6892, heads at y 3477, feet at y 4769) with margin, plus the entrance
-arch, the stained-glass bay above, and a band of tarmac for the logo.
+`GROUP_16_9 = (0, 600, 8000, 5100)` — the full frame width, cut off just below
+the group's feet (the group spans x 1169–6892, heads at y 3477, feet at y 4769).
+The manor fills the top of the tile, the group sits low in it, and only a thin
+band of tarmac remains. Zoomed this far out the faces are a few pixels across at
+the size a tile actually renders, which is deliberate.
 
 ## Regenerating
 

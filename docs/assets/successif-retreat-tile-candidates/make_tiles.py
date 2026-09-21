@@ -89,9 +89,9 @@ def A_logo_br_on_tarmac(photo):
     """House style, as the Lateral tile: colour wordmark over a soft cream
     glow. Sits on the tarmac below the group, clear of everyone's feet."""
     img = softened(photo.copy())
-    lg = logo(LOGO_COLOUR, round(W * 0.235))
-    pad = round(W * 0.028)
-    x, y = W - lg.size[0] - pad * 1.4, H - lg.size[1] - pad
+    lg = logo(LOGO_COLOUR, round(W * 0.165))
+    pad = round(W * 0.014)
+    x, y = W - lg.size[0] - pad * 1.6, H - lg.size[1] - pad
     img.paste(Image.new('RGB', img.size, CREAM), (0, 0),
               elliptical_wash(img.size, (x, y, x + lg.size[0], y + lg.size[1]), pad))
     paste_logo(img, lg, (x, y))
@@ -101,9 +101,9 @@ def A_logo_br_on_tarmac(photo):
 def B_logo_bl_on_tarmac(photo):
     """As A, mirrored to the bottom left."""
     img = softened(photo.copy())
-    lg = logo(LOGO_COLOUR, round(W * 0.235))
-    pad = round(W * 0.028)
-    x, y = pad * 1.4, H - lg.size[1] - pad
+    lg = logo(LOGO_COLOUR, round(W * 0.165))
+    pad = round(W * 0.014)
+    x, y = pad * 1.6, H - lg.size[1] - pad
     img.paste(Image.new('RGB', img.size, CREAM), (0, 0),
               elliptical_wash(img.size, (x, y, x + lg.size[0], y + lg.size[1]), pad))
     paste_logo(img, lg, (x, y))
@@ -112,20 +112,20 @@ def B_logo_bl_on_tarmac(photo):
 
 def C_cream_strip(_photo):
     """Panorama of the group above a cream strip carrying the logo."""
-    return with_cream_strip(0.155, 0.24, align='left')
+    return with_cream_strip(0.13, 0.21, align='left')
 
 
 def D_cream_strip_right(_photo):
     """As C, logo right-aligned."""
-    return with_cream_strip(0.155, 0.24, align='right')
+    return with_cream_strip(0.13, 0.21, align='right')
 
 
 def E_panel_br(photo):
     """Crisp rounded cream panel on the tarmac, bottom right."""
     img = softened(photo.copy())
-    lg = logo(LOGO_COLOUR, round(W * 0.21))
-    pad = round(W * 0.025)
-    inset = round(W * 0.018)
+    lg = logo(LOGO_COLOUR, round(W * 0.155))
+    pad = round(W * 0.012)
+    inset = round(W * 0.012)
     pw, ph = lg.size[0] + inset * 2, lg.size[1] + inset * 2
     px, py = W - pw - pad, H - ph - pad
     panel = Image.new('RGBA', (pw, ph), (0, 0, 0, 0))
@@ -141,20 +141,20 @@ def F_white_on_tarmac(photo):
     """White wordmark straight onto the tarmac, which is dark and even enough
     to carry it without any scrim at all."""
     img = softened(photo.copy())
-    lg = logo(LOGO_WHITE, round(W * 0.225))
-    pad = round(W * 0.028)
-    paste_logo(img, lg, (W - lg.size[0] - pad * 1.4, H - lg.size[1] - pad))
+    lg = logo(LOGO_WHITE, round(W * 0.165))
+    pad = round(W * 0.014)
+    paste_logo(img, lg, (W - lg.size[0] - pad * 1.6, H - lg.size[1] - pad))
     return img
 
 
-def G_wider_manor(_photo):
-    """A's treatment on a wider window: more of the manor, smaller group."""
-    photo = source().crop((300, 1174, 7700, 5336)).resize((W, H), Image.LANCZOS)
+def G_closer(_photo):
+    """A's treatment on a closer window: bigger group, less manor."""
+    photo = source().crop((820, 1725, 7240, 5336)).resize((W, H), Image.LANCZOS)
     return A_logo_br_on_tarmac(photo)
 
 
 CANDIDATES = [A_logo_br_on_tarmac, B_logo_bl_on_tarmac, C_cream_strip,
-              D_cream_strip_right, E_panel_br, F_white_on_tarmac, G_wider_manor]
+              D_cream_strip_right, E_panel_br, F_white_on_tarmac, G_closer]
 
 if __name__ == '__main__':
     photo = base_photo()
