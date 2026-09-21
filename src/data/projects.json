@@ -54,6 +54,15 @@
     "categories": ["Mentorship", "AI Security"]
   },
   {
+    "id": "successif-womens-retreat",
+    "title": "Successif Women in AI Safety Retreat",
+    "description": "Invitee at a three-day residential retreat at Pendley Manor for 35 women with established careers in technical AI safety, AI governance and organisational leadership.",
+    "image": "/images/successif-womens-retreat-2026.jpg",
+    "link": "https://www.successif.org/womens-retreat",
+    "year": "2026",
+    "categories": ["AI Security", "Public Speaking", "Conference"]
+  },
+  {
     "id": "public-design-conference",
     "title": "Public Design Conference 2025",
     "description": "Co-organised the inaugural global public design conference bringing together government designers worldwide. Part of World Design Congress, in collaboration with Royal College of Art and Greater London Authority.",
