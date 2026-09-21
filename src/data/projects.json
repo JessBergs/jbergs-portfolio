@@ -12,7 +12,7 @@
     "id": "spar-auditing-games-debate",
     "title": "Auditing Games for Debate: Can Models Learn Human Spot-Checking Patterns?",
     "description": "Mentoring a Fall 2026 AI safety research project through the SPAR (Supervised Program for Alignment Research) fellowship by Kairos, studying whether models can learn the patterns behind human spot-checks used for AI oversight.",
-    "image": "/images/spar-auditing-games-for-debate.png",
+    "image": "/images/spar-auditing-games-for-debate.jpg",
     "link": "https://sparai.org/projects/f26/recyQRpX2HbOZfHYp/",
     "year": "2026",
     "categories": ["Mentorship", "AI Security", "Scalable Oversight"]
@@ -21,7 +21,7 @@
     "id": "aisi-future-of-work",
     "title": "AI and the Future of Work – Study",
     "description": "UK AISI pilot study measuring AI-driven productivity gains across workplace tasks. The study with 500 participants found 25% higher quality and 61% faster completion with AI assistance.",
-    "image": "/images/aisi-ai-and-the-future-of-work.png",
+    "image": "/images/aisi-ai-and-the-future-of-work.jpg",
     "link": "https://www.aisi.gov.uk/blog/ai-and-the-future-of-work-measuring-ai-driven-productivity-gains-for-workplace-tasks",
     "year": "2026",
     "categories": ["Research Tooling", "Empirical Study", "AI Security", "Paper"]
@@ -30,7 +30,7 @@
     "id": "arxiv-ai-advice",
     "title": "AI Advice-Giving – Study",
     "description": "UK AISI longitudinal controlled study examining how people follow AI advice. Found 75% of participants followed GPT-4o advice on personal matters, though with no sustained well-being improvements.",
-    "image": "/images/arxiv.png",
+    "image": "/images/arxiv.jpg",
     "link": "https://arxiv.org/abs/2511.15352v2",
     "year": "2025",
     "categories": ["Research Tooling", "Empirical Study", "AI Security", "Paper"]
@@ -39,7 +39,7 @@
     "id": "arxiv-political-knowledge",
     "title": "AI and Political Knowledge – Study",
     "description": "UK AISI empirical study with 2,858 participants examining AI chatbot usage for political information. Demonstrated AI increases political knowledge as effectively as internet search.",
-    "image": "/images/arxiv.png",
+    "image": "/images/arxiv.jpg",
     "link": "https://arxiv.org/abs/2509.05219v2",
     "year": "2025",
     "categories": ["Research Tooling", "Empirical Study", "AI Security", "Paper"]
@@ -48,7 +48,7 @@
     "id": "bluedot-taisp-mentor",
     "title": "BlueDot Technical AI Safety Project – Mentor & Facilitator",
     "description": "Since March 2026 I've been working with BlueDot Impact on guiding technical talent through regular cohorts to a first impactful contribution to AI safety. Standout projects receive continued 1:1 coaching towards submissions to ICML and NeurIPS workshops.",
-    "image": "/images/bluedot-taisp.png",
+    "image": "/images/bluedot-taisp.jpg",
     "link": "https://bluedot.org/courses/technical-ai-safety-project",
     "year": "2026",
     "categories": ["Mentorship", "AI Security"]
@@ -66,7 +66,7 @@
     "id": "public-design-conference",
     "title": "Public Design Conference 2025",
     "description": "Co-organised the inaugural global public design conference bringing together government designers worldwide. Part of World Design Congress, in collaboration with Royal College of Art and Greater London Authority.",
-    "image": "/images/publicDesignConf.png",
+    "image": "/images/publicDesignConf.jpg",
     "link": "https://publicpolicydesign.blog.gov.uk/2025/07/14/join-our-first-global-public-design-conference/",
     "year": "2025",
     "categories": ["Event Organisation", "Conference"]
@@ -84,7 +84,7 @@
     "id": "chi-staig-2025",
     "title": "AISI HAI @ CHI 2025 STAIG Panel ",
     "description": "Panel speaker at the CHI 2025 workshop on Sociotechnical AI Governance: Opportunities and Challenges for HCI. Hybrid event held in Yokohama, Japan discussing AI governance from HCI perspectives.",
-    "image": "/images/staig-chi.png",
+    "image": "/images/staig-chi.jpg",
     "link": "https://chi-staig.github.io/",
     "year": "2025",
     "categories": ["Public Speaking", "Conference", "AI Security"]
@@ -93,7 +93,7 @@
     "id": "aisi-eurips-2025",
     "title": "AISI EurIPS 2025 Social",
     "description": "Organised the UK AI Security Institute's social event during EurIPS 2025 in Copenhagen, bringing together roughly 50 attendees from the AI safety research community to discuss frontier AI risks and technical solutions.",
-    "image": "/images/eurips.png",
+    "image": "/images/eurips.jpg",
     "link": "https://luma.com/bpu4e3s4",
     "year": "2025",
     "categories": ["Event Organisation", "AI Security"]
@@ -102,7 +102,7 @@
     "id": "bbc-explainable-ai",
     "title": "Making AI More Understandable",
     "description": "BBC R&D project researching Explainable AI to make AI decision-making transparent and interpretable. Prototyped ML-powered proofs-of-concept including generative ML art and interactive visualizations.",
-    "image": "/images/MakingAIUnderstandable.png",
+    "image": "/images/MakingAIUnderstandable.jpg",
     "link": "https://www.bbc.co.uk/rd/projects/making-ai-more-understandable/",
     "year": "2019-2021",
     "categories": ["Explainable AI", "Experimental"]
@@ -111,7 +111,7 @@
     "id": "bbc-together",
     "title": "BBC Together",
     "description": "A trial of a social watching and listening experience from BBC R&D. Multi-user iPlayer viewer enabling synchronized viewing experiences. Ran on BBC Taster for 1.5 years.",
-    "image": "/images/bbcTogether.png",
+    "image": "/images/bbcTogether.jpg",
     "link": "https://www.bbc.co.uk/programmes/p08dj0s5",
     "year": "2020-2021",
     "categories": ["Real-Time Collaboration","Experimental"]
@@ -120,7 +120,7 @@
     "id": "bbc-tech-meetup",
     "title": "BBC Tech Meetup",
     "description": "Co-organised the BBC Tech Meetup, facilitating knowledge sharing on latest technologies and development practices.",
-    "image": "/images/bbctechmeetup.png",
+    "image": "/images/bbctechmeetup.jpg",
     "link": "https://www.bbc.co.uk/programmes/articles/4BCZv12wbBYcsyKMbpyT574/bbc-tech-meetup",
     "year": "2019-2021",
     "categories": ["Event Organisation"]
@@ -147,7 +147,7 @@
     "id": "lab2",
     "title": "Lab² – A collaborative cross-reality game for virtual team building ",
     "description": "Master's Thesis project. A collaborative cross-reality game for virtual team building. Award 'Best Research Poster' at iLRN Conference",
-    "image": "/images/lab2.png",
+    "image": "/images/lab2.jpg",
     "link": "https://masters-portfolio.jbergs.eu/lab",
     "year": "2015",
     "categories": ["Paper", "Experimental", "Real-Time Collaboration"]
