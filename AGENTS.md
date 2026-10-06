@@ -21,9 +21,6 @@ Jess's private working context does not go in it:
   description.
 - **No raw chat logs or internal notes** anywhere in the tree, including code
   comments and PR text.
-- **`docs/REQUESTS.md` is gitignored too.** Keep logging Jess's asks there as the
-  global `feature-request-log` note requires — the file stays local. Never commit
-  it, and never quote it in a commit message or PR body.
 - Say nothing about Jess's employer, unannounced plans, or third parties beyond
   what the published site already states.
 
@@ -32,10 +29,9 @@ leave the context out.
 
 ## Session start
 
-1. Read the newest 1–3 files in `handoffs/` relevant to your branch (local and
-   untracked — see above).
-2. Read `docs/REQUESTS.md` — the append-only log of Jess's asks. A new feature
-   request gets a timestamped entry **before** you build it.
+Read the newest 1–3 files in `handoffs/` relevant to your branch (local and
+untracked — see above). This repo keeps no feature-request log: do not create
+`docs/REQUESTS.md`.
 
 ## `main` is production
 
