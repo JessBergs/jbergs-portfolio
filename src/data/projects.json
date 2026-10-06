@@ -37,11 +37,11 @@
   },
   {
     "id": "arxiv-political-knowledge",
-    "title": "AI and Political Knowledge – Study",
-    "description": "UK AISI empirical study with 2,858 participants examining AI chatbot usage for political information. Demonstrated AI increases political knowledge as effectively as internet search.",
-    "image": "/images/arxiv.jpg",
-    "link": "https://arxiv.org/abs/2509.05219v2",
-    "year": "2025",
+    "title": "AI and Political Knowledge – PNAS Nexus Paper",
+    "description": "UK AISI survey (n = 2,499) and randomised trials (n = 2,858) around the 2024 UK election. 13% of eligible voters used AI chatbots for political information, and chatbots raised political knowledge as effectively as internet search.",
+    "image": "/images/pnas-nexus-political-knowledge.jpg",
+    "link": "https://doi.org/10.1093/pnasnexus/pgag305",
+    "year": "2026",
     "categories": ["Research Tooling", "Empirical Study", "AI Security", "Paper"]
   },
   {
