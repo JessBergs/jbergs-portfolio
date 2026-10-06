@@ -30,7 +30,7 @@ TODO.md
 # Session handoffs — this repo is public; handoffs stay local (see AGENTS.md)
 handoffs/
 
-# Feature-request log — local only, this repo is public (see AGENTS.md)
+# Retired feature-request log. Still ignored so a stray copy is never published.
 docs/REQUESTS.md
 
 # Python bytecode (the tile-candidate generators)
