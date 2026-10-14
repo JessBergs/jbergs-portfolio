@@ -70,7 +70,16 @@ const About = () => {
           >
             Pivotal Research
           </a>
-          &apos;s AI Safety Fellowship.
+          &apos;s AI Safety Fellowship. I also advise the{' '}
+          <a
+            href="https://prism-research.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold underline hover:no-underline"
+          >
+            PRISM AI Safety Research Fellowship
+          </a>
+          .
         </p>
         <p
           className="text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
