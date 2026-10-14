@@ -52,7 +52,7 @@ const About = () => {
           >
             Algoverse AI Research
           </a>{' '}
-          and from this Autumn also{' '}
+          and{' '}
           <a
             href="https://sparai.org/"
             target="_blank"
@@ -61,7 +61,16 @@ const About = () => {
           >
             SPAR
           </a>
-          .
+          , and from Q1 2027 also at{' '}
+          <a
+            href="https://www.pivotal-research.org/mentors/profile/jess-bergs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold underline hover:no-underline"
+          >
+            Pivotal Research
+          </a>
+          &apos;s AI Safety Fellowship.
         </p>
         <p
           className="text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
