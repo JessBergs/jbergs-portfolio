@@ -43,16 +43,7 @@ const About = () => {
           >
             Technical AI Safety Project
           </a>{' '}
-          programme,{' '}
-          <a
-            href="https://algoverseairesearch.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold underline hover:no-underline"
-          >
-            Algoverse AI Research
-          </a>{' '}
-          and{' '}
+          programme and{' '}
           <a
             href="https://sparai.org/"
             target="_blank"
