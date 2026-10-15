@@ -43,7 +43,7 @@ const About = () => {
           >
             Technical AI Safety Project
           </a>{' '}
-          and the{' '}
+          programme and the{' '}
           <a
             href="https://sparai.org/"
             target="_blank"
