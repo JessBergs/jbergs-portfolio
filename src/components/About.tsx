@@ -43,7 +43,7 @@ const About = () => {
           >
             Technical AI Safety Project
           </a>{' '}
-          programme and{' '}
+          and the{' '}
           <a
             href="https://sparai.org/"
             target="_blank"
@@ -51,17 +51,17 @@ const About = () => {
             className="font-semibold underline hover:no-underline"
           >
             SPAR
-          </a>
-          , and from Q1 2027 also at{' '}
+          </a>{' '}
+          and{' '}
           <a
             href="https://www.pivotal-research.org/mentors/profile/jess-bergs"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold underline hover:no-underline"
           >
-            Pivotal Research
-          </a>
-          &apos;s AI Safety Fellowship.
+            Pivotal
+          </a>{' '}
+          research fellowships.
         </p>
         <p
           className="text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
