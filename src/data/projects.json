@@ -63,6 +63,15 @@
     "categories": ["AI Security", "Public Speaking", "Conference"]
   },
   {
+    "id": "apart-research-judging",
+    "title": "Apart Research – Research Sprint Judge",
+    "description": "Judge for Apart Research's AI safety research sprints, including Secret Loyalties, Digital Minds and Formal Methods. Reviews feed Apart's public critiques and its referrals to funders.",
+    "image": "/images/apart-research-judging.jpg",
+    "link": "https://apartresearch.com/sprints",
+    "year": "2026",
+    "categories": ["Peer Review", "AI Security", "Mentorship"]
+  },
+  {
     "id": "public-design-conference",
     "title": "Public Design Conference 2025",
     "description": "Co-organised the inaugural global public design conference bringing together government designers worldwide. Part of World Design Congress, in collaboration with Royal College of Art and Greater London Authority.",
