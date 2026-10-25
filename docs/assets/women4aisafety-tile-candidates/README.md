@@ -2,19 +2,18 @@
 
 The live tile (`public/images/women4aisafety-2026.jpg`) uses variant **A**: the
 event graphic from the Women4AISafety LinkedIn post (28 October 2026 online
-session) on the left, the blue W4AIS wordmark on the cream card background
-(`#fefcf9`) on the right. Same logo-on-cream treatment as the Successif and
-Lateral tiles.
+session), centred, with its speckled gradient background and purple base strip
+extended on both sides to fill 16:9.
 
-The source graphic is square, so a plain 16:9 crop loses either the portrait or
-the wordmark (the portrait ring overlaps the top of the wordmark, so there is no
-clean wordmark-only window); the split keeps both.
+The source graphic is square. The extension copies random content-free columns
+from the nearest edge of the graphic, so the gradient, the speckle and the strip
+continue without a seam. Earlier variants that put the W4AIS wordmark on a cream
+panel beside the graphic were dropped: the wordmark appeared twice.
 
 ## The candidates (all 1200x675, capped at 150 KB)
 
-- `A-split-logo-right.jpg` — **live tile.** Graphic left, wordmark on cream right
-- `B-split-logo-left.jpg` — as A, mirrored
-- `C-pillarbox.jpg` — the whole graphic centred on cream, no wordmark
+- `A-extended-centred.jpg` — **live tile.** Graphic centred, background extended both sides
+- `B-extended-left.jpg` — graphic flush left, background extended to the right only
 
 ## Regenerating
 
@@ -22,6 +21,6 @@ clean wordmark-only window); the split keeps both.
 uv run --with pillow python -I make_tiles.py <screenshot-of-the-linkedin-post.png>
 ```
 
-`GRAPHIC` in the script is the graphic's box inside the 1142x1432 screenshot.
-`w4ais_logo.png` is the colour wordmark from women4aisafety.com. Nothing in this
-folder is served by the site.
+`GRAPHIC` in the script is the graphic's box inside the 1142x1432 screenshot;
+`RIGHT_SLIVER` and the measured left sliver are the content-free edge columns
+the extension samples from. Nothing in this folder is served by the site.
