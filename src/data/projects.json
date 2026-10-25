@@ -63,6 +63,15 @@
     "categories": ["AI Security", "Public Speaking", "Conference"]
   },
   {
+    "id": "women4aisafety-talk",
+    "title": "Women4AISafety – Guest Speaker",
+    "description": "Guest speaker at Women4AISafety, the career network for women entering or working in AI safety. Talk: Pathways into Technical AI Safety.",
+    "image": "/images/women4aisafety-2026.jpg",
+    "link": "https://www.women4aisafety.com/",
+    "year": "2026",
+    "categories": ["AI Security", "Public Speaking"]
+  },
+  {
     "id": "public-design-conference",
     "title": "Public Design Conference 2025",
     "description": "Co-organised the inaugural global public design conference bringing together government designers worldwide. Part of World Design Congress, in collaboration with Royal College of Art and Greater London Authority.",
