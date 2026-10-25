@@ -6,12 +6,10 @@ usage: uv run --with pillow python -I make_tile.py
 Styled after the mentor profile page: Pivotal's Open Graph image as the
 background (white centre, lavender pixel mosaic at the sides, scaled to 675 tall
 and centre-cropped to 1200 wide), the "pivotal" wordmark lifted out of it and
-re-placed beside a square profile photo that carries the site's stepped
-white-squares corner mark, with the role set in monospace below the wordmark:
-"Mentor:" and a boxed "Q1 2027 AIS" tag as on the page, then the fellowship
-name. Text uses DejaVu Sans Mono, the closest system font to the page's
-monospace. Output is 1200x675, capped at 150 KB, written to
-public/images/pivotal-ais-fellowship-2027.jpg.
+re-placed, centred, above the role set in monospace: "Mentor:" and a boxed
+"Q1 2027 AIS" tag as on the page, then the fellowship name. Text uses DejaVu
+Sans Mono, the closest system font to the page's monospace. Output is 1200x675,
+capped at 150 KB, written to public/images/pivotal-ais-fellowship-2027.jpg.
 """
 from pathlib import Path
 
@@ -21,12 +19,9 @@ HERE = Path(__file__).resolve().parent
 OUT_W, OUT_H = 1200, 675
 SIZE_CAP = 150_000
 MONO = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
-PHOTO = 300  # profile photo side
-MARK = 56  # corner mark side (two stepped white squares)
-GAP = 56  # photo to text block
-WORDMARK_W = 320
+WORDMARK_W = 440
 TAG_BORDER = (176, 160, 214)  # lavender, as the tag outline on the page
-SIZE = 30
+SIZE = 36
 
 
 def save_capped(img, path, cap=SIZE_CAP):
@@ -50,25 +45,8 @@ def wordmark_box(og):
     return min(xs), min(ys), max(xs) + 1, max(ys) + 1
 
 
-def corner_mark(photo):
-    """Pivotal's profile-photo mark: two white squares stepped into the bottom-right corner."""
-    d = ImageDraw.Draw(photo)
-    s = MARK * 24.66 / 51.79  # square side, from the SVG
-    o = MARK * 27.13 / 51.79  # offset of the second square
-    w, h = photo.size
-    # the mark's box sits in the corner; squares at its top-right and bottom-left
-    bx, by = w - MARK, h - MARK
-    d.rectangle((bx + o, by, bx + MARK, by + s), fill=(255, 255, 255))
-    d.rectangle((bx, by + o, bx + s, by + MARK), fill=(255, 255, 255))
-    return photo
-
-
 def main():
     og = Image.open(HERE / "pivotal-og-image.png").convert("RGB")
-    photo = Image.open(HERE / "jess-photo.png").convert("RGB")
-    side = min(photo.size)
-    photo = photo.crop((0, 0, side, side)).resize((PHOTO, PHOTO), Image.LANCZOS)
-    photo = corner_mark(photo)
 
     # Lift the wordmark, then blank it out of the background.
     x0, y0, x1, y1 = wordmark_box(og)
@@ -82,33 +60,30 @@ def main():
     left = (bg.width - OUT_W) // 2
     tile = bg.crop((left, 0, left + OUT_W, OUT_H))
 
-    # Text block: wordmark, "Mentor: [Q1 2027 AIS]", fellowship name.
+    # Centred block: wordmark, "Mentor: [Q1 2027 AIS]", fellowship name.
     wm = wordmark.resize((WORDMARK_W, round(wordmark.height * WORDMARK_W / wordmark.width)), Image.LANCZOS)
     font = ImageFont.truetype(MONO, SIZE)
     label, tag, line2 = "Mentor:", "Q1 2027 AIS", "AI Safety Fellowship"
-    pad_x, pad_y = 14, 8
+    pad_x, pad_y = 16, 10
+    label_w = int(font.getlength(label))
     tag_w = int(font.getlength(tag)) + 2 * pad_x
     tag_h = SIZE + 2 * pad_y
-    row1_w = int(font.getlength(label)) + 18 + tag_w
-    block_w = max(WORDMARK_W, row1_w, int(font.getlength(line2)))
-    block_h = wm.height + 36 + tag_h + 22 + SIZE
+    row1_w = label_w + 20 + tag_w
+    line2_w = int(font.getlength(line2))
+    block_h = wm.height + 44 + tag_h + 26 + SIZE
 
-    group_w = PHOTO + GAP + block_w
-    gx = (OUT_W - group_w) // 2
-    py = (OUT_H - PHOTO) // 2
-    tile.paste(photo, (gx, py))
-
-    tx = gx + PHOTO + GAP
+    cx = OUT_W // 2
     ty = (OUT_H - block_h) // 2
-    tile.paste(wm, (tx, ty))
+    tile.paste(wm, (cx - wm.width // 2, ty))
     draw = ImageDraw.Draw(tile)
-    y = ty + wm.height + 36
-    draw.text((tx, y + pad_y), label, font=font, fill=ink)
-    bx = tx + int(font.getlength(label)) + 18
+    y = ty + wm.height + 44
+    rx = cx - row1_w // 2
+    draw.text((rx, y + pad_y), label, font=font, fill=ink)
+    bx = rx + label_w + 20
     draw.rectangle((bx, y, bx + tag_w, y + tag_h), outline=TAG_BORDER, width=2)
     draw.text((bx + pad_x, y + pad_y), tag, font=font, fill=ink)
-    y += tag_h + 22
-    draw.text((tx, y), line2, font=font, fill=ink)
+    y += tag_h + 26
+    draw.text((cx - line2_w // 2, y), line2, font=font, fill=ink)
 
     save_capped(tile, HERE / "tile.jpg")
     save_capped(tile, HERE.parents[2] / "public/images/pivotal-ais-fellowship-2027.jpg")
