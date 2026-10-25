@@ -1,5 +1,14 @@
 [
   {
+    "id": "pivotal-ais-fellowship-mentor",
+    "title": "Pivotal Research AI Safety Fellowship – Mentor",
+    "description": "Co-mentoring Pivotal Research's Q1 2027 AI Safety Fellowship. Current agent harness design is not human-centric, so our fellows will study effective oversight mechanisms for agents in automated R&D and AI control.",
+    "image": "/images/pivotal-ais-fellowship-2027.jpg",
+    "link": "https://www.pivotal-research.org/mentors/profile/jess-bergs",
+    "year": "2027",
+    "categories": ["Mentorship", "AI Security", "Scalable Oversight"]
+  },
+  {
     "id": "lateral-workshop-2026",
     "title": "Lateral Workshop 2026 – Expert Invitee",
     "description": "Ran one-to-ones and small-group sessions on career pathways into the field for experienced professionals from policy and comms backgrounds during a three-day workshop in Berkeley.",

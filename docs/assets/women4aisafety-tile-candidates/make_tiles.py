@@ -5,12 +5,16 @@ usage: uv run --with pillow python -I make_tiles.py <screenshot.png>
 
 The screenshot is the 1142x1432 LinkedIn post; GRAPHIC is the square event
 graphic inside it. The tile is 16:9, so the graphic's speckled gradient
-background is extended: sideways from content-free slivers at the left and
+background is extended: sideways from content-free columns at the left and
 right edges (keeping the top-bottom gradient), and above and below from
 content-free bands at the top and just under the date line (keeping the
-left-right gradient). Every added pixel is a random pixel from the relevant
-sliver/band within JITTER rows or columns of its own position, which keeps the
-gradient and speckle continuous without seams or banding.
+left-right gradient). The fill copies PATCH x PATCH blocks rather than single
+pixels, so the dither's local structure carries over; each block comes from
+within JITTER rows (sides) or BAND_JITTER columns (bands) of its own position,
+and side blocks come from at most SIDE_REACH columns inside the edge so their
+colour matches the edge. Content-free spans are found per row by scanning for
+text, ring and badge pixels, which gives the fill far more source material than
+the thin strip beside the portrait ring alone.
 
 Variant A (live) drops the purple base strip and gives the content equal
 background margins of GAP rows above the portrait ring and below the date line.
@@ -28,9 +32,12 @@ HERE = Path(__file__).resolve().parent
 OUT_W, OUT_H = 1200, 675
 SIZE_CAP = 150_000
 GRAPHIC = (0, 277, 1109, 1390)  # (x0, y0, x1, y1) of the graphic in the screenshot (1109+ is page border)
-RIGHT_SLIVER = (1080, 1108)  # content-free columns at the graphic's right edge
+RIGHT_SLIVER = (1080, 1108)  # fallback content-free columns at the right edge (beside "BlueDot Impact")
 LEFT_SLIVER_MAX = 28
-JITTER = 14  # rows/columns either side a sampled pixel may come from
+PATCH = 12  # the fill copies PATCH x PATCH blocks, which keeps the dither's local structure
+JITTER = 14  # rows a side-fill block may be taken from, either side of its own row
+BAND_JITTER = 60  # columns a top/bottom-fill block may be taken from, either side of its own column
+SIDE_REACH = 60  # how far inside an edge a side-fill block may come from
 GAP = 52  # variant A: background rows above the ring and below the date line
 STRIP_GAP = 14  # variant B: extra background rows between the date line and the strip
 LIVE = "A-no-strip.jpg"
@@ -52,6 +59,12 @@ def luminance(p):
 def is_ring(p):
     r, g, b = p
     return b > 150 and r < 100 and b > g + 30
+
+
+def is_content(p):
+    """White text, ring/date-box blue, or badge red, as opposed to the speckled background."""
+    r, g, b = p
+    return luminance(p) > 225 or (b > 150 and r < 110) or (r > 190 and g < 90 and b < 90)
 
 
 def ring_bounds(graphic, run=6):
@@ -92,36 +105,76 @@ def text_bottom_row(graphic, strip_y, run=3):
     return strip_y - 1
 
 
+def free_spans(img, margin=6, run=3):
+    """Per row, (left, right): columns [0, left) and [right, W) hold no content run."""
+    px = img.load()
+    w, h = img.size
+    lefts, rights = [], []
+    for y in range(h):
+        n, lf = 0, w
+        for x in range(w):
+            n = n + 1 if is_content(px[x, y]) else 0
+            if n >= run:
+                lf = x - run + 1
+                break
+        n, rf = 0, 0
+        for x in range(w - 1, -1, -1):
+            n = n + 1 if is_content(px[x, y]) else 0
+            if n >= run:
+                rf = x + run
+                break
+        lefts.append(max(0, lf - margin))
+        rights.append(min(w, rf + margin))
+    return lefts, rights
+
+
 def band_fill(graphic, band, width, height, rng):
-    """width x height patch: pixel (x, y) is a random pixel from rows `band` near column x."""
+    """width x height fill made of blocks copied from rows `band`, each from near its own column."""
     if height <= 0:
         return None
-    src = graphic.load()
     out = Image.new("RGB", (width, height))
-    dst = out.load()
     y0, y1 = band
+    ph = min(PATCH, y1 - y0)
     w = graphic.width
-    for y in range(height):
-        for x in range(width):
-            sx = min(max(x + rng.randint(-JITTER, JITTER), 0), w - 1)
-            dst[x, y] = src[sx, rng.randrange(y0, y1)]
+    for y in range(0, height, ph):
+        bh = min(ph, height - y)
+        for x in range(0, width, PATCH):
+            bw = min(PATCH, width - x)
+            sx = min(max(x + rng.randint(-BAND_JITTER, BAND_JITTER), 0), w - bw)
+            sy = rng.randint(y0, y1 - bh)
+            out.paste(graphic.crop((sx, sy, sx + bw, sy + bh)), (x, y))
     return out
 
 
-def side_fill(graphic, sliver, width, rng, strip_y=None):
-    """width x H patch: pixel (x, y) is a random pixel from columns `sliver` near row y."""
-    src = graphic.load()
-    h = graphic.height
+def side_fill(img, side, width, rng, spans, left_sliver, strip_y=None):
+    """width x H fill of blocks copied from content-free columns at `side`, each from near its own row."""
+    w, h = img.size
     out = Image.new("RGB", (width, h))
-    dst = out.load()
-    x0, x1 = sliver
-    for y in range(h):
-        lo, hi = 0, h - 1
+    lefts, rights = spans
+    for y in range(0, h, PATCH):
+        bh = min(PATCH, h - y)
+        lo, hi = 0, h - bh
         if strip_y is not None:
-            lo, hi = (0, strip_y - 1) if y < strip_y else (strip_y, h - 1)
-        for x in range(width):
+            if y + bh <= strip_y:
+                hi = strip_y - bh
+            elif y >= strip_y:
+                lo = strip_y
+            else:
+                lo = hi = y  # block straddles the strip edge: copy it aligned
+        for x in range(0, width, PATCH):
+            bw = min(PATCH, width - x)
             sy = min(max(y + rng.randint(-JITTER, JITTER), lo), hi)
-            dst[x, y] = src[rng.randrange(x0, x1), sy]
+            if side == "left":
+                lw = min(min(lefts[sy:sy + bh]), SIDE_REACH)
+                if lw < bw:
+                    lw = left_sliver[1]
+                sx = rng.randint(0, lw - bw)
+            else:
+                rf = max(max(rights[sy:sy + bh]), w - SIDE_REACH)
+                if w - rf < bw:
+                    rf = RIGHT_SLIVER[0]
+                sx = rng.randint(rf, w - bw)
+            out.paste(img.crop((sx, sy, sx + bw, sy + bh)), (x, y))
     return out
 
 
@@ -135,12 +188,13 @@ def compose(parts, left_sliver, rng, strip_h=0):
         g.paste(p, (0, y))
         y += p.height
     strip_y = h - strip_h if strip_h else None
+    spans = free_spans(g)
     extra = round(h * OUT_W / OUT_H) - g.width
     left_w, right_w = extra // 2, extra - extra // 2
     c = Image.new("RGB", (g.width + extra, h))
-    c.paste(side_fill(g, left_sliver, left_w, rng, strip_y), (0, 0))
+    c.paste(side_fill(g, "left", left_w, rng, spans, left_sliver, strip_y), (0, 0))
     c.paste(g, (left_w, 0))
-    c.paste(side_fill(g, RIGHT_SLIVER, right_w, rng, strip_y), (left_w + g.width, 0))
+    c.paste(side_fill(g, "right", right_w, rng, spans, left_sliver, strip_y), (left_w + g.width, 0))
     return c.resize((OUT_W, OUT_H), Image.LANCZOS)
 
 
