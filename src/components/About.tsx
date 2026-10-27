@@ -19,7 +19,7 @@ const About = () => {
           for our human-in-the-loop research tools, enabling our scientists to run their
           empirical research experiments at scale.
           <br />
-          My independent research currently focuses on how we can design for effective
+          Currently, my independent research focuses on how we can design for effective
           scalable human oversight.
         </p>
         <p
