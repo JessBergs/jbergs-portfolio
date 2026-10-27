@@ -7,7 +7,7 @@ const About = () => {
           className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
           style={{ color: '#3a4050' }}
         >
-          I lead engineering &amp; product strategy at the{' '}
+          I&apos;m an engineering lead at the{' '}
           <a
             href="https://www.aisi.gov.uk/"
             target="_blank"
