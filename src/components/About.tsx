@@ -18,7 +18,11 @@ const About = () => {
           </a>{' '}
           for our human-in-the-loop research tools, enabling our scientists to run their
           empirical research experiments at scale.
-          <br />
+        </p>
+        <p
+          className="mb-5 text-[0.88rem] font-medium leading-relaxed md:text-[0.95rem]"
+          style={{ color: '#3a4050' }}
+        >
           Currently, my independent research focuses on how we can design for effective
           scalable human oversight.
         </p>
