@@ -15,12 +15,8 @@ covers what the repo does not say out loud.
 world-readable the moment it is pushed, and stays in the history afterwards.
 Jess's private working context does not go in it:
 
-- **Never commit session handoffs.** `handoffs/` is gitignored — write yours
-  there as usual, it stays on this machine. Do not `git add -f` it, do not move
-  handoff content into `docs/`, and do not paste it into a commit message or PR
-  description.
-- **No raw chat logs or internal notes** anywhere in the tree, including code
-  comments and PR text.
+- **No raw chat logs, session notes or internal notes** anywhere in the tree,
+  including code comments, commit messages and PR text.
 - Say nothing about Jess's employer, unannounced plans, or third parties beyond
   what the published site already states.
 
@@ -29,9 +25,7 @@ leave the context out.
 
 ## Session start
 
-Read the newest 1–3 files in `handoffs/` relevant to your branch (local and
-untracked — see above). This repo keeps no feature-request log: do not create
-`docs/REQUESTS.md`.
+This repo keeps no feature-request log: do not create `docs/REQUESTS.md`.
 
 ## `main` is production
 
