@@ -42,7 +42,14 @@
   .row .m { display: block; font-size: .88rem; font-weight: 500; color: var(--color-ink-mute); margin-top: .05rem; }
   .row .m b { font-weight: 600; color: var(--color-ink-soft); }
 
-  .tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.1rem; }
+  .tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+  /* the tiles are narrower here than on the live site, so the type steps down with them */
+  .tiles .project-card__body { padding: .85rem .95rem 1rem; gap: .45rem; }
+  .tiles .project-card__title { font-size: .95rem; line-height: 1.3; }
+  .tiles .project-card__desc { font-size: .82rem; line-height: 1.45; font-weight: 500; }
+  .tiles .project-card__tag { font-size: .66rem; padding: .14rem .45rem; }
+  .filters { display: flex; flex-wrap: wrap; gap: .35rem; margin: -.4rem 0 1rem; }
+  .filters .filter-pill { padding: .2rem .6rem; font-size: .72rem; }
   .more { margin-top: 1.1rem; font-size: .9rem; }
   .more a { color: var(--color-ink-mute); }
 
@@ -90,6 +97,7 @@
     <hr class="rule">
     <section id="work">
       <h2 class="section-h2">Projects</h2>
+      <div class="filters" id="filters"></div>
       <div class="tiles" id="tiles"></div>
     </section>
     <hr class="rule">
@@ -113,12 +121,17 @@
   ];
   document.getElementById('up').innerHTML = UP.map((u) => `
     <div class="row"><div class="d">${esc(u.date)}</div><div class="t"><a class="ti" href="${u.href}">${esc(u.title)}</a><span class="m"><b>${esc(u.role)}</b>${u.org ? ', ' + esc(u.org) : ''}${u.place ? ', ' + esc(u.place) : ''}${u.tbc ? ', date to be confirmed' : ''}${u.note ? ', ' + esc(u.note) : ''}</span></div></div>`).join('');
-  document.getElementById('tiles').innerHTML = TILE_PROJECTS.map((p) => `
+  const cats = [...new Set(TILE_PROJECTS.flatMap((p) => p.categories || []))].sort();
+  let on = [];
+  const drawFilters = () => { document.getElementById('filters').innerHTML = [`<button type="button" class="filter-pill${on.length ? '' : ' filter-pill--on'}" data-c="">All</button>`, ...cats.map((c) => `<button type="button" class="filter-pill${on.includes(c) ? ' filter-pill--on' : ''}" data-c="${esc(c)}">${esc(c)}</button>`)].join('');
+    document.querySelectorAll('#filters .filter-pill').forEach((b) => b.addEventListener('click', () => { const c = b.dataset.c; on = c ? (on.includes(c) ? on.filter((x) => x !== c) : [...on, c]) : []; drawFilters(); drawTiles(); })); };
+  const drawTiles = () => { document.getElementById('tiles').innerHTML = TILE_PROJECTS.filter((p) => !on.length || (p.categories || []).some((c) => on.includes(c))).map((p) => `
     <a class="project-card" href="${p.link || '#'}" target="_blank" rel="noopener noreferrer">
       <div class="project-card__media"><img src="${p.image}" alt="" loading="lazy"></div>
       <div class="project-card__body"><h3 class="project-card__title">${esc(p.title)}</h3><p class="project-card__desc">${esc(p.description)}</p>
         <div class="project-card__tags">${(p.categories || []).map((c) => `<span class="project-card__tag">${esc(c)}</span>`).join('')}</div></div>
-    </a>`).join('');
+    </a>`).join(''); };
+  drawFilters(); drawTiles();
   document.getElementById('past').innerHTML = TILE_TALKS.map((t) => `
     <div class="row pic"><div class="d">${esc(t.when)}</div><figure><img src="${t.image}" alt="" loading="lazy"></figure><div class="t"><a class="ti" href="${t.link || '#'}">${esc(t.title)}</a><span class="m"><b>${esc(t.role)}</b>${t.org ? ', ' + esc(t.org) : ''}${t.place ? ', ' + esc(t.place) : ''}</span></div></div>`).join('');
   const hdr = document.getElementById('hdr'); const onScroll = () => hdr.classList.toggle('is-scrolled', window.scrollY > 8); onScroll(); addEventListener('scroll', onScroll, { passive: true });
