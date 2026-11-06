@@ -197,15 +197,15 @@ window.TILE_TALKS = [
   "place": "London",
   "link": "https://www.bbc.co.uk/programmes/articles/4BCZv12wbBYcsyKMbpyT574/bbc-tech-meetup",
   "image": "../../../public/images/bbctechmeetup.jpg",
-  "org": ""
+  "org": "BBC"
  },
  {
-  "title": "TEDxStuttgart",
+  "title": "TEDxStuttgart Talks Series",
   "when": "2011 to 2018",
   "role": "Co-organiser",
   "place": "Stuttgart",
   "link": "https://www.tedxstuttgart.de/",
   "image": "../../../public/images/tedxstuttgartnexteveent.jpg",
-  "org": ""
+  "org": "TEDxStuttgart"
  }
 ];
