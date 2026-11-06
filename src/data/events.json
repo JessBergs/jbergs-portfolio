@@ -1,0 +1,151 @@
+[
+  {
+    "id": "liftoff-founders-week-2026",
+    "title": "Liftoff Founders Week",
+    "role": "Speaker",
+    "org": "LISA",
+    "place": "London",
+    "date": "2026-11-12",
+    "link": "https://www.joinliftoff.ai/"
+  },
+  {
+    "id": "sash-symposium-2026",
+    "title": "Singapore AI Safety Research Symposium",
+    "role": "Speaker",
+    "org": "SASH",
+    "place": "Singapore",
+    "date": "2026-12-03",
+    "link": "https://www.aisafety.sg/"
+  },
+  {
+    "id": "neurips-meta-agents-panel-2026",
+    "title": "NeurIPS Workshop: Meta Agents",
+    "role": "Panel speaker",
+    "org": "NeurIPS 2026",
+    "place": "Sydney",
+    "date": "2026-12-11",
+    "link": "https://meta-agents-workshop.github.io/"
+  },
+  {
+    "id": "neurips-ai-safety-social-2026",
+    "title": "AI Safety Social @ NeurIPS, Sydney",
+    "role": "Host",
+    "place": "Sydney",
+    "note": "venue to be confirmed",
+    "date": "2026-12-12"
+  },
+  {
+    "id": "vub-ada-lovelace-lectures-2027",
+    "title": "VUB Ada Lovelace Algorithmic Lectures",
+    "role": "Speaker",
+    "org": "Vrije Universiteit Brussel",
+    "place": "Brussels",
+    "date": "2027-02-16",
+    "link": "https://data.research.vub.be/ada-lovelace-algorithmic-lectures"
+  },
+  {
+    "id": "gcp-workshop-2026",
+    "title": "GCP Workshop",
+    "role": "Expert invitee",
+    "date": "2026-11-01",
+    "when": "Nov 2026",
+    "org": "Kairos Global Challenges Project",
+    "place": "London",
+    "link": "https://www.globalchallengesproject.org/",
+    "image": "/images/gcp-workshop-2026.jpg"
+  },
+  {
+    "id": "women4aisafety-talk",
+    "title": "Pathways into Technical AI Safety",
+    "role": "Guest speaker",
+    "date": "2026-10-28",
+    "org": "Women4AISafety",
+    "place": "online",
+    "link": "https://www.women4aisafety.com/",
+    "image": "/images/women4aisafety-2026.jpg"
+  },
+  {
+    "id": "lateral-workshop-2026",
+    "title": "Lateral Workshop",
+    "role": "Expert invitee",
+    "date": "2026-09-11",
+    "org": "Constellation",
+    "place": "Berkeley, US",
+    "link": "https://www.lateralworkshop.org/",
+    "image": "/images/lateral-workshop-2026.jpg"
+  },
+  {
+    "id": "successif-womens-retreat",
+    "title": "Women in AI Safety Retreat",
+    "role": "Expert invitee",
+    "date": "2026-06-15",
+    "org": "Successif",
+    "place": "Oxford",
+    "link": "https://www.successif.org/womens-retreat",
+    "image": "/images/successif-womens-retreat-2026.jpg"
+  },
+  {
+    "id": "aisi-eurips-2025",
+    "title": "AISI EurIPS 2025 Social",
+    "role": "Host",
+    "date": "2025-12-03",
+    "org": "EurIPS",
+    "place": "Copenhagen",
+    "link": "https://luma.com/bpu4e3s4",
+    "image": "/images/eurips.jpg"
+  },
+  {
+    "id": "public-design-conference",
+    "title": "Public Design Conference 2025",
+    "role": "Co-organiser",
+    "date": "2025-09-11",
+    "org": "World Design Congress",
+    "place": "London",
+    "link": "https://publicpolicydesign.blog.gov.uk/2025/07/14/join-our-first-global-public-design-conference/",
+    "image": "/images/publicDesignConf.jpg"
+  },
+  {
+    "id": "chi-staig-2025",
+    "title": "AISI HAI @ CHI 2025 STAIG Panel",
+    "role": "Panel speaker",
+    "date": "2025-04-27",
+    "org": "CHI '25",
+    "place": "Yokohama, Japan",
+    "link": "https://chi-staig.github.io/",
+    "image": "/images/staig-chi.jpg"
+  },
+  {
+    "id": "services-week-2025",
+    "title": "AISI’s HAI Research Tools for Service Designers",
+    "role": "Speaker",
+    "date": "2025-03-01",
+    "org": "HMG Services Week",
+    "place": "London",
+    "link": "https://services.blog.gov.uk/2024/12/19/services-week-is-back-for-2025/",
+    "image": "/images/servicesWeek2025.png"
+  },
+  {
+    "id": "bbc-tech-meetup",
+    "title": "BBC Tech Meetup",
+    "role": "Co-organiser",
+    "date": "2019-03-01",
+    "endDate": "2021-06-01",
+    "when": "2019 to 2021",
+    "org": "BBC",
+    "place": "London",
+    "link": "https://www.bbc.co.uk/programmes/articles/4BCZv12wbBYcsyKMbpyT574/bbc-tech-meetup",
+    "image": "/images/bbctechmeetup.jpg"
+  },
+  {
+    "id": "tedx-stuttgart",
+    "title": "TEDxStuttgart Talks Series",
+    "role": "Co-organiser",
+    "date": "2011-03-01",
+    "endDate": "2018-06-01",
+    "when": "2011 to 2018",
+    "org": "TEDxStuttgart",
+    "place": "Stuttgart",
+    "link": "https://www.tedxstuttgart.de/",
+    "image": "/images/tedxstuttgartnexteveent.jpg"
+  }
+]

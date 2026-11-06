@@ -2,14 +2,21 @@ import { Mail, GraduationCap, Linkedin, Coffee } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <section className="relative isolate flex min-h-full items-center" aria-labelledby="hero-title">
-      <div className="relative z-10 flex w-full flex-col items-start gap-3">
+    <section className="home__side" aria-labelledby="hero-title">
+      <div className="hero-id">
+        <img
+          className="hero-photo"
+          src={`${import.meta.env.BASE_URL}images/profile.png`}
+          alt="Jess Bergs"
+          width={462}
+          height={456}
+        />
         <h1 id="hero-title" className="hero-h1" style={{ marginBottom: 0 }}>
           Jess Bergs
         </h1>
 
         <p
-          className="text-[1.12rem] leading-[1.5]"
+          className="hero-role text-[1.12rem] leading-[1.5]"
           style={{ color: 'var(--color-ink-soft)', fontFamily: 'var(--font-sans)' }}
         >
           R&amp;D Engineering Lead
@@ -18,7 +25,7 @@ const Hero = () => {
         </p>
 
         <ul
-          className="mt-2 flex list-none flex-col gap-3 p-0"
+          className="hero-links mt-2 flex list-none flex-col gap-3 p-0"
           style={{ color: 'var(--color-ink-mute)' }}
         >
           <li className="flex items-center gap-2 leading-none">

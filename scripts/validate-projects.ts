@@ -1,12 +1,13 @@
 #!/usr/bin/env tsx
 /**
- * Validates projects.json against the Zod schema
+ * Validates projects.json and events.json against their Zod schemas
  * Exits with code 1 if validation fails
  */
 
 import { readFileSync } from 'fs'
 import { join } from 'path'
 import { ProjectsArraySchema } from '../src/types/Project.js'
+import { EventsArraySchema } from '../src/types/Event.js'
 
 const projectsPath = join(process.cwd(), 'src/data/projects.json')
 
@@ -28,6 +29,15 @@ try {
   }
 
   console.log(`✅ Validation passed! ${result.data.length} projects validated.`)
+
+  const eventsRaw = readFileSync(join(process.cwd(), 'src/data/events.json'), 'utf-8')
+  const events = EventsArraySchema.safeParse(JSON.parse(eventsRaw))
+  if (!events.success) {
+    console.error('❌ events.json validation failed!')
+    events.error.errors.forEach((err) => console.error(`  - ${err.path.join('.')}: ${err.message}`))
+    process.exit(1)
+  }
+  console.log(`✅ ${events.data.length} events validated.`)
   process.exit(0)
 } catch (error) {
   console.error('❌ Error reading or parsing projects.json:', error)

@@ -1,20 +1,23 @@
 import Hero from '../components/Hero'
 import About from '../components/About'
+import { UpcomingEvents, PastEvents } from '../components/Events'
 import Projects from '../components/Projects'
 
 const Home = () => {
   return (
-    <>
-      {/* Hero (left) + About (right) on large screens, stacked on mobile */}
-      <div className="grid grid-cols-1 gap-10 py-10 md:py-14 lg:grid-cols-2 lg:gap-16">
-        <Hero />
+    <div className="home">
+      {/* Identity pinned on the left; the page reads down the right. */}
+      <Hero />
+      <div className="home__main">
         <About />
+        <hr className="rule" />
+        <UpcomingEvents />
+        <hr className="rule" />
+        <Projects />
+        <hr className="rule" />
+        <PastEvents />
       </div>
-
-      <hr className="rule" />
-
-      <Projects />
-    </>
+    </div>
   )
 }
 
