@@ -111,7 +111,7 @@ window.TILE_TALKS = [
   "title": "Global Challenges Project workshop",
   "when": "Nov 2026",
   "role": "Expert invitee",
-  "place": "",
+  "place": "London",
   "link": "https://www.globalchallengesproject.org/",
   "image": "../../../public/images/gcp-workshop-2026.jpg"
  },
@@ -127,7 +127,7 @@ window.TILE_TALKS = [
   "title": "Lateral Workshop",
   "when": "Sep 2026",
   "role": "Expert invitee",
-  "place": "Berkeley",
+  "place": "Berkeley, US",
   "link": "https://www.lateralworkshop.org/",
   "image": "../../../public/images/lateral-workshop-2026.jpg"
  },
@@ -159,7 +159,7 @@ window.TILE_TALKS = [
   "title": "AISI HAI @ CHI 2025 STAIG Panel",
   "when": "Apr 2025",
   "role": "Panel speaker",
-  "place": "Yokohama",
+  "place": "Yokohama, Japan",
   "link": "https://chi-staig.github.io/",
   "image": "../../../public/images/staig-chi.jpg"
  },
