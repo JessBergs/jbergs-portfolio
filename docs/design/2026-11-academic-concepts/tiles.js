@@ -143,7 +143,7 @@ window.TILE_TALKS = [
   "place": "Berkeley, US",
   "link": "https://www.lateralworkshop.org/",
   "image": "../../../public/images/lateral-workshop-2026.jpg",
-  "org": "Lighthaven"
+  "org": "Constellation"
  },
  {
   "title": "Successif Women in AI Safety Retreat",
