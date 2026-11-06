@@ -182,13 +182,13 @@ window.TILE_TALKS = [
   "org": "CHI '25"
  },
  {
-  "title": "AISI HAI @ HMG Services Week",
+  "title": "AISI’s HAI Research Tools for Service Designers",
   "when": "Mar 2025",
   "role": "Speaker",
   "place": "London",
   "link": "https://services.blog.gov.uk/2024/12/19/services-week-is-back-for-2025/",
   "image": "../../../public/images/servicesWeek2025.png",
-  "org": "UK Civil Service"
+  "org": "HMG Services Week"
  },
  {
   "title": "BBC Tech Meetup",
