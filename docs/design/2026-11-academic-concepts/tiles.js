@@ -179,7 +179,7 @@ window.TILE_TALKS = [
   "place": "Yokohama, Japan",
   "link": "https://chi-staig.github.io/",
   "image": "../../../public/images/staig-chi.jpg",
-  "org": "CHI 2025 STAIG workshop"
+  "org": "CHI '25"
  },
  {
   "title": "AISI HAI @ HMG Services Week",
