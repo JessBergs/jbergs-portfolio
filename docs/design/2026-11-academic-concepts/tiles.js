@@ -206,6 +206,6 @@ window.TILE_TALKS = [
   "place": "Stuttgart",
   "link": "https://www.tedxstuttgart.de/",
   "image": "../../../public/images/tedxstuttgartnexteveent.jpg",
-  "org": "TEDx"
+  "org": ""
  }
 ];
