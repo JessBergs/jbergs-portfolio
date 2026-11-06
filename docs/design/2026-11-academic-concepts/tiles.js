@@ -24,7 +24,7 @@ window.TILE_PROJECTS = [
   "image": "../../../public/images/pnas-nexus-political-knowledge.jpg"
  },
  {
-  "title": "Auditing Games for Debate: Can Models Learn Human Spot-Checking Patterns?",
+  "title": "Auditing Games for Debate: Can Models Learn Human Spot-Checking Patterns? – Mentor",
   "description": "Mentoring a Fall 2026 AI safety research project through the SPAR (Supervised Program for Alignment Research) fellowship by Kairos, studying whether models can learn the patterns behind human spot-checks used for AI oversight.",
   "link": "https://sparai.org/projects/f26/recyQRpX2HbOZfHYp/",
   "categories": [
