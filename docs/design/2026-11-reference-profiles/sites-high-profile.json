@@ -1,0 +1,678 @@
+{
+ "bengio": {
+  "url": "https://yoshuabengio.org/",
+  "who": "Yoshua Bengio",
+  "field": "AI and machine learning"
+ },
+ "hinton": {
+  "url": "https://www.cs.toronto.edu/~hinton/",
+  "who": "Geoffrey Hinton",
+  "field": "AI and machine learning"
+ },
+ "lecun": {
+  "url": "http://yann.lecun.com/",
+  "who": "Yann LeCun",
+  "field": "AI and machine learning"
+ },
+ "ng": {
+  "url": "https://www.andrewng.org/",
+  "who": "Andrew Ng",
+  "field": "AI and machine learning"
+ },
+ "jordan": {
+  "url": "https://people.eecs.berkeley.edu/~jordan/",
+  "who": "Michael I. Jordan",
+  "field": "AI and machine learning"
+ },
+ "russell": {
+  "url": "https://people.eecs.berkeley.edu/~russell/",
+  "who": "Stuart Russell",
+  "field": "AI and machine learning"
+ },
+ "abbeel": {
+  "url": "https://people.eecs.berkeley.edu/~pabbeel/",
+  "who": "Pieter Abbeel",
+  "field": "AI and machine learning"
+ },
+ "levine": {
+  "url": "https://people.eecs.berkeley.edu/~svlevine/",
+  "who": "Sergey Levine",
+  "field": "AI and machine learning"
+ },
+ "finn": {
+  "url": "https://ai.stanford.edu/~cbfinn/",
+  "who": "Chelsea Finn",
+  "field": "AI and machine learning"
+ },
+ "pliang": {
+  "url": "https://cs.stanford.edu/~pliang/",
+  "who": "Percy Liang",
+  "field": "AI and machine learning"
+ },
+ "manning": {
+  "url": "https://nlp.stanford.edu/~manning/",
+  "who": "Christopher Manning",
+  "field": "AI and machine learning"
+ },
+ "jurafsky": {
+  "url": "https://web.stanford.edu/~jurafsky/",
+  "who": "Dan Jurafsky",
+  "field": "AI and machine learning"
+ },
+ "leskovec": {
+  "url": "https://cs.stanford.edu/~jure/",
+  "who": "Jure Leskovec",
+  "field": "AI and machine learning"
+ },
+ "bender": {
+  "url": "https://faculty.washington.edu/ebender/",
+  "who": "Emily M. Bender",
+  "field": "AI and machine learning"
+ },
+ "ghahramani": {
+  "url": "https://mlg.eng.cam.ac.uk/zoubin/",
+  "who": "Zoubin Ghahramani",
+  "field": "AI and machine learning"
+ },
+ "sutton": {
+  "url": "http://incompleteideas.net/",
+  "who": "Richard Sutton",
+  "field": "AI and machine learning"
+ },
+ "schmidhuber": {
+  "url": "https://people.idsia.ch/~juergen/",
+  "who": "Jürgen Schmidhuber",
+  "field": "AI and machine learning"
+ },
+ "karpathy": {
+  "url": "https://karpathy.ai/",
+  "who": "Andrej Karpathy",
+  "field": "AI and machine learning"
+ },
+ "goodfellow": {
+  "url": "https://www.iangoodfellow.com/",
+  "who": "Ian Goodfellow",
+  "field": "AI and machine learning"
+ },
+ "mitchellm": {
+  "url": "https://melaniemitchell.me/",
+  "who": "Melanie Mitchell",
+  "field": "AI and machine learning"
+ },
+ "cho": {
+  "url": "https://kyunghyuncho.me/",
+  "who": "Kyunghyun Cho",
+  "field": "AI and machine learning"
+ },
+ "kolter": {
+  "url": "https://zicokolter.com/",
+  "who": "Zico Kolter",
+  "field": "AI and machine learning"
+ },
+ "neubig": {
+  "url": "https://www.phontron.com/",
+  "who": "Graham Neubig",
+  "field": "AI and machine learning"
+ },
+ "rush": {
+  "url": "https://rush-nlp.com/",
+  "who": "Alexander Rush",
+  "field": "AI and machine learning"
+ },
+ "hashimoto": {
+  "url": "https://thashim.github.io/",
+  "who": "Tatsunori Hashimoto",
+  "field": "AI and machine learning"
+ },
+ "choi": {
+  "url": "https://homes.cs.washington.edu/~yejin/",
+  "who": "Yejin Choi",
+  "field": "AI and machine learning"
+ },
+ "pineau": {
+  "url": "https://www.cs.mcgill.ca/~jpineau/",
+  "who": "Joelle Pineau",
+  "field": "AI and machine learning"
+ },
+ "tmitchell": {
+  "url": "http://www.cs.cmu.edu/~tom/",
+  "who": "Tom Mitchell",
+  "field": "AI and machine learning"
+ },
+ "veloso": {
+  "url": "http://www.cs.cmu.edu/~mmv/",
+  "who": "Manuela Veloso",
+  "field": "AI and machine learning"
+ },
+ "salakhutdinov": {
+  "url": "https://www.cs.cmu.edu/~rsalakhu/",
+  "who": "Ruslan Salakhutdinov",
+  "field": "AI and machine learning"
+ },
+ "murphy": {
+  "url": "https://www.cs.ubc.ca/~murphyk/",
+  "who": "Kevin Murphy",
+  "field": "AI and machine learning"
+ },
+ "defreitas": {
+  "url": "https://www.cs.ubc.ca/~nando/",
+  "who": "Nando de Freitas",
+  "field": "AI and machine learning"
+ },
+ "gal": {
+  "url": "https://www.cs.ox.ac.uk/people/yarin.gal/website/",
+  "who": "Yarin Gal",
+  "field": "AI and machine learning"
+ },
+ "osborne": {
+  "url": "https://www.robots.ox.ac.uk/~mosb/",
+  "who": "Maike Osborne",
+  "field": "AI and machine learning"
+ },
+ "wooldridge": {
+  "url": "https://www.cs.ox.ac.uk/people/michael.wooldridge/",
+  "who": "Michael Wooldridge",
+  "field": "AI and machine learning",
+  "note": "not a personal page at capture"
+ },
+ "kim": {
+  "url": "https://beenkim.github.io/",
+  "who": "Been Kim",
+  "field": "AI and machine learning"
+ },
+ "doshivelez": {
+  "url": "https://finale.seas.harvard.edu/",
+  "who": "Finale Doshi-Velez",
+  "field": "AI and machine learning"
+ },
+ "rudin": {
+  "url": "https://users.cs.duke.edu/~cynthia/",
+  "who": "Cynthia Rudin",
+  "field": "AI and machine learning"
+ },
+ "wallach": {
+  "url": "https://dirichlet.net/",
+  "who": "Hanna Wallach",
+  "field": "AI and machine learning"
+ },
+ "narayanan": {
+  "url": "https://www.cs.princeton.edu/~arvindn/",
+  "who": "Arvind Narayanan",
+  "field": "AI and machine learning"
+ },
+ "hardt": {
+  "url": "https://mrtz.org/",
+  "who": "Moritz Hardt",
+  "field": "AI and machine learning"
+ },
+ "tenenbaum": {
+  "url": "https://web.mit.edu/cocosci/josh.html",
+  "who": "Josh Tenenbaum",
+  "field": "Cognitive science"
+ },
+ "griffiths": {
+  "url": "https://cocosci.princeton.edu/tom/index.php",
+  "who": "Tom Griffiths",
+  "field": "Cognitive science"
+ },
+ "pinker": {
+  "url": "https://stevenpinker.com/",
+  "who": "Steven Pinker",
+  "field": "Cognitive science"
+ },
+ "barrett": {
+  "url": "https://lisafeldmanbarrett.com/",
+  "who": "Lisa Feldman Barrett",
+  "field": "Cognitive science"
+ },
+ "dragan": {
+  "url": "https://people.eecs.berkeley.edu/~anca/",
+  "who": "Anca Dragan",
+  "field": "AI safety and alignment"
+ },
+ "hadfield": {
+  "url": "https://people.csail.mit.edu/dhm/",
+  "who": "Dylan Hadfield-Menell",
+  "field": "AI safety and alignment"
+ },
+ "krueger": {
+  "url": "https://davidscottkrueger.com/",
+  "who": "David Krueger",
+  "field": "AI safety and alignment"
+ },
+ "steinhardt": {
+  "url": "https://jsteinhardt.stat.berkeley.edu/",
+  "who": "Jacob Steinhardt",
+  "field": "AI safety and alignment"
+ },
+ "leike": {
+  "url": "https://jan.leike.name/",
+  "who": "Jan Leike",
+  "field": "AI safety and alignment"
+ },
+ "christiano": {
+  "url": "https://paulfchristiano.com/",
+  "who": "Paul Christiano",
+  "field": "AI safety and alignment"
+ },
+ "shah": {
+  "url": "https://rohinshah.com/",
+  "who": "Rohin Shah",
+  "field": "AI safety and alignment"
+ },
+ "krakovna": {
+  "url": "https://vkrakovna.wordpress.com/",
+  "who": "Victoria Krakovna",
+  "field": "AI safety and alignment"
+ },
+ "dafoe": {
+  "url": "https://www.allandafoe.com/",
+  "who": "Allan Dafoe",
+  "field": "AI safety and alignment"
+ },
+ "lazar": {
+  "url": "https://sethlazar.org/",
+  "who": "Seth Lazar",
+  "field": "Philosophy and ethics"
+ },
+ "kasirzadeh": {
+  "url": "https://kasirzadeh.org/",
+  "who": "Atoosa Kasirzadeh",
+  "field": "Philosophy and ethics"
+ },
+ "chalmers": {
+  "url": "https://consc.net/",
+  "who": "David Chalmers",
+  "field": "Philosophy and ethics"
+ },
+ "bostrom": {
+  "url": "https://nickbostrom.com/",
+  "who": "Nick Bostrom",
+  "field": "Philosophy and ethics"
+ },
+ "ord": {
+  "url": "https://www.tobyord.com/",
+  "who": "Toby Ord",
+  "field": "Philosophy and ethics"
+ },
+ "macaskill": {
+  "url": "https://www.williammacaskill.com/",
+  "who": "William MacAskill",
+  "field": "Philosophy and ethics"
+ },
+ "singer": {
+  "url": "https://petersinger.info/",
+  "who": "Peter Singer",
+  "field": "Philosophy and ethics"
+ },
+ "crawford": {
+  "url": "https://www.katecrawford.net/",
+  "who": "Kate Crawford",
+  "field": "Technology and society"
+ },
+ "benjamin": {
+  "url": "https://www.ruhabenjamin.com/",
+  "who": "Ruha Benjamin",
+  "field": "Technology and society"
+ },
+ "boyd": {
+  "url": "https://www.danah.org/",
+  "who": "danah boyd",
+  "field": "Technology and society"
+ },
+ "zittrain": {
+  "url": "https://zittrain.org/",
+  "who": "Jonathan Zittrain",
+  "field": "Technology and society"
+ },
+ "lessig": {
+  "url": "https://lessig.org/",
+  "who": "Lawrence Lessig",
+  "field": "Technology and society"
+ },
+ "darling": {
+  "url": "https://www.katedarling.org/",
+  "who": "Kate Darling",
+  "field": "Technology and society"
+ },
+ "bergstrom": {
+  "url": "https://ctbergstrom.com/",
+  "who": "Carl Bergstrom",
+  "field": "Technology and society"
+ },
+ "schneier": {
+  "url": "https://www.schneier.com/",
+  "who": "Bruce Schneier",
+  "field": "Security and systems"
+ },
+ "anderson": {
+  "url": "https://www.cl.cam.ac.uk/~rja14/",
+  "who": "Ross Anderson",
+  "field": "Security and systems"
+ },
+ "boneh": {
+  "url": "https://crypto.stanford.edu/~dabo/",
+  "who": "Dan Boneh",
+  "field": "Security and systems"
+ },
+ "knuth": {
+  "url": "https://www-cs-faculty.stanford.edu/~knuth/",
+  "who": "Donald Knuth",
+  "field": "Computer science, classic"
+ },
+ "lamport": {
+  "url": "https://lamport.azurewebsites.net/",
+  "who": "Leslie Lamport",
+  "field": "Computer science, classic"
+ },
+ "norvig": {
+  "url": "https://norvig.com/",
+  "who": "Peter Norvig",
+  "field": "Computer science, classic"
+ },
+ "pearl": {
+  "url": "http://bayes.cs.ucla.edu/jp_home.html",
+  "who": "Judea Pearl",
+  "field": "Computer science, classic"
+ },
+ "kleinberg": {
+  "url": "https://www.cs.cornell.edu/home/kleinber/",
+  "who": "Jon Kleinberg",
+  "field": "Theory and algorithms"
+ },
+ "aaronson": {
+  "url": "https://scottaaronson.com/",
+  "who": "Scott Aaronson",
+  "field": "Theory and algorithms"
+ },
+ "barak": {
+  "url": "https://www.boazbarak.org/",
+  "who": "Boaz Barak",
+  "field": "Theory and algorithms"
+ },
+ "roughgarden": {
+  "url": "https://timroughgarden.org/",
+  "who": "Tim Roughgarden",
+  "field": "Theory and algorithms"
+ },
+ "fortnow": {
+  "url": "https://lance.fortnow.com/",
+  "who": "Lance Fortnow",
+  "field": "Theory and algorithms"
+ },
+ "wigderson": {
+  "url": "https://www.math.ias.edu/avi/",
+  "who": "Avi Wigderson",
+  "field": "Theory and algorithms"
+ },
+ "wadler": {
+  "url": "https://homepages.inf.ed.ac.uk/wadler/",
+  "who": "Philip Wadler",
+  "field": "Programming languages"
+ },
+ "peytonjones": {
+  "url": "https://simon.peytonjones.org/",
+  "who": "Simon Peyton Jones",
+  "field": "Programming languages"
+ },
+ "stroustrup": {
+  "url": "https://www.stroustrup.com/",
+  "who": "Bjarne Stroustrup",
+  "field": "Programming languages"
+ },
+ "kernighan": {
+  "url": "https://www.cs.princeton.edu/~bwk/",
+  "who": "Brian Kernighan",
+  "field": "Programming languages"
+ },
+ "might": {
+  "url": "https://matt.might.net/",
+  "who": "Matt Might",
+  "field": "Programming languages"
+ },
+ "tao": {
+  "url": "https://www.math.ucla.edu/~tao/",
+  "who": "Terence Tao",
+  "field": "Mathematics and physics"
+ },
+ "strogatz": {
+  "url": "https://www.stevenstrogatz.com/",
+  "who": "Steven Strogatz",
+  "field": "Mathematics and physics"
+ },
+ "ellenberg": {
+  "url": "https://www.jordanellenberg.com/",
+  "who": "Jordan Ellenberg",
+  "field": "Mathematics and physics"
+ },
+ "fry": {
+  "url": "https://hannahfry.co.uk/",
+  "who": "Hannah Fry",
+  "field": "Mathematics and physics"
+ },
+ "carroll": {
+  "url": "https://www.preposterousuniverse.com/",
+  "who": "Sean Carroll",
+  "field": "Mathematics and physics"
+ },
+ "hossenfelder": {
+  "url": "https://sabinehossenfelder.com/",
+  "who": "Sabine Hossenfelder",
+  "field": "Mathematics and physics"
+ },
+ "mack": {
+  "url": "https://www.astrokatie.com/",
+  "who": "Katie Mack",
+  "field": "Mathematics and physics"
+ },
+ "wilczek": {
+  "url": "https://frankwilczek.com/",
+  "who": "Frank Wilczek",
+  "field": "Mathematics and physics"
+ },
+ "chetty": {
+  "url": "https://rajchetty.com/",
+  "who": "Raj Chetty",
+  "field": "Economics and statistics"
+ },
+ "oster": {
+  "url": "https://emilyoster.net/",
+  "who": "Emily Oster",
+  "field": "Economics and statistics",
+  "note": "not a personal page at capture"
+ },
+ "mullainathan": {
+  "url": "https://sendhil.org/",
+  "who": "Sendhil Mullainathan",
+  "field": "Economics and statistics"
+ },
+ "obermeyer": {
+  "url": "https://www.ziadobermeyer.com/",
+  "who": "Ziad Obermeyer",
+  "field": "Economics and statistics"
+ },
+ "gelman": {
+  "url": "http://www.stat.columbia.edu/~gelman/",
+  "who": "Andrew Gelman",
+  "field": "Economics and statistics"
+ },
+ "wickham": {
+  "url": "https://hadley.nz/",
+  "who": "Hadley Wickham",
+  "field": "Economics and statistics"
+ },
+ "varian": {
+  "url": "https://people.ischool.berkeley.edu/~hal/",
+  "who": "Hal Varian",
+  "field": "Economics and statistics"
+ },
+ "barabasi": {
+  "url": "https://www.barabasi.com/",
+  "who": "Albert-László Barabási",
+  "field": "Networks and complexity"
+ },
+ "watts": {
+  "url": "https://www.duncanjwatts.com/",
+  "who": "Duncan Watts",
+  "field": "Networks and complexity"
+ },
+ "hidalgo": {
+  "url": "https://www.chidalgo.com/",
+  "who": "César Hidalgo",
+  "field": "Networks and complexity"
+ },
+ "shneiderman": {
+  "url": "https://www.cs.umd.edu/~ben/",
+  "who": "Ben Shneiderman",
+  "field": "HCI and visualisation"
+ },
+ "norman": {
+  "url": "https://jnd.org/",
+  "who": "Don Norman",
+  "field": "HCI and visualisation"
+ },
+ "buxton": {
+  "url": "https://www.billbuxton.com/",
+  "who": "Bill Buxton",
+  "field": "HCI and visualisation"
+ },
+ "ko": {
+  "url": "https://faculty.washington.edu/ajko/",
+  "who": "Amy J. Ko",
+  "field": "HCI and visualisation"
+ },
+ "klemmer": {
+  "url": "https://d.ucsd.edu/srk/",
+  "who": "Scott Klemmer",
+  "field": "HCI and visualisation"
+ },
+ "hartmann": {
+  "url": "https://people.eecs.berkeley.edu/~bjoern/",
+  "who": "Björn Hartmann",
+  "field": "HCI and visualisation"
+ },
+ "maes": {
+  "url": "https://web.media.mit.edu/~pattie/",
+  "who": "Pattie Maes",
+  "field": "HCI and visualisation",
+  "note": "not a personal page at capture"
+ },
+ "resnick": {
+  "url": "https://web.media.mit.edu/~mres/",
+  "who": "Mitchel Resnick",
+  "field": "HCI and visualisation"
+ },
+ "tufte": {
+  "url": "https://www.edwardtufte.com/",
+  "who": "Edward Tufte",
+  "field": "HCI and visualisation",
+  "note": "not a personal page at capture"
+ },
+ "cairo": {
+  "url": "https://www.albertocairo.com/",
+  "who": "Alberto Cairo",
+  "field": "HCI and visualisation"
+ },
+ "hintfm": {
+  "url": "https://hint.fm/",
+  "who": "Fernanda Viégas and Martin Wattenberg",
+  "field": "HCI and visualisation"
+ },
+ "olah": {
+  "url": "https://colah.github.io/",
+  "who": "Chris Olah",
+  "field": "AI and machine learning"
+ },
+ "weng": {
+  "url": "https://lilianweng.github.io/",
+  "who": "Lilian Weng",
+  "field": "AI and machine learning"
+ },
+ "raschka": {
+  "url": "https://sebastianraschka.com/",
+  "who": "Sebastian Raschka",
+  "field": "AI and machine learning"
+ },
+ "howard": {
+  "url": "https://jeremy.fast.ai/",
+  "who": "Jeremy Howard",
+  "field": "AI and machine learning"
+ },
+ "huyen": {
+  "url": "https://huyenchip.com/",
+  "who": "Chip Huyen",
+  "field": "AI and machine learning"
+ },
+ "nielsen": {
+  "url": "https://michaelnielsen.org/",
+  "who": "Michael Nielsen",
+  "field": "Mathematics and physics",
+  "note": "not a personal page at capture"
+ },
+ "brooks": {
+  "url": "https://rodneybrooks.com/",
+  "who": "Rodney Brooks",
+  "field": "AI and machine learning"
+ },
+ "marcus": {
+  "url": "https://garymarcus.com/",
+  "who": "Gary Marcus",
+  "field": "AI and machine learning"
+ },
+ "turkle": {
+  "url": "https://www.sherryturkle.com/",
+  "who": "Sherry Turkle",
+  "field": "Technology and society"
+ },
+ "buolamwini": {
+  "url": "https://www.poetofcode.com/",
+  "who": "Joy Buolamwini",
+  "field": "Technology and society"
+ },
+ "noble": {
+  "url": "https://safiyaunoble.com/",
+  "who": "Safiya Noble",
+  "field": "Technology and society"
+ },
+ "abebe": {
+  "url": "https://www.redietabebe.com/",
+  "who": "Rediet Abebe",
+  "field": "Technology and society",
+  "note": "not a personal page at capture"
+ },
+ "zuckerman": {
+  "url": "https://ethanzuckerman.com/",
+  "who": "Ethan Zuckerman",
+  "field": "Technology and society"
+ },
+ "mackay": {
+  "url": "https://www.inference.org.uk/mackay/",
+  "who": "David MacKay",
+  "field": "Computer science, classic"
+ },
+ "liskov": {
+  "url": "https://pmg.csail.mit.edu/~liskov/",
+  "who": "Barbara Liskov",
+  "field": "Computer science, classic"
+ },
+ "rus": {
+  "url": "https://danielarus.csail.mit.edu/",
+  "who": "Daniela Rus",
+  "field": "AI and machine learning"
+ },
+ "andreas": {
+  "url": "https://www.mit.edu/~jda/",
+  "who": "Jacob Andreas",
+  "field": "AI and machine learning"
+ },
+ "bowman": {
+  "url": "https://cims.nyu.edu/~sbowman/",
+  "who": "Sam Bowman",
+  "field": "AI safety and alignment"
+ },
+ "hendrycks": {
+  "url": "https://people.eecs.berkeley.edu/~hendrycks/",
+  "who": "Dan Hendrycks",
+  "field": "AI safety and alignment"
+ }
+}
