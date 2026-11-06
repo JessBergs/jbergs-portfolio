@@ -42,7 +42,7 @@
   .row .m { display: block; font-size: .88rem; font-weight: 500; color: var(--color-ink-mute); margin-top: .05rem; }
   .row .m b { font-weight: 600; color: var(--color-ink-soft); }
 
-  .tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+  .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
   /* the tiles are narrower here than on the live site, so the type steps down with them */
   .tiles .project-card__body { padding: .85rem .95rem 1rem; gap: .45rem; }
   .tiles .project-card__title { font-size: .95rem; line-height: 1.3; }
@@ -53,7 +53,6 @@
   .more { margin-top: 1.1rem; font-size: .9rem; }
   .more a { color: var(--color-ink-mute); }
 
-  @media (max-width: 72rem) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   @media (max-width: 56rem) {
     .page { grid-template-columns: 1fr; row-gap: 1.5rem; }
     .side { position: static; display: grid; grid-template-columns: 6rem 1fr; column-gap: 1.2rem; align-items: center; }
