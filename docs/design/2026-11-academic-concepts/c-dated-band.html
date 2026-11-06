@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jess Bergs</title>
+<link rel="stylesheet" href="base.css"><link rel="stylesheet" href="parts.css">
+<style>
+  /* C. A header row, then a tinted band that holds the two things that change: a dated note
+     on the left (what this month looks like) and the upcoming list on the right. Projects
+     in two columns under it, talks as a list. */
+  body { font-size: 16.5px; }
+  .wrap { max-width: 60rem; padding: 0 2rem; }
+  .top { display: grid; grid-template-columns: 7rem 1fr auto; column-gap: 1.6rem; align-items: center; padding: 3.5rem 0 2rem; }
+  .top img { width: 7rem; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border-radius: 2px; }
+  h1 { font-size: 1.9rem; line-height: 1.1; }
+  .top .title { margin-top: .3rem; font-size: .95rem; }
+  .top .statement { margin-top: .5rem; font-size: 1.05rem; color: var(--ink-2); }
+  .top nav { display: flex; flex-direction: column; gap: .2rem; font-size: .92rem; text-align: right; }
+  .band { display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem; padding: 1.6rem 2rem; margin: 0 -2rem; background: color-mix(in srgb, var(--sand) 40%, white); border-top: 2px solid var(--sand-pen); }
+  .band h2 { font-size: 1.05rem; font-weight: 700; color: var(--sand-pen); margin-bottom: .6rem; }
+  .band .status { font-size: .97rem; }
+  .band .status b { display: none; }
+  .band .row { --gut: 4.4rem; --rowpad: .3rem; --dsize: .85rem; }
+  .bio { padding-top: 2.4rem; max-width: 44rem; }
+  .bio p + p { margin-top: .9rem; }
+  h2.sec { font-size: 1.25rem; font-weight: 700; margin: 2.8rem 0 1rem; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem; row-gap: .4rem; }
+  .cols .row { --gut: 0; grid-template-columns: var(--thumb, 4.2rem) 1fr; --rowpad: .5rem; }
+  .cols .row .d { display: none; }
+  .cols .row .m::after { content: ' · ' attr(data-when); }
+  .row.talk { --gut: 5.5rem; --thumb-s: 2.6rem; --rowpad: .45rem; }
+  .svc { max-width: 44rem; }
+  .more { font-size: .95rem; margin-top: .8rem; }
+  @media (max-width: 48rem) { .top { grid-template-columns: 5rem 1fr; } .top nav { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; gap: 1rem; text-align: left; } .band, .cols { grid-template-columns: 1fr; row-gap: 1.5rem; } .band { margin: 0 -1.25rem; padding: 1.4rem 1.25rem; } .wrap { padding: 0 1.25rem; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top" id="top"></header>
+  <section class="band">
+    <div><h2 id="when"></h2><div id="status"></div></div>
+    <div><h2>Upcoming</h2><div id="upcoming"></div></div>
+  </section>
+  <section class="bio" id="bio"></section>
+  <section><h2 class="sec">Projects</h2><div class="cols" id="projects"></div><p class="more"><a href="#">All projects since 2011</a></p></section>
+  <section><h2 class="sec">Talks and conferences</h2><div id="talks"></div></section>
+  <section class="svc"><h2 class="sec">Mentoring and service</h2><div id="roles"></div></section>
+  <p id="updated"></p>
+</div>
+<span class="mock-label">C · dated band</span>
+<script src="entries.js"></script><script src="parts.js"></script>
+<script>
+  document.getElementById('top').innerHTML = P.photo() + `<div>${P.name()}${P.titleLines()}${P.statement()}</div><nav>${P.links()}</nav>`;
+  document.getElementById('when').textContent = STATUS.when;
+  document.getElementById('status').innerHTML = P.status(false);
+  document.getElementById('upcoming').innerHTML = P.upcoming();
+  document.getElementById('bio').innerHTML = P.bio();
+  document.getElementById('projects').innerHTML = P.projects({ n: 8, summary: false }).replace(/<span class="m">/g, '<span class="m" data-when="">');
+  document.querySelectorAll('#projects .row').forEach((r, i) => r.querySelector('.m').dataset.when = PROJECTS[i].when);
+  document.getElementById('talks').innerHTML = P.talks();
+  document.getElementById('roles').innerHTML = P.roles();
+  document.getElementById('updated').outerHTML = P.updated();
+</script>
+</body>
+</html>

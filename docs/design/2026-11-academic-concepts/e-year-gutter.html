@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jess Bergs</title>
+<link rel="stylesheet" href="base.css"><link rel="stylesheet" href="parts.css">
+<style>
+  /* E. One gutter runs down the whole page. In the header it holds nothing; in Upcoming it
+     holds the dates; in Projects and Talks it holds the year, written once per group, so a
+     reader can run a finger down the left edge and see the shape of the record. Photo top
+     right, the way many plain faculty pages place it. */
+  body { font-size: 16.5px; }
+  .page { max-width: 50rem; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+  .g { display: grid; grid-template-columns: 5rem minmax(0, 1fr); column-gap: 1.5rem; }
+  .top { align-items: start; }
+  .top .r { display: grid; grid-template-columns: minmax(0, 1fr) 6.5rem; column-gap: 1.5rem; }
+  .top img { width: 6.5rem; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border-radius: 2px; }
+  h1 { font-size: 1.9rem; line-height: 1.1; }
+  .top .title { margin-top: .3rem; font-size: .95rem; }
+  .links { margin-top: .5rem; display: flex; flex-wrap: wrap; gap: .2rem 1rem; font-size: .93rem; }
+  .statement { margin-top: 1.6rem; }
+  .bio { margin-top: .9rem; }
+  .bio p + p { margin-top: .8rem; }
+  .status { margin-top: 1rem; font-size: .97rem; border-left: 3px solid var(--apricot); padding-left: .9rem; }
+  h2 { grid-column: 2; font-size: 1.15rem; font-weight: 700; margin: 2.8rem 0 .5rem; }
+  .yr { color: var(--ink-3); font-size: .9rem; padding-top: .6rem; border-top: 1px solid var(--line-2); margin-top: .5rem; }
+  .yr.first { border-top: 0; margin-top: 0; padding-top: .35rem; }
+  .grp { padding: .25rem 0; }
+  .grp .row { --gut: 0; --thumb: 5rem; --thumb-s: 2.6rem; --rowpad: .4rem; }
+  .grp .row:not(.proj):not(.talk) { grid-template-columns: 1fr; }
+  .grp .row .d { display: none; }
+  .grp .row.proj { grid-template-columns: var(--thumb) 1fr; }
+  .grp .row.talk { grid-template-columns: var(--thumb-s) 1fr; }
+  .up .row { grid-template-columns: 1fr; }
+  .up .d2 { color: var(--ink); font-size: .9rem; padding-top: .55rem; }
+  .svc .row { grid-template-columns: 1fr; }
+  .more { grid-column: 2; font-size: .95rem; margin-top: .6rem; }
+  .updated { grid-column: 2; }
+  @media (max-width: 40rem) { .g { grid-template-columns: 3.6rem 1fr; column-gap: .8rem; } .top .r { grid-template-columns: 1fr; } .top .r #photo { order: -1; margin-bottom: .8rem; } .top img { width: 5rem; } }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="g top"><div></div><div class="r"><div id="idtext"></div><div id="photo"></div></div></header>
+  <section class="g" id="about"><div></div><div id="abouttext"></div></section>
+  <section class="g up"><h2>Upcoming talks and events</h2><div id="upcoming" style="display: contents"></div></section>
+  <section class="g"><h2>Projects</h2><div id="projects" style="display: contents"></div><p class="more"><a href="#">All projects since 2011</a></p></section>
+  <section class="g"><h2>Talks and conferences</h2><div id="talks" style="display: contents"></div></section>
+  <section class="g svc"><h2>Mentoring and service</h2><div id="roles" style="display: contents"></div></section>
+  <div class="g"><div></div><p id="updated"></p></div>
+</main>
+<span class="mock-label">E · year gutter</span>
+<script src="entries.js"></script><script src="parts.js"></script>
+<script>
+  document.getElementById('idtext').innerHTML = P.name() + P.titleLines() + `<p class="links">${P.links()}</p>`;
+  document.getElementById('photo').innerHTML = P.photo();
+  document.getElementById('abouttext').innerHTML = P.statement() + `<div class="bio">${P.bio()}</div>` + P.status(true);
+  /* upcoming: date in the gutter, one row each */
+  document.getElementById('upcoming').innerHTML = UPCOMING.map((u) => `<div class="d2">${esc(u.date)}</div><div class="grp">${P.upcoming().split('<div class="row')[UPCOMING.indexOf(u) + 1].replace(/^/, '<div class="row').replace(/<div class="d">[^<]*<\/div>/, '')}</div>`).join('');
+  /* grouped by year: a gutter cell with the year, a content cell with the rows */
+  const grouped = (list, html) => { const rows = html.split('<div class="row').slice(1).map((s) => '<div class="row' + s); const out = []; let last = null; list.forEach((e, i) => { const y = e.iso.slice(0, 4); if (y !== last) { out.push({ y, rows: [] }); last = y; } out[out.length - 1].rows.push(rows[i]); }); return out.map((g, i) => `<div class="yr ${i === 0 ? 'first' : ''}">${g.y}</div><div class="grp">${g.rows.join('')}</div>`).join(''); };
+  document.getElementById('projects').innerHTML = grouped(PROJECTS, P.projects());
+  document.getElementById('talks').innerHTML = grouped(TALKS, P.talks());
+  document.getElementById('roles').innerHTML = `<div class="yr first"></div><div class="grp">${P.roles()}</div>`;
+  document.getElementById('updated').outerHTML = P.updated();
+</script>
+</body>
+</html>

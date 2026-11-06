@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jess Bergs</title>
+<link rel="stylesheet" href="base.css"><link rel="stylesheet" href="parts.css">
+<style>
+  /* B. Identity pinned on the left (photo, name, title, contacts, the status note), the
+     page reads down the right. The status note is boxed, the way recruiting notices are. */
+  body { font-size: 16.5px; }
+  .page { display: grid; grid-template-columns: 15rem minmax(0, 40rem); column-gap: 4rem; max-width: 64rem; margin: 0 auto; padding: 4rem 2rem 5rem; }
+  .side { position: sticky; top: 3rem; align-self: start; }
+  .side img { width: 9rem; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border-radius: 50%; }
+  h1 { font-size: 1.7rem; line-height: 1.1; margin-top: 1.1rem; }
+  .side .title { margin-top: .4rem; font-size: .95rem; }
+  .side nav { margin-top: 1rem; display: flex; flex-direction: column; gap: .25rem; font-size: .95rem; }
+  .side .status { margin-top: 1.6rem; font-size: .9rem; padding: .75rem .85rem; border: 1px solid var(--line-2); border-radius: 3px; background: #fff; }
+  .side .status b { display: block; margin-bottom: .2rem; }
+  .statement { font-size: 1.28rem; }
+  .bio { margin-top: 1rem; }
+  .bio p + p { margin-top: .9rem; }
+  h2 { font-size: 1.15rem; font-weight: 700; margin: 2.8rem 0 .6rem; }
+  .row { --gut: 5.5rem; --thumb: 6rem; --thumb-s: 2.8rem; --rowpad: .5rem; border-top: 1px solid var(--line); }
+  .row:first-child { border-top: 0; }
+  .more { font-size: .95rem; margin-top: .6rem; }
+  @media (max-width: 52rem) { .page { grid-template-columns: 1fr; row-gap: 2rem; padding: 2.5rem 1.25rem 4rem; } .side { position: static; } .side img { width: 6rem; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <aside class="side" id="side"></aside>
+  <main>
+    <section id="about"></section>
+    <section><h2>Upcoming talks and events</h2><div id="upcoming"></div></section>
+    <section><h2>Projects</h2><div id="projects"></div><p class="more"><a href="#">All projects since 2011</a></p></section>
+    <section><h2>Talks and conferences</h2><div id="talks"></div></section>
+    <section><h2>Mentoring and service</h2><div id="roles"></div></section>
+    <p id="updated"></p>
+  </main>
+</div>
+<span class="mock-label">B · sidebar</span>
+<script src="entries.js"></script><script src="parts.js"></script>
+<script>
+  document.getElementById('side').innerHTML = P.photo() + P.name() + P.titleLines() + `<nav>${P.links()}</nav>` + P.status(true);
+  document.getElementById('about').innerHTML = P.statement() + `<div class="bio">${P.bio()}</div>`;
+  document.getElementById('upcoming').innerHTML = P.upcoming();
+  document.getElementById('projects').innerHTML = P.projects({ n: 6 });
+  document.getElementById('talks').innerHTML = P.talks();
+  document.getElementById('roles').innerHTML = P.roles();
+  document.getElementById('updated').outerHTML = P.updated();
+</script>
+</body>
+</html>

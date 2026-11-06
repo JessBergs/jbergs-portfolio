@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jess Bergs</title>
+<link rel="stylesheet" href="base.css"><link rel="stylesheet" href="parts.css">
+<style>
+  /* D. Text first. Name and bio on the left, photo and contacts on the right. Every section
+     is a list where each entry is a title plus a small italic type label (Paper, Talk,
+     Panel) and one line, with a stamp-sized image at the left edge. Headings carry a
+     thin blue rule, so the sections scan without boxes. */
+  body { font-size: 16.5px; }
+  .page { max-width: 54rem; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+  .top { display: grid; grid-template-columns: minmax(0, 1fr) 13rem; column-gap: 3rem; align-items: start; }
+  h1 { font-size: 2rem; line-height: 1.1; letter-spacing: -0.01em; }
+  .top .title { margin-top: .4rem; }
+  .statement { margin-top: 1.2rem; }
+  .bio { margin-top: .9rem; }
+  .bio p + p { margin-top: .8rem; }
+  .status { margin-top: 1rem; color: var(--ink-2); font-size: .97rem; }
+  .side img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border-radius: 2px; }
+  .side nav { margin-top: .8rem; display: flex; flex-direction: column; gap: .2rem; font-size: .93rem; }
+  h2 { font-size: 1.2rem; font-weight: 700; margin: 2.8rem 0 .8rem; padding-bottom: .35rem; border-bottom: 2px solid var(--sky-pen); }
+  .row { --thumb: 3rem; --thumb-s: 2.4rem; --rowpad: .5rem; grid-template-columns: 1fr; }
+  .row.proj { grid-template-columns: var(--thumb) 1fr; }
+  .row.talk { grid-template-columns: var(--thumb-s) 1fr; }
+  .row .d { display: none; }
+  .row .ti { font-weight: 700; }
+  .row .m { display: inline; margin-left: .5rem; font-style: italic; color: var(--ink-3); font-size: .9rem; }
+  .row .m .ty { color: var(--ink-3); }
+  .row .s { font-size: .95rem; color: var(--ink-2); }
+  .row figure { border-radius: 2px; }
+  .row.proj figure { aspect-ratio: 1; }
+  .up .row .t::before { content: attr(data-date); font-weight: 700; margin-right: .5rem; }
+  .svc .row .m { display: inline; }
+  .more { font-size: .95rem; margin-top: .6rem; }
+  @media (max-width: 48rem) { .top { grid-template-columns: 1fr; row-gap: 1.5rem; } .side { order: -1; display: grid; grid-template-columns: 6rem 1fr; column-gap: 1rem; align-items: center; } .side img { width: 6rem; } .side nav { margin: 0; } }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <div id="main"></div>
+    <aside class="side" id="side"></aside>
+  </header>
+  <section class="up"><h2>Upcoming talks and events</h2><div id="upcoming"></div></section>
+  <section><h2>Projects</h2><div id="projects"></div><p class="more"><a href="#">All projects since 2011</a></p></section>
+  <section><h2>Talks and conferences</h2><div id="talks"></div></section>
+  <section class="svc"><h2>Mentoring and service</h2><div id="roles"></div></section>
+  <p id="updated"></p>
+</main>
+<span class="mock-label">D · typed lists</span>
+<script src="entries.js"></script><script src="parts.js"></script>
+<script>
+  document.getElementById('main').innerHTML = P.name() + P.titleLines() + P.statement() + `<div class="bio">${P.bio()}</div>` + P.status(true);
+  document.getElementById('side').innerHTML = P.photo() + `<nav>${P.links()}</nav>`;
+  document.getElementById('upcoming').innerHTML = P.upcoming();
+  document.querySelectorAll('#upcoming .row').forEach((r, i) => { r.querySelector('.t').dataset.date = UPCOMING[i].date; r.querySelector('.d').remove(); });
+  document.getElementById('projects').innerHTML = P.projects({ n: 7 });
+  document.getElementById('talks').innerHTML = P.talks();
+  document.getElementById('roles').innerHTML = P.roles().replace(/<div class="d">[^<]*<\/div>/g, '');
+  document.getElementById('updated').outerHTML = P.updated();
+</script>
+</body>
+</html>

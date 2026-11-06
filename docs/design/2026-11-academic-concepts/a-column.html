@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jess Bergs</title>
+<link rel="stylesheet" href="base.css"><link rel="stylesheet" href="parts.css">
+<style>
+  /* A. One column, the way most faculty pages are built, typeset properly. Photo beside the
+     name, everything else a list with the date in the gutter. Nothing moves. */
+  body { font-size: 17px; }
+  .page { max-width: 42rem; margin: 0 auto; padding: 4rem 1.5rem 5rem; }
+  .id { display: grid; grid-template-columns: 6rem 1fr; column-gap: 1.5rem; align-items: start; }
+  .id img { width: 6rem; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border-radius: 2px; }
+  h1 { font-size: 1.85rem; line-height: 1.1; letter-spacing: -0.01em; }
+  .id .title { margin-top: .35rem; font-size: .98rem; }
+  .links { margin-top: .55rem; display: flex; flex-wrap: wrap; gap: .2rem 1.1rem; font-size: .95rem; }
+  .statement { margin-top: 2.2rem; }
+  .bio { margin-top: 1rem; }
+  .bio p + p { margin-top: .9rem; }
+  .status { margin-top: 1.2rem; padding: .8rem 1rem; background: color-mix(in srgb, var(--sky) 45%, white); border-radius: 3px; font-size: .97rem; }
+  h2 { font-size: 1.2rem; font-weight: 700; margin: 2.6rem 0 .7rem; padding-bottom: .3rem; border-bottom: 1px solid var(--line-2); }
+  h2 small { font-weight: 400; color: var(--ink-3); font-size: .9rem; margin-left: .5rem; }
+  .row { --gut: 5.5rem; --thumb: 6rem; --thumb-s: 2.8rem; --rowpad: .45rem; }
+  .more { font-size: .95rem; margin-top: .6rem; }
+  @media (max-width: 40rem) { .page { padding-top: 2.5rem; } .row, .row.proj, .row.talk { grid-template-columns: 1fr; row-gap: .2rem; } .row figure { max-width: 10rem; } .row .d { padding: 0; } }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="id" id="id"></header>
+  <section id="about"></section>
+  <section><h2>Upcoming talks and events</h2><div id="upcoming"></div></section>
+  <section><h2>Projects <small>papers, studies and built things</small></h2><div id="projects"></div><p class="more"><a href="#">All projects since 2011</a></p></section>
+  <section><h2>Talks and conferences</h2><div id="talks"></div></section>
+  <section><h2>Mentoring and service</h2><div id="roles"></div></section>
+  <p class="updated" id="updated"></p>
+</main>
+<span class="mock-label">A · column</span>
+<script src="entries.js"></script><script src="parts.js"></script>
+<script>
+  document.getElementById('id').innerHTML = P.photo() + `<div>${P.name()}${P.titleLines()}<p class="links">${P.links()}</p></div>`;
+  document.getElementById('about').innerHTML = P.statement() + `<div class="bio">${P.bio()}</div>` + P.status();
+  document.getElementById('upcoming').innerHTML = P.upcoming();
+  document.getElementById('projects').innerHTML = P.projects({ n: 6 });
+  document.getElementById('talks').innerHTML = P.talks();
+  document.getElementById('roles').innerHTML = P.roles();
+  document.getElementById('updated').outerHTML = P.updated();
+</script>
+</body>
+</html>
