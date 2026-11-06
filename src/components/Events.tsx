@@ -48,7 +48,7 @@ export const UpcomingEvents = () => {
   if (upcoming.length === 0) return null
   return (
     <section id="upcoming" className="relative z-10">
-      <h2 className="section-h2 mb-5">Upcoming talks and events</h2>
+      <h2 className="section-h2 mb-5">Upcoming</h2>
       <ul className="event-list">
         {upcoming.map((e) => (
           <EventRow key={e.id} event={e} upcoming />
