@@ -119,13 +119,13 @@ window.TILE_PROJECTS = [
 ];
 window.TILE_TALKS = [
  {
-  "title": "Global Challenges Project workshop",
+  "title": "GCP Workshop",
   "when": "Nov 2026",
   "role": "Expert invitee",
   "place": "London",
   "link": "https://www.globalchallengesproject.org/",
   "image": "../../../public/images/gcp-workshop-2026.jpg",
-  "org": "Global Challenges Project"
+  "org": "Kairos Global Challenges Project"
  },
  {
   "title": "Women4AISafety",
