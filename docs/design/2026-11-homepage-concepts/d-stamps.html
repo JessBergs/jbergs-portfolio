@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jess Bergs · Stamps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+  /* D · Stamps. A passport. Every talk, paper and role is an ink stamp in one of the five inks;
+     circles for speaking, rectangles for everything else, wide visas for the standing roles.
+     What is still to come is outlined and not yet inked. Pages are years. */
+  :root { --stamp: 'Bricolage Grotesque', 'Archivo', sans-serif; }
+  .top { padding-top: 3rem; padding-bottom: 0.5rem; }
+  .top > * { max-width: 44rem; }
+  h1 { font-size: 2.7rem; line-height: 1.05; }
+  .intro { margin-top: 0.9rem; font-size: 1.08rem; line-height: 1.55; color: var(--ink-2); }
+  .links { display: flex; flex-wrap: wrap; gap: 0.35rem 1.4rem; margin-top: 1.1rem; font-size: 0.95rem; }
+  section { padding: 1.5rem 0 0.5rem; }
+  .sec-h { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; }
+  .sec-h i { font-size: 0.92rem; color: var(--ink-3); }
+  .stamps { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.5rem; padding: 0.5rem 0.75rem; }
+  .stamps li { margin: 0.1rem -0.35rem; }
+  .st { display: block; font-family: var(--stamp); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--pen); text-decoration: none; mix-blend-mode: multiply; transform: rotate(var(--r, 0deg)); transition: transform .2s ease; }
+  .st:hover { transform: rotate(var(--r, 0deg)) scale(1.04); }
+  .st--circle { width: 158px; height: 158px; }
+  .st--circle svg { width: 100%; height: 100%; overflow: visible; }
+  .st--circle .ring { font-size: 10.5px; letter-spacing: 1.6px; fill: var(--pen); }
+  .st--circle .big { font-size: 30px; fill: var(--pen); font-weight: 800; letter-spacing: 0; }
+  .st--circle .mid { font-size: 10px; letter-spacing: 1.5px; fill: var(--pen); }
+  .st--circle circle { fill: color-mix(in srgb, var(--wash) 55%, transparent); stroke: var(--pen); }
+  .st--circle.open circle { fill: transparent; stroke-dasharray: 5 3; }
+  .st--rect { width: 186px; padding: 11px 13px 10px; border: 2.5px solid var(--pen); border-radius: 4px; outline: 1.2px solid var(--pen); outline-offset: -7px; background: color-mix(in srgb, var(--wash) 55%, transparent); text-align: center; line-height: 1.15; }
+  .st--rect.open { background: transparent; border-style: dashed; outline-style: dashed; }
+  .st--rect .r { font-size: 0.6rem; letter-spacing: 0.14em; }
+  .st--rect .t { display: block; font-size: 0.86rem; margin: 0.25rem 0 0.2rem; font-weight: 800; font-stretch: 90%; }
+  .st--rect .w { font-size: 0.62rem; letter-spacing: 0.1em; }
+  .st--rect .d { display: block; font-size: 0.72rem; margin-top: 0.3rem; border-top: 1px solid var(--pen); padding-top: 0.25rem; }
+  .visa { width: 236px; padding: 10px 14px; border: 2px solid var(--pen); outline: 1px solid var(--pen); outline-offset: -6px; border-radius: 3px; background: color-mix(in srgb, var(--wash) 50%, transparent); line-height: 1.2; }
+  .visa .o { display: block; font-size: 0.9rem; font-weight: 800; }
+  .visa .rl { display: block; font-size: 0.6rem; letter-spacing: 0.1em; margin-top: 0.2rem; }
+  .visa .s { display: block; font-size: 0.6rem; letter-spacing: 0.14em; margin-top: 0.35rem; opacity: .85; }
+  .visa.open { background: transparent; border-style: dashed; outline-style: dashed; }
+  .page { border-top: 1px solid var(--line); margin-top: 1rem; padding-top: 1.25rem; }
+  footer { padding: 2.5rem 0; font-size: 0.85rem; color: var(--ink-3); }
+  @media (max-width: 40rem) { h1 { font-size: 2.2rem; } .st--circle { width: 132px; height: 132px; } .st--rect { width: 160px; } .visa { width: 100%; } }
+</style>
+</head>
+<body>
+<header class="wrap top">
+  <h1>Jess Bergs</h1>
+  <p class="intro" id="intro"></p>
+  <p class="links" id="links"></p>
+</header>
+<main class="wrap">
+  <section aria-labelledby="next-h">
+    <div class="sec-h"><h2 id="next-h">Next</h2><i>outlined until it happens</i></div>
+    <ul class="stamps" id="next"></ul>
+  </section>
+  <section aria-labelledby="now-h">
+    <div class="sec-h"><h2 id="now-h">Standing</h2></div>
+    <ul class="stamps" id="visas"></ul>
+  </section>
+  <div id="pages"></div>
+</main>
+<footer class="wrap">© 2026 Jessica Bergs</footer>
+<div class="mock-label">D · stamps</div>
+<script src="entries.js"></script>
+<script>
+  document.getElementById('intro').textContent = INTRO;
+  document.getElementById('links').innerHTML = linksHtml();
+  const rots = [-7, 5, -3, 8, -5, 2, 6, -8, 4, -2, 7, -6, 3, -4, 5, -7, 2, 6, -3, 8, -5, 4, -6, 3, 7, -2];
+  let n = 0;
+  const up = (s) => esc(String(s).toUpperCase());
+  const circle = (e, open) => {
+    const id = 'arc' + (n++);
+    const ring = e.ring || [e.title, e.role, e.place].filter(Boolean).join('  ★  ');
+    const big = e.day || (e.when.match(/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/) || [String(e.year)])[0];
+    const mid = e.mon ? e.mon + ' ' + e.year : (big === String(e.year) ? '' : String(e.year));
+    return `<a class="st st--circle k-${e.kind}${open ? ' open' : ''}" href="#" style="--r:${rots[n % rots.length]}deg" title="${esc(e.blurb || e.note || '')}">
+      <svg viewBox="0 0 158 158" role="img" aria-label="${esc(e.title)}, ${e.role}">
+        <defs><path id="${id}" d="M79,79 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
+        <circle cx="79" cy="79" r="73" stroke-width="2.6"/>
+        <circle cx="79" cy="79" r="45" stroke-width="1.2" fill="none"/>
+        <text class="ring"><textPath href="#${id}" startOffset="2">${up(ring)}</textPath></text>
+        <text class="big" x="79" y="${mid ? 86 : 91}" text-anchor="middle">${up(big)}</text>
+        <text class="mid" x="79" y="104" text-anchor="middle">${up(mid)}</text>
+      </svg></a>`;
+  };
+  const rect = (e, open) => `<a class="st st--rect k-${e.kind}${open ? ' open' : ''}" href="#" style="--r:${rots[(n++) % rots.length]}deg" title="${esc(e.blurb || e.note || '')}">
+      <span class="r">${up(e.role)}</span><span class="t">${esc(e.title)}</span>
+      <span class="w">${up([e.org, e.place].filter(Boolean).join(', '))}</span>
+      <span class="d">${up(e.date || e.when)}${e.tbc ? ' · TBC' : ''}</span></a>`;
+  const RING = { 'chi-staig-2025': 'CHI 2025  ★  PANEL  ★  YOKOHAMA', 'successif-womens-retreat': 'SUCCESSIF RETREAT  ★  INVITEE', 'women4aisafety-talk': 'WOMEN4AISAFETY  ★  GUEST SPEAKER', 'services-week-2025': 'SERVICES WEEK  ★  TALK  ★  LONDON' };
+  const stamp = (e, open) => `<li>${e.kind === 'speaking' ? circle({ ...e, ring: RING[e.id] || (e.title === 'Vrije Universiteit Brussel' ? 'VUB BRUSSELS  ★  TALK  ★  16 FEB 2027' : e.ring) }, open) : rect(e, open)}</li>`;
+  document.getElementById('next').innerHTML = UPCOMING.map((e) => stamp({ ...e, year: e.year }, true)).join('');
+  document.getElementById('visas').innerHTML = ROLES.map((r) => `<li><a class="st visa k-${r.kind}${r.future ? ' open' : ''}" href="#" style="--r:${rots[(n++) % rots.length] / 3}deg"><span class="o">${esc(r.org)}</span><span class="rl">${up(r.role)}</span><span class="s">${up(/^\d/.test(r.since) ? 'since ' + r.since : r.since)}</span></a></li>`).join('');
+  const groups = [['2026', (p) => p.year === 2026], ['2025', (p) => p.year === 2025], ['2011 to 2021', (p) => p.year < 2025]];
+  document.getElementById('pages').innerHTML = groups.map(([h, f]) => `<section class="page" aria-label="${h}"><div class="sec-h"><h2>${h}</h2></div><ul class="stamps">${byYearDesc(PAST).filter(f).map((p) => stamp(p, false)).join('')}</ul></section>`).join('');
+</script>
+</body>
+</html>

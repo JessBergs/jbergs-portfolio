@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jess Bergs · Margin notes</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  /* C · Margin notes. No hero block. The page is one short piece of writing in a measured column,
+     and everything that would have been a tile sits in the margin beside the sentence that
+     mentions it: dates for what is next, small figures for the work, a list for the roles. */
+  .top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 1rem 2rem; padding-top: 3rem; padding-bottom: 2.25rem; }
+  h1 { font-size: 2.6rem; line-height: 1; }
+  .links { display: flex; flex-wrap: wrap; gap: 0.35rem 1.4rem; font-size: 0.95rem; }
+  .row { display: grid; grid-template-columns: minmax(0, 36rem) 15rem; column-gap: 3.5rem; align-items: start; }
+  .row + .row { margin-top: 1.5rem; }
+  .row p { font-size: 1.18rem; line-height: 1.62; }
+  .row p a { text-decoration-thickness: 1px; text-decoration-color: var(--line-2); }
+  .row p a:hover { text-decoration-color: var(--ink); }
+  .note { font-size: 0.84rem; line-height: 1.4; color: var(--ink-2); padding-top: 0.45rem; }
+  .dates li { display: grid; grid-template-columns: 3.6rem minmax(0, 1fr); gap: 0.5rem; padding: 0.22rem 0 0.22rem 0.65rem; border-left: 3px solid var(--wash); }
+  .dates b { color: var(--ink); font-weight: 700; }
+  .dates small { display: block; color: var(--ink-3); }
+  .fig { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 0.65rem; align-items: center; }
+  .fig + .fig { margin-top: 0.7rem; }
+  .fig img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px; box-shadow: 0 0 0 1px var(--line); }
+  .fig b { display: block; color: var(--ink); font-weight: 700; }
+  .orgs li { padding: 0.22rem 0 0.22rem 0.65rem; border-left: 3px solid var(--wash); }
+  .orgs li + li { margin-top: 0.25rem; }
+  .orgs b { color: var(--ink); font-weight: 700; }
+  .index { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line-2); }
+  h2 { font-size: 1.25rem; margin-bottom: 1rem; }
+  .cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem 3rem; }
+  .cols h3 { font-size: 1rem; color: var(--ink-3); margin-bottom: 0.4rem; }
+  .cols li { display: grid; grid-template-columns: 0.75rem minmax(0, 1fr); gap: 0.55rem; padding: 0.3rem 0; font-size: 0.92rem; line-height: 1.35; }
+  .cols .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--wash); box-shadow: inset 0 0 0 1px var(--pen); margin-top: 0.42rem; }
+  .cols small { display: block; color: var(--ink-3); font-size: 0.8rem; }
+  footer { padding: 2.5rem 0; font-size: 0.85rem; color: var(--ink-3); }
+  @media (max-width: 64rem) { .row { grid-template-columns: 1fr; } .note { padding: 0.5rem 0 0 0; margin-top: 0.6rem; } .cols { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 40rem) { .cols { grid-template-columns: 1fr; } .row p { font-size: 1.08rem; } }
+</style>
+</head>
+<body>
+<header class="wrap top"><h1>Jess Bergs</h1><nav class="links" id="links" aria-label="Contact"></nav></header>
+<main class="wrap">
+  <article>
+    <div class="row">
+      <p>Next: a talk at <a href="#">Liftoff</a> on Thursday 12 November, then <a href="#">SASH</a> on 3 December. In the second week of December I'm in Sydney for <a href="#">NeurIPS</a>, on a panel on the 11th and hosting an AI safety social the same evening (date still to settle). In February, a talk at the <a href="#">Vrije Universiteit Brussel</a>. And from the new year I'm a research advisor on <a href="#">Pivotal</a>'s AI safety fellowship.</p>
+      <aside class="note"><ul class="dates" id="dates"></ul></aside>
+    </div>
+    <div class="row">
+      <p>I lead engineering for the human-in-the-loop research tools at the <a href="#">UK AI Security Institute</a>, so our scientists can run empirical studies at scale. Three of those studies are out: on <a href="#">AI and the future of work</a>, on <a href="#">how people take AI advice</a>, and on <a href="#">AI and political knowledge</a>, the last in PNAS Nexus.</p>
+      <aside class="note" id="figs-studies"></aside>
+    </div>
+    <div class="row">
+      <p>My own research is on scalable human oversight: how people keep checking AI systems once the systems produce more than anyone can read. This autumn I'm mentoring a <a href="#">SPAR project</a> on exactly that, auditing games for debate.</p>
+      <aside class="note" id="figs-spar"></aside>
+    </div>
+    <div class="row">
+      <p>I also mentor on BlueDot's <a href="#">Technical AI Safety Project</a>, judge research sprints for <a href="#">Apart Research</a>, join the <a href="#">Global Challenges Project</a> as an expert invitee, and now and then advise on careers with <a href="#">80,000 Hours</a>.</p>
+      <aside class="note"><ul class="orgs" id="orgs"></ul></aside>
+    </div>
+    <div class="row">
+      <p>Before this: explainable AI and social viewing at <a href="#">BBC R&amp;D</a>, EU Horizon work on energy citizenship at IES, a master's in visualisation and serious games at the Glasgow School of Art, and seven years co-organising <a href="#">TEDxStuttgart</a>. I still organise things, most recently the <a href="#">Public Design Conference</a> and AISI's social at <a href="#">EurIPS</a> in Copenhagen.</p>
+      <aside class="note" id="figs-before"></aside>
+    </div>
+    <div class="row">
+      <p>Outside work I design and playtest board games. If any of this is your thing, <a href="mailto:hello@jbergs.eu">say hello</a>.</p>
+      <aside class="note"></aside>
+    </div>
+  </article>
+  <section class="index" aria-labelledby="idx-h">
+    <h2 id="idx-h">Everything, by year</h2>
+    <div class="cols" id="index"></div>
+  </section>
+</main>
+<footer class="wrap">© 2026 Jessica Bergs</footer>
+<div class="mock-label">C · margin notes</div>
+<script src="entries.js"></script>
+<script>
+  document.getElementById('links').innerHTML = linksHtml();
+  document.getElementById('dates').innerHTML = UPCOMING.map((e) => `<li class="k-${e.kind}"><b>${e.date.replace(/^\w{3} /, '')}</b><span>${esc(e.title)}${e.place ? ', ' + e.place : ''}, ${e.role.toLowerCase()}${e.tbc ? '<small>date tbc</small>' : ''}</span></li>`).join('');
+  const fig = (id) => { const p = PAST.find((x) => x.id === id); return `<figure class="fig k-${p.kind}"><img src="${p.image}" alt=""><figcaption><b>${esc(p.title)}</b>${esc(p.org)}, ${p.when}</figcaption></figure>`; };
+  document.getElementById('figs-studies').innerHTML = ['aisi-future-of-work', 'arxiv-ai-advice', 'arxiv-political-knowledge'].map(fig).join('');
+  document.getElementById('figs-spar').innerHTML = fig('spar-auditing-games-debate');
+  document.getElementById('figs-before').innerHTML = ['public-design-conference', 'aisi-eurips-2025'].map(fig).join('');
+  document.getElementById('orgs').innerHTML = ROLES.filter((r) => r.org !== 'UK AI Security Institute' && r.org !== 'SPAR').map((r) => `<li class="k-${r.kind}"><b>${r.org}</b><br>${r.role}, ${r.since}</li>`).join('');
+  const groups = [['2026', (p) => p.year === 2026], ['2025', (p) => p.year === 2025], ['2011 to 2021', (p) => p.year < 2025]];
+  document.getElementById('index').innerHTML = groups.map(([h, f]) => `<div><h3>${h}</h3><ul>${byYearDesc(PAST).filter(f).map((p) => `<li class="k-${p.kind}"><span class="dot"></span><span>${esc(p.title)}<small>${p.role}, ${esc(p.org)}${p.place ? ', ' + p.place : ''}</small></span></li>`).join('')}</ul></div>`).join('');
+</script>
+</body>
+</html>

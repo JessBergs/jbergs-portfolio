@@ -1,0 +1,50 @@
+/* Shared floor for the concept pages: Charter, Jess's inks, the viewport frame, focus styles. */
+@font-face { font-family: "Charter"; src: url("../../../public/fonts/charter/charter_regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Charter"; src: url("../../../public/fonts/charter/charter_italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Charter"; src: url("../../../public/fonts/charter/charter_bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Charter"; src: url("../../../public/fonts/charter/charter_bold_italic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
+
+:root {
+  --paper: #fefcf9;
+  --ink: #1d2029;
+  --ink-2: #4a5062;
+  --ink-3: #8b90a0;
+  --line: rgba(29, 32, 41, 0.12);
+  --line-2: rgba(29, 32, 41, 0.22);
+  /* the five inks of the frame, as washes and as pens */
+  --apricot: #ffd6c4; --apricot-pen: #b4521e;
+  --sky:     #c5dafd; --sky-pen:     #2f5fb3;
+  --lilac:   #e6ccf3; --lilac-pen:   #6a44a8;
+  --rose:    #ffc8dd; --rose-pen:    #b8336a;
+  --sand:    #ffdfa3; --sand-pen:    #8a6414;
+  --serif: "Charter", "Iowan Old Style", Georgia, serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-height: 100vh; background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 17px; line-height: 1.5; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-variant-numeric: tabular-nums; }
+h1, h2, h3, p, figure { margin: 0; font-weight: 400; }
+ul, ol { list-style: none; margin: 0; padding: 0; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.14em; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 2px; }
+img { display: block; max-width: 100%; }
+
+/* the coloured frame around the viewport, as on the live site */
+body::before { content: ''; position: fixed; inset: 14px; border-radius: 6px; pointer-events: none; z-index: 100; padding: 1px;
+  background: linear-gradient(135deg, #ffdfa3 0%, #ffc8dd 20%, #ffdfa3 40%, #e6ccf3 68%, #c5dafd 85%, #ffc8dd 100%) border-box;
+  -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: frameWobble 14s ease-in-out infinite alternate; }
+@keyframes frameWobble { from { transform: rotate(-10deg); } to { transform: rotate(10deg); } }
+@media (prefers-reduced-motion: reduce) { body::before { animation: none; } * { transition: none !important; } }
+@media (max-width: 40rem) { body::before { inset: 8px; } }
+
+.wrap { max-width: 76rem; margin: 0 auto; padding: 0 2.5rem; }
+@media (max-width: 48rem) { .wrap { padding: 0 1.25rem; } }
+
+/* kind inks */
+.k-speaking   { --wash: var(--apricot); --pen: var(--apricot-pen); }
+.k-research   { --wash: var(--sky);     --pen: var(--sky-pen); }
+.k-mentoring  { --wash: var(--lilac);   --pen: var(--lilac-pen); }
+.k-organising { --wash: var(--rose);    --pen: var(--rose-pen); }
+.k-judging    { --wash: var(--sand);    --pen: var(--sand-pen); }
+
+.mock-label { position: fixed; left: 14px; bottom: 14px; z-index: 200; font: 11px/1 ui-monospace, Menlo, monospace; background: rgba(29,32,41,.85); color: #fff; padding: 5px 8px; border-radius: 0 6px 0 6px; }
