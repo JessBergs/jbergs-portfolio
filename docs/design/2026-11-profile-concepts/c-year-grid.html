@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jess Bergs</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  /* C. The tiles stay, but small and many: a continuous grid of thumbnails with the year
+     written above the first tile of each year, so the grid can take another twenty entries
+     without a filter bar. What is next is the first row, dated the same way. Older work sits
+     under a band that says so. A pale page, section squares in the five inks. */
+  :root { --paper: #fdf8ea; }
+  body { font-size: 16px; }
+  .wrap { max-width: 72rem; }
+  .top { display: grid; grid-template-columns: 8rem 1fr; column-gap: 2rem; padding-top: 3rem; align-items: start; }
+  .top img { width: 8rem; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border-radius: 2px; }
+  .top h1 { font-size: 2rem; letter-spacing: -0.01em; line-height: 1.05; }
+  .top .line { margin-top: .4rem; font-size: 1.05rem; color: var(--ink-2); }
+  .top .line a, .top .links a { color: var(--sky-pen); text-decoration: none; }
+  .top a:hover { text-decoration: underline; }
+  .top .links { margin-top: .5rem; display: flex; gap: 1.2rem; flex-wrap: wrap; font-size: .95rem; }
+  .interests { margin-top: 1.4rem; display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem; max-width: 44rem; }
+  .interests h2 { font-size: .95rem; margin-bottom: .35rem; }
+  .interests ul { padding-left: 1.1rem; list-style: disc; }
+  .interests li { line-height: 1.5; }
+  .interests .past, .interests .past h2 { color: var(--ink-3); }
+  @media (max-width: 44rem) { .interests .past { margin-top: 1rem; } }
+
+  section { margin-top: 3rem; }
+  h2.sec { display: flex; align-items: center; gap: .55rem; font-size: 1.3rem; font-weight: 700; letter-spacing: -0.005em; margin-bottom: 1.2rem; }
+  h2.sec::before { content: ''; width: .8rem; height: .8rem; background: var(--sq, var(--sky)); border-radius: 1px; }
+  h2.sec small { font-weight: 400; color: var(--ink-3); font-size: .9rem; margin-left: .3rem; }
+
+  .grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 1.1rem; row-gap: 1.6rem; }
+  .cell { display: grid; grid-template-rows: 1.5rem auto auto; row-gap: .4rem; min-width: 0; }
+  .cell .yr { font-weight: 700; font-size: 1.05rem; line-height: 1.5rem; }
+  .cell figure { aspect-ratio: 16/10; overflow: hidden; border-radius: 2px; background: var(--wash); border: 1px solid var(--line); display: grid; place-items: center; }
+  .cell img { width: 100%; height: 100%; object-fit: cover; }
+  .cell figure .ph { color: var(--pen); font-size: .9rem; text-align: center; padding: .4rem; line-height: 1.3; }
+  .cell figure .ph b { display: block; font-size: 1.35rem; font-weight: 400; letter-spacing: -0.01em; }
+  .cell .cap { font-size: .9rem; line-height: 1.3; }
+  .cell .cap a { color: var(--sky-pen); text-decoration: none; }
+  .cell .cap a:hover { text-decoration: underline; }
+  .cell .cap span { display: block; color: var(--ink-3); font-size: .82rem; margin-top: .15rem; }
+  .cell .cap i { color: var(--pen); font-style: normal; }
+  .next .cell .yr { color: var(--ink); }
+
+  .band { margin: 3.5rem 0 2rem; padding: 2.2rem 1.6rem 1.2rem; border-radius: 3px; background: linear-gradient(180deg, rgba(197,218,253,0) 0%, #c5dafd 70%, #c5dafd 100%); }
+  .band h2 { font-size: 1.3rem; font-weight: 700; }
+  .band p { color: var(--ink-2); font-size: .95rem; max-width: 40rem; }
+
+  .misc { margin: 3.5rem 0 4rem; font-size: .95rem; color: var(--ink-2); max-width: 40rem; line-height: 1.6; }
+  .misc a { color: var(--sky-pen); text-decoration: none; }
+
+  @media (max-width: 64rem) { .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (max-width: 44rem) {
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .top { grid-template-columns: 1fr; row-gap: 1rem; }
+    .top img { width: 5rem; }
+    .interests { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <img src="../../../public/images/profile.png" alt="Jess Bergs" width="462" height="456">
+    <div>
+      <h1>Jess Bergs</h1>
+      <p class="line">Engineering lead for Human-AI Interaction at the <a href="https://www.aisi.gov.uk/">UK AI Security Institute</a>. Studying how people keep oversight of AI systems, and building the tools to find out.</p>
+      <p class="links" id="links"></p>
+      <div class="interests">
+        <div><h2>Current interests</h2><ul id="cur"></ul></div>
+        <div class="past"><h2>Past interests</h2><ul id="pst"></ul></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="next">
+    <h2 class="sec" style="--sq: var(--apricot)">Next <small>talks, panels and a fellowship</small></h2>
+    <div class="grid" id="next"></div>
+  </section>
+
+  <section>
+    <h2 class="sec" style="--sq: var(--sky)">Research, talks and projects</h2>
+    <div class="grid" id="recent"></div>
+    <div class="band">
+      <h2>The archive</h2>
+      <p>Earlier work, from before AI safety: explainable AI and social viewing at the BBC, energy and community data, and the master&rsquo;s in visualisation and serious games.</p>
+    </div>
+    <div class="grid" id="older"></div>
+  </section>
+
+  <p class="misc">I also mentor on <a href="#">BlueDot Impact</a>, <a href="#">SPAR</a> and, from 2027, <a href="#">Pivotal</a> fellowships; judge research sprints at <a href="#">Apart Research</a>; sit in as an expert invitee at the <a href="#">Global Challenges Project</a>; and do occasional career advising with <a href="#">80,000 Hours</a>. Outside work I design and playtest board games. Last updated November 2026.</p>
+</div>
+<span class="mock-label">C · year grid</span>
+<script src="entries.js"></script>
+<script>
+  document.getElementById('links').innerHTML = linksHtml();
+  document.getElementById('cur').innerHTML = ['Human oversight of AI systems', 'Auditing games and spot-checking', 'AI advice, trust and reliance', 'Research tooling for human-in-the-loop studies'].map((t) => `<li>${t}</li>`).join('');
+  document.getElementById('pst').innerHTML = ['Explainable AI', 'Social and synchronised viewing', 'Energy and civic data visualisation', 'Serious games for teams'].map((t) => `<li>${t}</li>`).join('');
+
+  const cell = (e, label, img) => `
+    <div class="cell k-${e.kind}">
+      <div class="yr">${label || ''}</div>
+      <figure>${img ? `<img src="${e.image}" alt="" loading="lazy">` : `<div class="ph"><b>${esc(e.day)}</b>${esc(e.mon)}</div>`}</figure>
+      <p class="cap"><a href="#">${esc(e.title)}</a><span><i>${esc(e.role)}</i>${e.place ? ', ' + esc(e.place) : ''}${e.org && img ? ', ' + esc(e.org) : ''}${e.tbc ? ', date tbc' : ''}</span></p>
+    </div>`;
+
+  let last = null;
+  document.getElementById('next').innerHTML = UPCOMING.map((u) => { const l = u.date !== last ? u.date.replace('Thu ', '') : ''; last = u.date; return cell(u, l, false); }).join('');
+
+  const past = byYearDesc(PAST);
+  const recent = past.filter((p) => p.iso >= '2024-01-01');
+  const older = past.filter((p) => p.iso < '2024-01-01');
+  const grid = (list) => { let ly = null; return list.map((p) => { const y = p.iso.slice(0, 4); const l = y !== ly ? y : ''; ly = y; return cell(p, l, true); }).join(''); };
+  document.getElementById('recent').innerHTML = grid(recent);
+  document.getElementById('older').innerHTML = grid(older);
+</script>
+</body>
+</html>

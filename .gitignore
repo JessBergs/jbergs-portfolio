@@ -33,3 +33,6 @@ docs/REQUESTS.md
 # Python bytecode (the tile-candidate generators)
 __pycache__/
 *.pyc
+
+# Reference captures of other people's sites, kept local only
+docs/design/2026-11-reference-profiles/shots/

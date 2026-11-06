@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jess Bergs</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  /* D. Three columns and the lines between them. Interests on the left, sized by how much
+     current work hangs off them; the record in the middle by year, next things first;
+     organisations on the right. Thin curves join each entry to the interests it serves and
+     the organisation it was for, drawn after layout. Hovering an interest or an organisation
+     keeps only its lines. */
+  body { font-size: 16px; }
+  .wrap { max-width: 78rem; position: relative; }
+  .top { padding-top: 2.6rem; display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .top h1 { font-size: 2rem; letter-spacing: -0.01em; }
+  .top p { color: var(--ink-2); max-width: 36rem; }
+  .top a { color: var(--sky-pen); text-decoration: none; }
+  .top a:hover { text-decoration: underline; }
+  .cols { display: grid; grid-template-columns: 15rem minmax(0, 1fr) 13rem; column-gap: 3rem; padding-top: 2.4rem; padding-bottom: 5rem; position: relative; z-index: 1; }
+  h2 { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--ink-2); margin-bottom: .9rem; }
+  .left { align-self: start; }
+  .left .who { font-size: .95rem; color: var(--ink-2); line-height: 1.45; margin-bottom: 1.6rem; }
+  .left .who b { display: block; color: var(--ink); font-weight: 400; }
+  .left nav { display: flex; flex-direction: column; gap: .15rem; margin: .5rem 0 0; font-size: .92rem; }
+  .left nav a { color: var(--sky-pen); text-decoration: none; }
+  .int li { line-height: 1.25; padding: .22rem 0; cursor: default; }
+  .int li span, .org li span { display: inline; }
+  .int li[data-size="3"] { font-size: 1.45rem; }
+  .int li[data-size="2"] { font-size: 1.12rem; }
+  .int li[data-size="1"] { font-size: .9rem; color: var(--ink-2); }
+  .int li:hover, .int li.on { color: var(--sky-pen); }
+
+  .mid > * + * { margin-top: 2.2rem; }
+  .yr { font-size: 1rem; color: var(--ink-3); margin-bottom: .6rem; }
+  .ent { padding: .3rem 0; line-height: 1.45; }
+  .ent + .ent { margin-top: .4rem; }
+  .ent .t { font-size: 1.1rem; }
+  .ent .t a { color: var(--pen); text-decoration: none; }
+  .ent .t a:hover { text-decoration: underline; }
+  .ent .m { color: var(--ink-2); font-size: .93rem; }
+  .ent .m i { color: var(--ink-3); }
+  .next .ent .t::before { content: attr(data-date) ' '; color: var(--ink); font-weight: 700; }
+  .ent figure { float: right; margin: .1rem 0 .4rem 1rem; width: 7rem; aspect-ratio: 16/10; overflow: hidden; border-radius: 2px; border: 1px solid var(--line); }
+  .ent img { width: 100%; height: 100%; object-fit: cover; }
+  .ent::after { content: ''; display: block; clear: both; }
+
+  .right { text-align: right; align-self: start; }
+  .org li { line-height: 1.3; padding: .2rem 0; font-size: 1rem; cursor: default; }
+  .org li.s { font-size: 1.2rem; }
+  .org li.n { font-size: .9rem; color: var(--ink-2); }
+  .org li:hover, .org li.on { color: var(--sky-pen); }
+
+  svg.wires { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+  svg.wires path { fill: none; stroke: var(--line-2); stroke-width: 1; transition: stroke .15s, opacity .15s; }
+  svg.wires.focus path { opacity: .12; }
+  svg.wires.focus path.on { opacity: 1; stroke: var(--sky-pen); stroke-width: 1.4; }
+
+  @media (max-width: 62rem) {
+    .cols { grid-template-columns: 1fr; row-gap: 2.5rem; }
+    .left, .right { position: static; text-align: left; }
+    .int li[data-size="3"] { font-size: 1.2rem; } .int li[data-size="2"] { font-size: 1rem; }
+    svg.wires { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Jess Bergs</h1>
+    <p>Engineering lead for Human-AI Interaction at the <a href="https://www.aisi.gov.uk/">UK AI Security Institute</a>. I study how people keep oversight of AI, and build the tools to find out. Board games on the side.</p>
+  </header>
+  <svg class="wires" id="wires" aria-hidden="true"></svg>
+  <div class="cols">
+    <aside class="left">
+      <div class="who"><b>London</b>Engineering lead, Human-AI Interaction<br>UK AI Security Institute<nav id="links"></nav></div>
+      <h2>Interests</h2>
+      <ul class="int" id="int"></ul>
+    </aside>
+    <main class="mid">
+      <section class="next">
+        <h2>Next</h2>
+        <div id="next"></div>
+      </section>
+      <section>
+        <h2>Research, talks and projects</h2>
+        <div id="rec"></div>
+      </section>
+    </main>
+    <aside class="right">
+      <h2>Organisations</h2>
+      <ul class="org" id="org"></ul>
+    </aside>
+  </div>
+</div>
+<span class="mock-label">D · connected</span>
+<script src="entries.js"></script>
+<script>
+  document.getElementById('links').innerHTML = linksHtml();
+  document.getElementById('int').innerHTML = INTERESTS.map((i) => `<li data-size="${i.size}" data-int="${i.id}"><span>${esc(i.label)}</span></li>`).join('');
+
+  const orgKey = (s) => s.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
+  const ORG_ALIAS = { 'UK AI Security Institute': 'UK AISI', 'NeurIPS': 'NeurIPS', 'Women4AISafety': 'Women4AISafety' };
+  const normOrg = (o) => ORG_ALIAS[o] || o;
+  const orgs = new Map();
+  [...ROLES, ...UPCOMING, ...PAST].forEach((e) => { const o = normOrg(e.org); orgs.set(o, (orgs.get(o) || 0) + 1); });
+  const current = new Set(ROLES.map((r) => normOrg(r.org)));
+  const ordered = [...orgs.keys()].sort((a, b) => (current.has(b) - current.has(a)) || (orgs.get(b) - orgs.get(a)) || a.localeCompare(b));
+  document.getElementById('org').innerHTML = ordered.map((o) => `<li class="${current.has(o) ? 's' : (orgs.get(o) > 1 ? '' : 'n')}" data-org="${orgKey(o)}"><span>${esc(o)}</span></li>`).join('');
+
+  const ent = (e, up) => `
+    <article class="ent k-${e.kind}" data-ints="${(e.interests || []).join(' ')}" data-org="${orgKey(normOrg(e.org))}">
+      ${e.image ? `<figure><img src="${e.image}" alt="" loading="lazy"></figure>` : ''}
+      <p class="t" ${up ? `data-date="${esc(e.date.replace('Thu ', ''))}"` : ''}><a href="#">${esc(e.title)}</a></p>
+      <p class="m">${esc(e.role)}${e.place ? ', ' + esc(e.place) : ''}${!up ? ' <i>· ' + esc(e.when) + '</i>' : ''}${e.tbc ? ' <i>· date tbc</i>' : ''}${e.note ? ' <i>· ' + esc(e.note) + '</i>' : ''}</p>
+    </article>`;
+  document.getElementById('next').innerHTML = UPCOMING.map((u) => ent(u, true)).join('');
+  let ly = null;
+  document.getElementById('rec').innerHTML = byYearDesc(PAST).map((p) => { const y = p.iso.slice(0, 4); const h = y !== ly ? `<div class="yr">${y}</div>` : ''; ly = y; return h + ent(p, false); }).join('');
+
+  /* draw the wires after layout */
+  const svg = document.getElementById('wires');
+  const wrap = document.querySelector('.wrap');
+  function draw() {
+    if (window.innerWidth < 992) return;
+    const W = wrap.getBoundingClientRect();
+    svg.setAttribute('viewBox', `0 0 ${W.width} ${wrap.scrollHeight}`);
+    svg.style.height = wrap.scrollHeight + 'px';
+    const pos = (el, side) => { const r = el.getBoundingClientRect(); return { x: (side === 'r' ? r.right : r.left) - W.left, y: r.top + r.height / 2 - W.top }; };
+    const ints = {}; document.querySelectorAll('.int li').forEach((li) => ints[li.dataset.int] = li);
+    const orgEls = {}; document.querySelectorAll('.org li').forEach((li) => orgEls[li.dataset.org] = li);
+    let d = '';
+    const paths = [];
+    document.querySelectorAll('.ent').forEach((e) => {
+      const t = e.querySelector('.t');
+      const a = pos(t, 'l'); a.x -= 6;
+      (e.dataset.ints || '').split(' ').filter(Boolean).forEach((id) => {
+        if (!ints[id]) return; const b = pos(ints[id].firstElementChild, 'r'); b.x += 10;
+        const k = Math.max(40, (a.x - b.x) * 0.6); paths.push({ cls: `i-${id}`, d: `M${b.x},${b.y} C${b.x + k},${b.y} ${a.x - k},${a.y} ${a.x},${a.y}` });
+      });
+      const o = orgEls[e.dataset.org];
+      if (o) { const c = pos(o.firstElementChild, 'l'); c.x -= 10; const r = pos(t, 'r'); const x2 = e.getBoundingClientRect().right - W.left + 6; const k2 = Math.max(40, (c.x - x2) * 0.6); paths.push({ cls: `o-${e.dataset.org}`, d: `M${x2},${a.y} C${x2 + k2},${a.y} ${c.x - k2},${c.y} ${c.x},${c.y}` }); }
+    });
+    svg.innerHTML = paths.map((p) => `<path class="${p.cls}" d="${p.d}"/>`).join('');
+  }
+  const focus = (sel) => { svg.classList.toggle('focus', !!sel); svg.querySelectorAll('path').forEach((p) => p.classList.toggle('on', !!sel && p.classList.contains(sel))); };
+  document.querySelectorAll('.int li').forEach((li) => { li.addEventListener('mouseenter', () => focus('i-' + li.dataset.int)); li.addEventListener('mouseleave', () => focus(null)); });
+  document.querySelectorAll('.org li').forEach((li) => { li.addEventListener('mouseenter', () => focus('o-' + li.dataset.org)); li.addEventListener('mouseleave', () => focus(null)); });
+  window.addEventListener('load', draw);
+  window.addEventListener('resize', draw);
+  document.fonts && document.fonts.ready.then(draw);
+  draw();
+</script>
+</body>
+</html>

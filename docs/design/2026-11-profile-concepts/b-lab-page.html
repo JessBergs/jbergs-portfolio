@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jess Bergs</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  /* B. The professor's lab page: a title band, a research statement across the top, the
+     full record down the left, and a right-hand column that holds everything about now:
+     who, where, what is coming up, who is being mentored, and how to get a slot. */
+  body { font-size: 16.5px; }
+  .band { padding: 1.1rem 0; background: linear-gradient(90deg, #ffd6c4, #ffc8dd 30%, #e6ccf3 60%, #c5dafd); }
+  .band .wrap { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; }
+  .band h1 { font-size: 1.55rem; letter-spacing: .01em; }
+  .band nav { display: flex; gap: 1.4rem; font-size: .95rem; }
+  .band nav a { text-decoration: none; }
+  .band nav a:hover { text-decoration: underline; }
+  .page { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; column-gap: 3.5rem; padding-top: 2.6rem; padding-bottom: 5rem; }
+  .statement p { max-width: 44rem; line-height: 1.58; }
+  .statement p + p { margin-top: .9rem; }
+  .statement .q { font-size: 1.3rem; line-height: 1.4; letter-spacing: -0.005em; max-width: 44rem; margin-bottom: 1.1rem; }
+  h2 { font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); font-weight: 700; margin: 2.6rem 0 1rem; }
+  .side h2 { margin: 1.8rem 0 .6rem; font-size: .78rem; }
+  .side h2:first-of-type { margin-top: 1.4rem; }
+
+  /* the record */
+  .rec { display: flex; flex-direction: column; gap: 1.35rem; }
+  .row { display: grid; grid-template-columns: 7.5rem 1fr; column-gap: 1.2rem; align-items: start; }
+  .row figure { aspect-ratio: 4/3; overflow: hidden; border-radius: 2px; background: var(--wash); border: 1px solid var(--line); }
+  .row img { width: 100%; height: 100%; object-fit: cover; }
+  .row h3 { font-size: 1.05rem; font-weight: 400; line-height: 1.3; }
+  .row h3 a { color: var(--pen); text-decoration: none; }
+  .row h3 a:hover { text-decoration: underline; }
+  .row .meta { color: var(--ink-2); font-size: .92rem; margin-top: .15rem; }
+  .row .meta .when { color: var(--ink-3); }
+  .row .tag { display: inline-block; margin-top: .4rem; font-size: .78rem; padding: .1rem .5rem; border-radius: 2px; background: var(--wash); color: var(--pen); }
+  .yr { font-size: .85rem; color: var(--ink-3); border-bottom: 1px solid var(--line); padding-bottom: .25rem; margin-top: .6rem; }
+
+  /* the right column */
+  .side { font-size: .93rem; }
+  .side img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border-radius: 2px; }
+  .side .who { margin-top: .9rem; line-height: 1.4; }
+  .side .who b { display: block; font-size: 1.05rem; }
+  .side .who span { color: var(--ink-2); display: block; }
+  .side nav { display: flex; flex-direction: column; gap: .2rem; margin-top: .8rem; }
+  .side a { color: var(--sky-pen); text-decoration: none; }
+  .side a:hover { text-decoration: underline; }
+  .ev { display: grid; grid-template-columns: 4rem 1fr; row-gap: .45rem; column-gap: .6rem; }
+  .ev .d { color: var(--ink-3); white-space: nowrap; }
+  .ev .t { line-height: 1.35; }
+  .ev .t i { color: var(--ink-3); }
+  .ev .t .k { color: var(--pen); }
+  .ppl li { line-height: 1.35; padding: .3rem 0; border-top: 1px solid var(--line); }
+  .ppl li:first-child { border-top: 0; padding-top: 0; }
+  .ppl b { font-weight: 400; }
+  .ppl span { display: block; color: var(--ink-2); font-size: .88rem; }
+  .ppl .soon { color: var(--ink-3); font-style: italic; }
+  .office { background: var(--sky); padding: .7rem .8rem; border-radius: 2px; line-height: 1.4; }
+  .office a { color: var(--ink); text-decoration: underline; }
+
+  @media (max-width: 56rem) {
+    .page { grid-template-columns: 1fr; }
+    .side { order: -1; display: grid; grid-template-columns: 6rem 1fr; column-gap: 1.2rem; }
+    .side img { grid-row: 1 / span 2; }
+    .side > :not(img) { grid-column: 2; }
+    .side h2, .side .ev, .side .ppl, .side .office { grid-column: 1 / -1; }
+    .band nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<header class="band">
+  <div class="wrap">
+    <h1>Jess Bergs · Human-AI Interaction</h1>
+    <nav><a href="#work">Work</a><a href="#events">Talks and events</a><a href="#mentoring">Mentoring</a><a href="#coffee">Coffee chat</a></nav>
+  </div>
+</header>
+<div class="wrap page">
+  <main>
+    <section class="statement">
+      <p class="q">How do people keep meaningful oversight of AI systems when the systems do most of the work? What is a spot-check actually worth, when does advice get followed, and what tooling does a research team need to find out?</p>
+      <p id="bio1"></p>
+      <p id="bio2"></p>
+    </section>
+    <h2 id="work">Research, talks and projects</h2>
+    <div class="rec" id="rec"></div>
+  </main>
+  <aside class="side">
+    <img src="../../../public/images/profile.png" alt="Jess Bergs" width="462" height="456">
+    <p class="who"><b>Jess Bergs</b><span>Engineering lead, Human-AI Interaction</span><span>UK AI Security Institute, London</span></p>
+    <nav id="links"></nav>
+    <h2 id="events">Talks and events</h2>
+    <div class="ev" id="ev"></div>
+    <h2 id="mentoring">Mentoring</h2>
+    <ul class="ppl" id="mentoring-list"></ul>
+    <h2>Service</h2>
+    <ul class="ppl" id="service-list"></ul>
+    <h2 id="coffee">Coffee chats</h2>
+    <p class="office">Thirty minutes, online, for anyone thinking about a move into AI safety or oversight research. <a href="/coffee-chat">Book a slot</a>.</p>
+  </aside>
+</div>
+<span class="mock-label">B · lab page</span>
+<script src="entries.js"></script>
+<script>
+  document.getElementById('bio1').innerHTML = BIO[0];
+  document.getElementById('bio2').innerHTML = BIO[1];
+  document.getElementById('links').innerHTML = linksHtml();
+  document.getElementById('ev').innerHTML = UPCOMING.map((u) => `
+    <div class="d">${esc(u.date.replace('Thu ', ''))}</div>
+    <div class="t k-${u.kind}">${esc(u.title)}${u.place ? ', ' + esc(u.place) : ''}<br><span class="k">${esc(u.role)}</span>${u.tbc ? ' <i>date tbc</i>' : ''}${u.note ? ` <i>${esc(u.note)}</i>` : ''}</div>`).join('');
+  const ment = ROLES.filter((r) => r.kind === 'mentoring');
+  const serv = ROLES.filter((r) => r.kind === 'judging');
+  document.getElementById('mentoring-list').innerHTML = ment.map((r) => `<li><b>${esc(r.org)}</b><span>${esc(r.role)}${r.future ? ' <em class="soon">' + esc(r.since) + '</em>' : ''}</span></li>`).join('');
+  document.getElementById('service-list').innerHTML = serv.map((r) => `<li><b>${esc(r.org)}</b><span>${esc(r.role)}, since ${esc(r.since)}</span></li>`).join('');
+  let lastYear = null;
+  document.getElementById('rec').innerHTML = byYearDesc(PAST).map((p) => {
+    const y = p.iso.slice(0, 4);
+    const head = y !== lastYear ? `<div class="yr">${y}</div>` : '';
+    lastYear = y;
+    return head + `
+    <article class="row k-${p.kind}">
+      <figure><img src="${p.image}" alt="" loading="lazy"></figure>
+      <div>
+        <h3><a href="#">${esc(p.title)}</a></h3>
+        <p class="meta">${esc(p.role)}, ${esc(p.org)}${p.place ? ', ' + esc(p.place) : ''} <span class="when">· ${esc(p.when)}</span></p>
+        <span class="tag">${esc(p.venue || KINDS[p.kind].one)}</span>
+      </div>
+    </article>`;
+  }).join('');
+</script>
+</body>
+</html>

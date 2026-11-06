@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jess Bergs</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  /* E. One record, four views. A short header, then a switch: tiles (the current site's
+     grid, kept), list (dense, dated, the academic default), timeline (years as columns),
+     and cv (roles and organisations). What is next appears first in every view, drawn
+     differently in each. The switch is the memorable thing; everything else is quiet. */
+  body { font-size: 16px; }
+  .wrap { max-width: 74rem; }
+  .top { padding-top: 2.8rem; display: grid; grid-template-columns: 5.5rem 1fr auto; column-gap: 1.4rem; align-items: center; }
+  .top img { width: 5.5rem; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border-radius: 50%; }
+  .top h1 { font-size: 1.7rem; letter-spacing: -0.01em; line-height: 1.1; }
+  .top p { color: var(--ink-2); font-size: .98rem; max-width: 44rem; }
+  .top p a { color: var(--sky-pen); text-decoration: none; }
+  .top nav { display: flex; flex-direction: column; gap: .1rem; font-size: .92rem; text-align: right; }
+  .top nav a { color: var(--sky-pen); text-decoration: none; }
+
+  .tabs { margin-top: 2.2rem; display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--ink); border-radius: 3px; overflow: hidden; }
+  .tabs button { font: inherit; font-size: .95rem; padding: .55rem 0; background: var(--paper); color: var(--ink); border: 0; border-left: 1px solid var(--ink); cursor: pointer; }
+  .tabs button:first-child { border-left: 0; }
+  .tabs button[aria-selected="true"] { background: var(--ink); color: var(--paper); }
+  .view { padding: 2rem 0 5rem; }
+  .view[hidden] { display: none; }
+  .lbl { font-size: .95rem; color: var(--ink-3); margin: 1.6rem 0 .8rem; }
+  .lbl:first-child { margin-top: 0; }
+
+  /* tiles: the current grid, kept, with dated placeholders for what is next */
+  .tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.1rem; }
+  .tile { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
+  .tile figure { aspect-ratio: 16/9; background: var(--wash); display: grid; place-items: center; }
+  .tile img { width: 100%; height: 100%; object-fit: cover; }
+  .tile .ph { color: var(--pen); text-align: center; line-height: 1.2; }
+  .tile .ph b { display: block; font-size: 2rem; font-weight: 400; }
+  .tile .body { padding: .7rem .85rem .85rem; }
+  .tile h3 { font-size: 1rem; font-weight: 700; line-height: 1.3; }
+  .tile .m { color: var(--ink-2); font-size: .88rem; margin-top: .2rem; }
+  .tile .m i { color: var(--pen); font-style: normal; }
+  .tile .m span { color: var(--ink-3); }
+
+  /* list: dense and dated */
+  .list { display: grid; grid-template-columns: 6rem 5.5rem 1fr; column-gap: 1rem; row-gap: .35rem; max-width: 56rem; }
+  .list .d { color: var(--ink-3); font-size: .92rem; }
+  .list .k { color: var(--pen); font-size: .92rem; }
+  .list .t b { font-weight: 400; }
+  .list .t span { color: var(--ink-3); }
+
+  /* timeline: a column per year, latest on the left */
+  .tl { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(9rem, 1fr); column-gap: .9rem; overflow-x: auto; padding-bottom: 1rem; }
+  .tl .col { border-top: 2px solid var(--ink); padding-top: .5rem; min-width: 0; }
+  .tl .col.future { border-top-style: dashed; }
+  .tl .y { font-size: 1.15rem; margin-bottom: .6rem; }
+  .tl .col.future .y::after { content: ' next'; font-size: .8rem; color: var(--ink-3); }
+  .tl .e { font-size: .88rem; line-height: 1.3; padding: .35rem .5rem; border-left: 3px solid var(--wash); margin-bottom: .45rem; background: color-mix(in srgb, var(--wash) 30%, white); }
+  .tl .e b { font-weight: 400; display: block; }
+  .tl .e span { color: var(--ink-3); }
+
+  /* cv: roles and organisations, in rows */
+  .cv { max-width: 52rem; }
+  .cv h2 { font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 .6rem; }
+  .cv h2:first-child { margin-top: 0; }
+  .cv .row { display: grid; grid-template-columns: 9rem 1fr; column-gap: 1rem; padding: .4rem 0; border-top: 1px solid var(--line); }
+  .cv .row .d { color: var(--ink-3); font-size: .92rem; }
+  .cv .row .d.soon { color: var(--pen); }
+  .cv .row span { display: block; color: var(--ink-2); font-size: .92rem; }
+
+  @media (max-width: 60rem) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } .top { grid-template-columns: 4rem 1fr; } .top nav { grid-column: 1 / -1; flex-direction: row; gap: 1rem; text-align: left; flex-wrap: wrap; } .list { grid-template-columns: 5rem 1fr; } .list .k { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <img src="../../../public/images/profile.png" alt="Jess Bergs" width="462" height="456">
+    <div>
+      <h1>Jess Bergs</h1>
+      <p>Engineering lead for Human-AI Interaction at the <a href="https://www.aisi.gov.uk/">UK AI Security Institute</a>, London. I study how people keep oversight of AI, and build the tools to find out. Mentor on BlueDot, SPAR and Pivotal fellowships; research sprint judge at Apart. Board games on the side.</p>
+    </div>
+    <nav id="links"></nav>
+  </header>
+  <div class="tabs" role="tablist" id="tabs">
+    <button role="tab" aria-selected="true" data-v="tiles">tiles</button>
+    <button role="tab" aria-selected="false" data-v="list">list</button>
+    <button role="tab" aria-selected="false" data-v="time">timeline</button>
+    <button role="tab" aria-selected="false" data-v="cv">cv</button>
+  </div>
+  <section class="view" id="v-tiles"></section>
+  <section class="view" id="v-list" hidden></section>
+  <section class="view" id="v-time" hidden></section>
+  <section class="view" id="v-cv" hidden></section>
+</div>
+<span class="mock-label">E · four views</span>
+<script src="entries.js"></script>
+<script>
+  document.getElementById('links').innerHTML = linksHtml();
+  const past = byYearDesc(PAST);
+
+  /* tiles */
+  const tile = (e, up) => `
+    <article class="tile k-${e.kind}">
+      <figure>${up ? `<div class="ph"><b>${esc(e.day)}</b>${esc(e.mon)}</div>` : `<img src="${e.image}" alt="" loading="lazy">`}</figure>
+      <div class="body"><h3>${esc(e.title)}</h3><p class="m"><i>${esc(e.role)}</i>${e.place ? ', ' + esc(e.place) : ''}${up ? '' : ' <span>· ' + esc(e.when) + '</span>'}${e.tbc ? ' <span>· date tbc</span>' : ''}</p></div>
+    </article>`;
+  document.getElementById('v-tiles').innerHTML = `<p class="lbl">Next</p><div class="tiles">${UPCOMING.map((u) => tile(u, true)).join('')}</div><p class="lbl">Research, talks and projects, 2011 to now</p><div class="tiles">${past.map((p) => tile(p, false)).join('')}</div>`;
+
+  /* list */
+  const li = (e, up) => `<div class="d">${esc(up ? e.date.replace('Thu ', '') : e.when)}</div><div class="k k-${e.kind}">${esc(e.role)}</div><div class="t"><b>${esc(e.title)}</b><span>${e.org && !up ? ', ' + esc(e.org) : ''}${e.place ? ', ' + esc(e.place) : ''}${e.tbc ? ', date tbc' : ''}${e.note ? ', ' + esc(e.note) : ''}</span></div>`;
+  document.getElementById('v-list').innerHTML = `<p class="lbl">Next</p><div class="list">${UPCOMING.map((u) => li(u, true)).join('')}</div><p class="lbl">Record</p><div class="list">${past.map((p) => li(p, false)).join('')}</div>`;
+
+  /* timeline */
+  const years = {};
+  UPCOMING.forEach((u) => { const y = u.iso.slice(0, 4); (years[y] = years[y] || { future: [], past: [] }).future.push(u); });
+  past.forEach((p) => { const y = p.iso.slice(0, 4); (years[y] = years[y] || { future: [], past: [] }).past.push(p); });
+  const ys = Object.keys(years).sort().reverse();
+  document.getElementById('v-time').innerHTML = `<div class="tl">${ys.map((y) => `
+    <div class="col ${years[y].future.length && !years[y].past.length ? 'future' : ''}"><div class="y">${y}</div>
+      ${years[y].future.map((u) => `<div class="e k-${u.kind}" style="border-left-style: dashed"><b>${esc(u.title)}</b><span>${esc(u.date.replace('Thu ', ''))} · ${esc(u.role)}</span></div>`).join('')}
+      ${years[y].past.map((p) => `<div class="e k-${p.kind}"><b>${esc(p.title)}</b><span>${esc(p.role)}${p.place ? ', ' + esc(p.place) : ''}</span></div>`).join('')}
+    </div>`).join('')}</div>`;
+
+  /* cv */
+  const roleRows = ROLES.map((r) => `<div class="row k-${r.kind}"><div class="d ${r.future ? 'soon' : ''}">${esc(r.since)}</div><div>${esc(r.org)}<span>${esc(r.role)}</span></div></div>`).join('');
+  const talkRows = [...UPCOMING.filter((u) => u.kind === 'speaking').map((u) => ({ d: u.date.replace('Thu ', '') + ' ' + u.year, t: u.title, s: u.role + (u.place ? ', ' + u.place : ''), soon: true })), ...past.filter((p) => p.kind === 'speaking').map((p) => ({ d: p.when, t: p.title, s: p.role + ', ' + p.org + (p.place ? ', ' + p.place : '') }))]
+    .map((r) => `<div class="row k-speaking"><div class="d ${r.soon ? 'soon' : ''}">${esc(r.d)}</div><div>${esc(r.t)}<span>${esc(r.s)}</span></div></div>`).join('');
+  const resRows = past.filter((p) => p.kind === 'research').map((p) => `<div class="row k-research"><div class="d">${esc(p.when)}</div><div>${esc(p.title)}<span>${esc(p.role)}, ${esc(p.org)}</span></div></div>`).join('');
+  document.getElementById('v-cv').innerHTML = `<div class="cv"><h2>Roles</h2>${roleRows}<h2>Talks and panels</h2>${talkRows}<h2>Research</h2>${resRows}</div>`;
+
+  /* switch */
+  const tabs = document.querySelectorAll('#tabs button');
+  const show = (v) => { tabs.forEach((b) => b.setAttribute('aria-selected', String(b.dataset.v === v))); document.querySelectorAll('.view').forEach((s) => s.hidden = s.id !== 'v-' + v); };
+  tabs.forEach((b) => b.addEventListener('click', () => show(b.dataset.v)));
+  const fromHash = () => { const v = location.hash.slice(1); if (['tiles', 'list', 'time', 'cv'].includes(v)) show(v); };
+  tabs.forEach((b) => b.addEventListener('click', () => history.replaceState(null, '', '#' + b.dataset.v)));
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+</script>
+</body>
+</html>
