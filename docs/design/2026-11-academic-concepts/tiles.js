@@ -1,7 +1,7 @@
 /* Original tile copy from src/data/projects.json, split into projects (tiles) and past talks (rows). Role suffixes are dropped from talk titles because the row carries the role. */
 window.TILE_PROJECTS = [
  {
-  "title": "Pivotal Research AI Safety Fellowship – Mentor",
+  "title": "User-Centric Agent Design for Effective Oversight – Mentor",
   "description": "Co-mentoring Pivotal Research's Q1 2027 AI Safety Fellowship. Current agent harness design is not human-centric, so our fellows will study effective oversight mechanisms for agents in automated R&D and AI control.",
   "link": "https://www.pivotal-research.org/mentors/profile/jess-bergs",
   "categories": [
