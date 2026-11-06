@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V5 · Sticky profile + feed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* V5: the modern personal-site dialect (sticky identity column + scrolling feed). Name, a short
+     bio and the "Currently" roles stay pinned on the left; the right column scrolls through a
+     year-grouped "Upcoming" list and then the tiles in two columns. Nothing has to be cut, but
+     the identity never leaves the screen and the first screen always shows what's next. */
+  .split { display: grid; grid-template-columns: minmax(0, 24rem) 1fr; gap: 5rem; padding: 2.25rem 0 1rem; align-items: start; }
+  .side { position: sticky; top: 3.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+  .side .bio { font-size: 0.9rem; font-weight: 500; line-height: 1.6; color: #3a4050; margin-top: 1rem; }
+  .side .bio a { font-weight: 600; }
+  .side-roles .eyebrow { display: block; margin-bottom: 0.5rem; }
+  .side-roles li { display: grid; grid-template-columns: 1fr; padding: 0.3rem 0; border-top: 1px solid var(--color-line); font-size: 0.82rem; font-weight: 500; line-height: 1.35; }
+  .side-roles li:last-child { border-bottom: 1px solid var(--color-line); }
+  .side-roles .org { color: var(--color-ink-mute); }
+  .side-nav { display: flex; flex-direction: column; gap: 0.35rem; }
+  .side-nav a { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-mute); text-decoration: none; font-weight: 600; }
+  .side-nav a::before { content: ''; width: 1.5rem; border-top: 1px solid var(--color-ink-mute); }
+  .side-nav a.on { color: var(--color-ink); }
+  .side-nav a.on::before { width: 3rem; border-color: var(--color-ink); }
+  .feed > section + section { margin-top: 3.5rem; }
+  .feed-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.75rem; }
+  .feed-head a { font-size: 0.78rem; color: var(--color-ink-mute); text-decoration: none; }
+  .dated li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1.25rem; padding: 0.7rem 0; border-top: 1px solid var(--color-line); align-items: baseline; }
+  .dated li.yr { border-top: 0; padding: 1.25rem 0 0.25rem; }
+  .dated li.yr:first-child { padding-top: 0; }
+  .dated li.yr span { font-family: var(--font-mono); font-size: 0.74rem; color: var(--color-ink-mute); letter-spacing: 0.04em; }
+  .dated time { font-family: var(--font-mono); font-size: 0.76rem; color: var(--color-ink-mute); white-space: nowrap; }
+  .dated .what { font-size: 0.95rem; font-weight: 500; }
+  .dated .where { color: var(--color-ink-mute); }
+  .dated .kind { margin-right: 0.45rem; position: relative; top: -1px; }
+  .tiles--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (max-width: 64rem) { .split { grid-template-columns: 1fr; gap: 2.5rem; } .side { position: static; } .side-nav { display: none; } }
+  @media (max-width: 40rem) { .tiles--2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div id="header"></div>
+<main>
+  <div class="wrap">
+    <div class="split">
+      <aside class="side">
+        <div>
+          <div id="hero"></div>
+          <p class="bio" id="bio"></p>
+        </div>
+        <div class="side-roles" id="about">
+          <span class="eyebrow">Currently</span>
+          <ul id="roles"></ul>
+        </div>
+        <nav class="side-nav" aria-label="Sections">
+          <a class="on" href="#upcoming">Upcoming</a>
+          <a href="#work">Selected work</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </aside>
+
+      <div class="feed">
+        <section id="upcoming">
+          <div class="feed-head"><h2 class="section-h2">Upcoming</h2><a href="#">past talks &amp; events →</a></div>
+          <ol class="dated" id="dated"></ol>
+        </section>
+
+        <section id="work">
+          <div class="feed-head"><h2 class="section-h2">Selected Work</h2></div>
+          <div id="filters"></div>
+          <ul class="tiles tiles--2" id="tiles"></ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+<div id="footer"></div>
+<div class="mock-label">V5 · sticky profile + feed</div>
+
+<script src="data.js"></script>
+<script>
+  document.getElementById('header').innerHTML = renderHeader(['Upcoming', 'Work', 'Contact']);
+  document.getElementById('hero').innerHTML = renderHero();
+  document.getElementById('bio').innerHTML = ABOUT.work + ' ' + ABOUT.research + ' <a href="#">More about me →</a>';
+  document.getElementById('roles').innerHTML = ROLES.filter((r) => r.org !== 'UK AI Security Institute').map((r) => `<li><span>${r.role}</span><span class="org">${r.org} · ${r.since}</span></li>`).join('');
+  let year = '';
+  document.getElementById('dated').innerHTML = UPCOMING.map((e) => {
+    const yr = e.year !== year ? `<li class="yr"><span>${e.year}</span></li>` : '';
+    year = e.year;
+    return yr + `<li><time datetime="${e.iso}">${e.when.replace(/ \d{4}$/, '')}</time>
+      <div class="what"><span class="${kindClass(e.kind)}">${e.kind}</span>${e.title}${e.where ? ` <span class="where">· ${e.where}</span>` : ''}${e.tbc ? ' <span class="tbc">date tbc</span>' : ''}</div></li>`;
+  }).join('');
+  document.getElementById('filters').innerHTML = renderFilters();
+  document.getElementById('tiles').innerHTML = PROJECTS.map((p) => renderTile(p)).join('');
+  document.getElementById('footer').innerHTML = renderFooter();
+</script>
+</body>
+</html>

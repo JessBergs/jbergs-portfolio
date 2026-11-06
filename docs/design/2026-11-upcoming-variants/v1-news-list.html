@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V1 · Dated news list</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* V1: the academic "news" dialect (al-folio, Academic Pages). A dated, two-column list
+     sits straight under the bio; dates in a muted fixed-width column, entries one line each.
+     Roles become a terse "Currently" list beside it. Tiles are capped at 6 with a "show all". */
+  .top { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; padding: 2.25rem 0 2rem; align-items: start; }
+  .news { display: grid; grid-template-columns: 7fr 5fr; gap: 4rem; padding: 0.5rem 0 2.5rem; align-items: start; }
+  .news-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.6rem; }
+  .news-head a { font-size: 0.78rem; color: var(--color-ink-mute); text-decoration: none; }
+  .dated li { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; padding: 0.55rem 0; border-top: 1px solid var(--color-line); align-items: baseline; }
+  .dated li:last-child { border-bottom: 1px solid var(--color-line); }
+  .dated time { font-family: var(--font-mono); font-size: 0.76rem; color: var(--color-ink-mute); letter-spacing: 0.01em; white-space: nowrap; }
+  .dated .what { font-size: 0.95rem; font-weight: 500; color: var(--color-ink); }
+  .dated .where { color: var(--color-ink-mute); font-weight: 500; }
+  .dated .kind { margin-right: 0.45rem; position: relative; top: -1px; }
+  .roles li { display: grid; grid-template-columns: 1fr auto; gap: 1rem; padding: 0.55rem 0; border-top: 1px solid var(--color-line); font-size: 0.88rem; font-weight: 500; align-items: baseline; }
+  .roles li:last-child { border-bottom: 1px solid var(--color-line); }
+  .roles b { font-weight: 600; }
+  .roles .org { color: var(--color-ink-soft); }
+  .roles .since { font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-ink-mute); white-space: nowrap; }
+  #work { padding: 3rem 0 1rem; }
+  .show-all { display: inline-flex; align-items: center; gap: 0.5rem; margin: 2rem auto 0; padding: 0.7rem 1.3rem; border-radius: 999px; border: 1px solid var(--color-line-strong); background: rgba(255,255,255,0.7); font: 500 0.9rem var(--font-sans); cursor: pointer; }
+  .show-all-wrap { text-align: center; }
+  @media (max-width: 64rem) { .top, .news { grid-template-columns: 1fr; gap: 2.5rem; } }
+</style>
+</head>
+<body>
+<div id="header"></div>
+<main>
+  <div class="wrap">
+    <div class="top">
+      <div id="hero"></div>
+      <div id="about"></div>
+    </div>
+
+    <section id="upcoming" class="news" aria-label="Upcoming and current roles">
+      <div>
+        <div class="news-head"><h2 class="section-h2">Upcoming</h2><a href="#">past talks &amp; events →</a></div>
+        <ol class="dated" id="dated"></ol>
+      </div>
+      <div>
+        <div class="news-head"><h2 class="section-h2">Currently</h2></div>
+        <ul class="roles" id="roles"></ul>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="work">
+      <h2 class="section-h2" style="margin-bottom:2rem">Selected Work</h2>
+      <div id="filters"></div>
+      <ul class="tiles" id="tiles"></ul>
+      <div class="show-all-wrap"><button class="show-all">Show all 20 projects ↓</button></div>
+    </section>
+  </div>
+</main>
+<div id="footer"></div>
+<div class="mock-label">V1 · dated news list</div>
+
+<script src="data.js"></script>
+<script>
+  document.getElementById('header').innerHTML = renderHeader(['About', 'Upcoming', 'Work', 'Contact']);
+  document.getElementById('hero').innerHTML = renderHero();
+  document.getElementById('about').innerHTML = renderAbout(['work', 'research', 'career', 'generalist']);
+  document.getElementById('dated').innerHTML = UPCOMING.map((e) => `<li>
+      <time datetime="${e.iso}">${e.when}</time>
+      <div class="what"><span class="${kindClass(e.kind)}">${e.kind}</span>${e.title}${e.where ? ` <span class="where">· ${e.where}</span>` : ''}${e.tbc ? ' <span class="tbc">date tbc</span>' : ''}</div>
+    </li>`).join('');
+  document.getElementById('roles').innerHTML = ROLES.map((r) => `<li><span><b>${r.role}</b>, <span class="org">${r.org}</span></span><span class="since">${r.since}</span></li>`).join('');
+  document.getElementById('filters').innerHTML = renderFilters();
+  document.getElementById('tiles').innerHTML = PROJECTS.slice(0, 6).map((p) => renderTile(p)).join('');
+  document.getElementById('footer').innerHTML = renderFooter();
+</script>
+</body>
+</html>

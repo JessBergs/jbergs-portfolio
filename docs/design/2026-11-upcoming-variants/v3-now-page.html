@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V3 · Now page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* V3: the "now page" dialect (Derek Sivers' nownownow; Arvind Narayanan's prose-first homepage).
+     Everything current lives in present-tense prose with inline links and a visible "Updated" stamp.
+     Upcoming talks are one sentence with dates typeset in a muted mono. Below, only three tiles stay
+     as tiles ("Featured"); the other 17 become a compact two-column list. */
+  .top { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; padding: 2.25rem 0 2.5rem; align-items: start; }
+  .now-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .stamp { font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-ink-mute); }
+  .next { background: rgba(255, 255, 255, 0.55); border: 1px solid var(--color-line); border-radius: 12px; padding: 0.9rem 1.1rem; }
+  .next .eyebrow { display: block; margin-bottom: 0.35rem; }
+  .next time { font-family: var(--font-mono); font-size: 0.74rem; color: var(--color-ink-mute); white-space: nowrap; }
+  .next .sep { color: var(--color-ink-mute); margin: 0 0.35rem; }
+  #featured { padding: 2.75rem 0 1rem; }
+  #work { padding: 2.5rem 0 1rem; }
+  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; margin-top: 0.5rem; }
+  .row { display: grid; grid-template-columns: 4.5rem 1fr auto; gap: 0.9rem; align-items: center; padding: 0.6rem 0; border-top: 1px solid var(--color-line); text-decoration: none; color: var(--color-ink); }
+  .row img { width: 4.5rem; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; display: block; background: linear-gradient(135deg, #f4ecf7, #e6f0ff); }
+  .row .t { font-size: 0.88rem; font-weight: 500; line-height: 1.3; }
+  .row .c { font-size: 0.7rem; color: var(--color-ink-mute); margin-top: 0.1rem; }
+  .row .y { font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-ink-mute); white-space: nowrap; }
+  @media (max-width: 64rem) { .top { grid-template-columns: 1fr; gap: 2.5rem; } .rows { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div id="header"></div>
+<main>
+  <div class="wrap">
+    <div class="top">
+      <div id="hero"></div>
+      <section id="about" class="about now" aria-labelledby="now-title">
+        <div class="now-head"><h2 id="now-title" class="section-h2">What I&rsquo;m doing now</h2><span class="stamp">Updated 6 November 2026</span></div>
+        <p id="p-work"></p>
+        <p id="p-research"></p>
+        <p>Alongside that I mentor on BlueDot Impact&rsquo;s <a href="#">Technical AI Safety Project</a> and with <a href="#">SPAR</a>, judge research sprints for <a href="#">Apart Research</a>, join the <a href="#">Global Challenges Project</a> as an expert invitee, and now and then advise on careers with <a href="#">80,000 Hours</a>. From Q1 2027 I&rsquo;m a research advisor with <a href="#">Pivotal</a>.</p>
+        <p class="next" id="upcoming"><span class="eyebrow">Speaking next</span>
+          <a href="#">Liftoff</a> <time>Thu 12 Nov</time><span class="sep">·</span>
+          <a href="#">SASH</a> <time>3 Dec</time><span class="sep">·</span>
+          panel at <a href="#">NeurIPS 2026</a>, Sydney <time>11 Dec</time><span class="sep">·</span>
+          hosting an AI safety social at NeurIPS <time>11 Dec, tbc</time><span class="sep">·</span>
+          <a href="#">Vrije Universiteit Brussel</a> <time>16 Feb 2027</time>
+        </p>
+        <p id="p-generalist"></p>
+      </section>
+    </div>
+
+    <hr class="rule">
+
+    <section id="featured">
+      <h2 class="section-h2" style="margin-bottom:1.5rem">Featured</h2>
+      <ul class="tiles" id="featured-tiles"></ul>
+    </section>
+
+    <section id="work">
+      <h2 class="section-h2" style="margin-bottom:1.25rem">Everything else</h2>
+      <div id="filters"></div>
+      <div class="rows" id="rows"></div>
+    </section>
+  </div>
+</main>
+<div id="footer"></div>
+<div class="mock-label">V3 · now page</div>
+
+<script src="data.js"></script>
+<script>
+  document.getElementById('header').innerHTML = renderHeader(['Now', 'Featured', 'Work', 'Contact']);
+  document.getElementById('hero').innerHTML = renderHero();
+  document.getElementById('p-work').innerHTML = ABOUT.work;
+  document.getElementById('p-research').innerHTML = ABOUT.research;
+  document.getElementById('p-generalist').innerHTML = ABOUT.generalist;
+  const featuredIds = ['spar-auditing-games-debate', 'arxiv-political-knowledge', 'lateral-workshop-2026'];
+  const featured = featuredIds.map((id) => PROJECTS.find((p) => p.id === id));
+  document.getElementById('featured-tiles').innerHTML = featured.map((p) => renderTile(p)).join('');
+  document.getElementById('filters').innerHTML = renderFilters();
+  document.getElementById('rows').innerHTML = PROJECTS.filter((p) => !featuredIds.includes(p.id))
+    .map((p) => `<a class="row" href="#"><img src="${p.image}" alt=""><div><div class="t">${p.title}</div><div class="c">${p.categories.join(' · ')}</div></div><span class="y">${p.year}</span></a>`).join('');
+  document.getElementById('footer').innerHTML = renderFooter();
+</script>
+</body>
+</html>

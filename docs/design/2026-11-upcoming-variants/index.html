@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homepage variants · upcoming and roles</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  body::before { display: none; }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+  @media (max-width: 64rem) { .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 40rem) { .grid { grid-template-columns: 1fr; } }
+  .card { background: rgba(254,252,249,.75); border: 1px solid var(--color-line); border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--color-ink); display: flex; flex-direction: column; }
+  .card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid var(--color-line); }
+  .card .b { padding: 1rem 1.1rem 1.1rem; display: flex; flex-direction: column; gap: .4rem; }
+  .card h3 { font-size: 1rem; }
+  .card p { font-size: .85rem; color: var(--color-ink-soft); font-weight: 500; }
+  .card .links { display: flex; gap: .75rem; font-size: .76rem; margin-top: .3rem; }
+  .card .links a { color: var(--color-ink-mute); }
+  .intro { max-width: 44rem; font-size: .95rem; font-weight: 500; color: #3a4050; margin-top: .5rem; }
+</style>
+</head>
+<body>
+<main><div class="wrap" style="padding-top:2.5rem">
+  <h1 class="hero-h1" style="font-size:2rem">Homepage variants</h1>
+  <p class="intro">Five ways to put upcoming talks and current roles on the first screen and stop the tile grid growing. Each page is a static mockup in the live site's styling. The README in this folder explains the conventions each one borrows.</p>
+  <div class="grid">
+    <a class="card" href="v1-news-list.html"><img src="shots/v1-news-list-fold.png" alt=""><div class="b"><h3>V1 · Dated news list</h3><p>Academic "news" dialect. Dated list plus a role register under the bio. Tiles capped at six.</p><div class="links"><a href="shots/v1-news-list-full.jpg">full page</a><a href="shots/v1-news-list-mobile.png">phone</a></div></div></a>
+    <a class="card" href="v2-agenda-sidebar.html"><img src="shots/v2-agenda-sidebar-fold.png" alt=""><div class="b"><h3>V2 · Agenda sidebar</h3><p>Lab-page dialect. Calendar-block agenda card as a third column, role chips, compact four-up tiles.</p><div class="links"><a href="shots/v2-agenda-sidebar-full.jpg">full page</a><a href="shots/v2-agenda-sidebar-mobile.png">phone</a></div></div></a>
+    <a class="card" href="v3-now-page.html"><img src="shots/v3-now-page-fold.png" alt=""><div class="b"><h3>V3 · Now page</h3><p>Prose-first with an "Updated" stamp and a "Speaking next" sentence. Three featured tiles, the rest as a list.</p><div class="links"><a href="shots/v3-now-page-full.jpg">full page</a><a href="shots/v3-now-page-mobile.png">phone</a></div></div></a>
+    <a class="card" href="v4-speaker.html"><img src="shots/v4-speaker-fold.png" alt=""><div class="b"><h3>V4 · Speaker page</h3><p>"Next up" bar, event-card rail with role badges, wordmark strip. Tiles by year, earlier work collapsed.</p><div class="links"><a href="shots/v4-speaker-full.jpg">full page</a><a href="shots/v4-speaker-mobile.png">phone</a></div></div></a>
+    <a class="card" href="v5-sticky-profile.html"><img src="shots/v5-sticky-profile-fold.png" alt=""><div class="b"><h3>V5 · Sticky profile + feed</h3><p>Identity and roles pinned left, upcoming list and two-column tiles scroll on the right. Nothing cut.</p><div class="links"><a href="shots/v5-sticky-profile-full.jpg">full page</a><a href="shots/v5-sticky-profile-mobile.png">phone</a></div></div></a>
+    <a class="card" href="https://www.jbergs.eu/"><img src="shots/current-live-fold.png" alt=""><div class="b"><h3>Today · live site</h3><p>Baseline for comparison, captured at the same sizes.</p><div class="links"><a href="shots/current-live-full.jpg">full page</a><a href="shots/current-live-mobile.png">phone</a></div></div></a>
+  </div>
+</div></main>
+</body>
+</html>
