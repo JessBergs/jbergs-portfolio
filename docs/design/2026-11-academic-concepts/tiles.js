@@ -128,13 +128,13 @@ window.TILE_TALKS = [
   "org": "Kairos Global Challenges Project"
  },
  {
-  "title": "Women4AISafety",
+  "title": "Pathways into Technical AI Safety",
   "when": "Oct 2026",
   "role": "Guest speaker",
   "place": "online",
   "link": "https://www.women4aisafety.com/",
   "image": "../../../public/images/women4aisafety-2026.jpg",
-  "org": ""
+  "org": "Women4AISafety"
  },
  {
   "title": "Lateral Workshop",
