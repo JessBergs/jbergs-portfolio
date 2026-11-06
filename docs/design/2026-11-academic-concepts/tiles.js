@@ -146,10 +146,10 @@ window.TILE_TALKS = [
   "org": "Constellation"
  },
  {
-  "title": "Successif Women in AI Safety Retreat",
+  "title": "Women in AI Safety Retreat",
   "when": "Jun 2026",
   "role": "Expert invitee",
-  "place": "Pendley Manor",
+  "place": "Oxford",
   "link": "https://www.successif.org/womens-retreat",
   "image": "../../../public/images/successif-womens-retreat-2026.jpg",
   "org": "Successif"
