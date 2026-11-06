@@ -367,11 +367,11 @@ body::before {
   column-gap: 4rem;
   padding: 1.5rem 0 2rem;
 }
-.home__side { position: sticky; top: 4rem; align-self: start; }
+.home__side { position: sticky; top: 4rem; align-self: start; padding-top: 0.5rem; }
 .home__main > section { padding: 2.4rem 0; }
 .home__main > section:first-child { padding-top: 0.5rem; }
 .hero-photo {
-  width: 9rem;
+  width: 10rem;
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
@@ -394,7 +394,7 @@ body::before {
 .about-copy a:hover { text-decoration: none; }
 @media (max-width: 56rem) {
   .home { grid-template-columns: 1fr; row-gap: 1.5rem; }
-  .home__side { position: static; }
+  .home__side { position: static; padding-top: 0; }
   .hero-id { display: grid; grid-template-columns: 6rem 1fr; column-gap: 1.2rem; align-items: center; }
   .hero-photo { width: 6rem; grid-row: 1 / span 2; }
   .home__side .hero-h1 { margin: 0; font-size: 1.9rem; grid-column: 2; align-self: end; }
