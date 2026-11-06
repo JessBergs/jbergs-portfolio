@@ -1,39 +1,16 @@
 [
   {
-    "id": "lateral-workshop-2026",
-    "title": "Lateral Workshop 2026 – Expert Invitee",
-    "description": "Ran one-to-ones and small-group sessions on career pathways into the field for experienced professionals from policy and comms backgrounds during a three-day workshop in Berkeley.",
-    "image": "/images/lateral-workshop-2026.jpg",
-    "link": "https://www.lateralworkshop.org/",
-    "year": "2026",
-    "categories": ["Public Speaking", "Mentorship", "AI Security"]
-  },
-  {
-    "id": "spar-auditing-games-debate",
-    "title": "Auditing Games for Debate: Can Models Learn Human Spot-Checking Patterns?",
-    "description": "Mentoring a Fall 2026 AI safety research project through the SPAR (Supervised Program for Alignment Research) fellowship by Kairos, studying whether models can learn the patterns behind human spot-checks used for AI oversight.",
-    "image": "/images/spar-auditing-games-for-debate.jpg",
-    "link": "https://sparai.org/projects/f26/recyQRpX2HbOZfHYp/",
-    "year": "2026",
-    "categories": ["Mentorship", "AI Security", "Scalable Oversight"]
-  },
-  {
-    "id": "aisi-future-of-work",
-    "title": "AI and the Future of Work – Study",
-    "description": "UK AISI pilot study measuring AI-driven productivity gains across workplace tasks. The study with 500 participants found 25% higher quality and 61% faster completion with AI assistance.",
-    "image": "/images/aisi-ai-and-the-future-of-work.jpg",
-    "link": "https://www.aisi.gov.uk/blog/ai-and-the-future-of-work-measuring-ai-driven-productivity-gains-for-workplace-tasks",
-    "year": "2026",
-    "categories": ["Research Tooling", "Empirical Study", "AI Security", "Paper"]
-  },
-  {
-    "id": "arxiv-ai-advice",
-    "title": "AI Advice-Giving – Study",
-    "description": "UK AISI longitudinal controlled study examining how people follow AI advice. Found 75% of participants followed GPT-4o advice on personal matters, though with no sustained well-being improvements.",
-    "image": "/images/arxiv.jpg",
-    "link": "https://arxiv.org/abs/2511.15352v2",
-    "year": "2025",
-    "categories": ["Research Tooling", "Empirical Study", "AI Security", "Paper"]
+    "id": "pivotal-ais-fellowship-mentor",
+    "title": "User-Centric Agent Design for Effective Oversight – Mentor",
+    "description": "Co-mentoring Pivotal Research's Q1 2027 AI Safety Fellowship. Current agent harness design is not human-centric, so our fellows will study effective oversight mechanisms for agents in automated R&D and AI control.",
+    "image": "/images/pivotal-ais-fellowship-2027.jpg",
+    "link": "https://www.pivotal-research.org/mentors/profile/jess-bergs",
+    "year": "2027",
+    "categories": [
+      "Mentorship",
+      "AI Security",
+      "Scalable Oversight"
+    ]
   },
   {
     "id": "arxiv-political-knowledge",
@@ -42,79 +19,53 @@
     "image": "/images/pnas-nexus-political-knowledge.jpg",
     "link": "https://doi.org/10.1093/pnasnexus/pgag305",
     "year": "2026",
-    "categories": ["Research Tooling", "Empirical Study", "AI Security", "Paper"]
+    "categories": [
+      "Research Tooling",
+      "Empirical Study",
+      "AI Security",
+      "Paper"
+    ]
   },
   {
-    "id": "bluedot-taisp-mentor",
-    "title": "BlueDot Technical AI Safety Project – Mentor & Facilitator",
-    "description": "Since March 2026 I've been working with BlueDot Impact on guiding technical talent through regular cohorts to a first impactful contribution to AI safety. Standout projects received further support for submissions to workshops at conferences such as ICML.",
-    "image": "/images/bluedot-taisp.jpg",
-    "link": "https://bluedot.org/courses/technical-ai-safety-project",
+    "id": "spar-auditing-games-debate",
+    "title": "Auditing Games for Debate: Can Models Learn Human Spot-Checking Patterns? – Mentor",
+    "description": "Mentoring a Fall 2026 AI safety research project through the SPAR (Supervised Program for Alignment Research) fellowship by Kairos, studying whether models can learn the patterns behind human spot-checks used for AI oversight.",
+    "image": "/images/spar-auditing-games-for-debate.jpg",
+    "link": "https://sparai.org/projects/f26/recyQRpX2HbOZfHYp/",
     "year": "2026",
-    "categories": ["Mentorship", "AI Security"]
+    "categories": [
+      "Mentorship",
+      "AI Security",
+      "Scalable Oversight"
+    ]
   },
   {
-    "id": "successif-womens-retreat",
-    "title": "Successif Women in AI Safety Retreat",
-    "description": "Invitee at a three-day residential conference at Pendley Manor for 35 women with established careers in technical AI safety, AI governance and organisational leadership.",
-    "image": "/images/successif-womens-retreat-2026.jpg",
-    "link": "https://www.successif.org/womens-retreat",
+    "id": "aisi-future-of-work",
+    "title": "AI and the Future of Work – Study",
+    "description": "UK AISI pilot study measuring AI-driven productivity gains across workplace tasks. The study with 500 participants found 25% higher quality and 61% faster completion with AI assistance.",
+    "image": "/images/aisi-ai-and-the-future-of-work.jpg",
+    "link": "https://www.aisi.gov.uk/blog/ai-and-the-future-of-work-measuring-ai-driven-productivity-gains-for-workplace-tasks",
     "year": "2026",
-    "categories": ["AI Security", "Public Speaking", "Conference"]
+    "categories": [
+      "Research Tooling",
+      "Empirical Study",
+      "AI Security",
+      "Paper"
+    ]
   },
   {
-    "id": "women4aisafety-talk",
-    "title": "Women4AISafety – Guest Speaker",
-    "description": "Guest speaker at Women4AISafety, the career network for women entering or working in AI safety. Talk: Pathways into Technical AI Safety.",
-    "image": "/images/women4aisafety-2026.jpg",
-    "link": "https://www.women4aisafety.com/",
-    "year": "2026",
-    "categories": ["AI Security", "Public Speaking"]
-  },
-  {
-    "id": "public-design-conference",
-    "title": "Public Design Conference 2025",
-    "description": "Co-organised the inaugural global public design conference bringing together government designers worldwide. Part of World Design Congress, in collaboration with Royal College of Art and Greater London Authority.",
-    "image": "/images/publicDesignConf.jpg",
-    "link": "https://publicpolicydesign.blog.gov.uk/2025/07/14/join-our-first-global-public-design-conference/",
+    "id": "arxiv-ai-advice",
+    "title": "AI Advice-Giving – Study",
+    "description": "UK AISI longitudinal controlled study examining how people follow AI advice. Found 75% of participants followed GPT-4o advice on personal matters, though with no sustained well-being improvements.",
+    "image": "/images/arxiv.jpg",
+    "link": "https://arxiv.org/abs/2511.15352v2",
     "year": "2025",
-    "categories": ["Event Organisation", "Conference"]
-  },
-  {
-    "id": "services-week-2025",
-    "title": "AISI HAI @ Services Week 2025",
-    "description": "Presented AISI's research tools at Services Week 2025, the UK government's annual event bringing together public sector professionals to share knowledge on service design and digital innovation.",
-    "image": "/images/servicesWeek2025.png",
-    "link": "https://services.blog.gov.uk/2024/12/19/services-week-is-back-for-2025/",
-    "year": "2025",
-    "categories": ["Public Speaking", "Conference"]
-  },
-  {
-    "id": "chi-staig-2025",
-    "title": "AISI HAI @ CHI 2025 STAIG Panel ",
-    "description": "Panel speaker at the CHI 2025 workshop on Sociotechnical AI Governance: Opportunities and Challenges for HCI. Hybrid event held in Yokohama, Japan discussing AI governance from HCI perspectives.",
-    "image": "/images/staig-chi.jpg",
-    "link": "https://chi-staig.github.io/",
-    "year": "2025",
-    "categories": ["Public Speaking", "Conference", "AI Security"]
-  },
-  {
-    "id": "aisi-eurips-2025",
-    "title": "AISI EurIPS 2025 Social",
-    "description": "Organised the UK AI Security Institute's social event during EurIPS 2025 in Copenhagen, bringing together roughly 50 attendees from the AI safety research community to discuss frontier AI risks and technical solutions.",
-    "image": "/images/eurips.jpg",
-    "link": "https://luma.com/bpu4e3s4",
-    "year": "2025",
-    "categories": ["Event Organisation", "AI Security"]
-  },
-  {
-    "id": "bbc-explainable-ai",
-    "title": "Making AI More Understandable",
-    "description": "BBC R&D project researching Explainable AI to make AI decision-making transparent and interpretable. Prototyped ML-powered proofs-of-concept including generative ML art and interactive visualizations.",
-    "image": "/images/MakingAIUnderstandable.jpg",
-    "link": "https://www.bbc.co.uk/rd/projects/making-ai-more-understandable/",
-    "year": "2019-2021",
-    "categories": ["Explainable AI", "Experimental"]
+    "categories": [
+      "Research Tooling",
+      "Empirical Study",
+      "AI Security",
+      "Paper"
+    ]
   },
   {
     "id": "bbc-together",
@@ -123,16 +74,22 @@
     "image": "/images/bbcTogether.jpg",
     "link": "https://www.bbc.co.uk/programmes/p08dj0s5",
     "year": "2020-2021",
-    "categories": ["Real-Time Collaboration","Experimental"]
+    "categories": [
+      "Real-Time Collaboration",
+      "Experimental"
+    ]
   },
   {
-    "id": "bbc-tech-meetup",
-    "title": "BBC Tech Meetup",
-    "description": "Co-organised the BBC Tech Meetup, facilitating knowledge sharing on latest technologies and development practices.",
-    "image": "/images/bbctechmeetup.jpg",
-    "link": "https://www.bbc.co.uk/programmes/articles/4BCZv12wbBYcsyKMbpyT574/bbc-tech-meetup",
+    "id": "bbc-explainable-ai",
+    "title": "Making AI More Understandable",
+    "description": "BBC R&D project researching Explainable AI to make AI decision-making transparent and interpretable. Prototyped ML-powered proofs-of-concept including generative ML art and interactive visualizations.",
+    "image": "/images/MakingAIUnderstandable.jpg",
+    "link": "https://www.bbc.co.uk/rd/projects/making-ai-more-understandable/",
     "year": "2019-2021",
-    "categories": ["Event Organisation"]
+    "categories": [
+      "Explainable AI",
+      "Experimental"
+    ]
   },
   {
     "id": "trent-basin",
@@ -141,7 +98,9 @@
     "image": "/images/trent.jpg",
     "link": "https://www.projectscene.uk/trent-basin-community-information-model/",
     "year": "2018-2019",
-    "categories": ["Energy Efficiency"]
+    "categories": [
+      "Energy Efficiency"
+    ]
   },
   {
     "id": "entrust",
@@ -150,7 +109,9 @@
     "image": "/images/EntrustHorizon.png",
     "link": "https://cordis.europa.eu/project/id/657998",
     "year": "2015-2018",
-    "categories": ["Energy Efficiency"]
+    "categories": [
+      "Energy Efficiency"
+    ]
   },
   {
     "id": "lab2",
@@ -159,7 +120,11 @@
     "image": "/images/lab2.jpg",
     "link": "https://masters-portfolio.jbergs.eu/lab",
     "year": "2015",
-    "categories": ["Paper", "Experimental", "Real-Time Collaboration"]
+    "categories": [
+      "Paper",
+      "Experimental",
+      "Real-Time Collaboration"
+    ]
   },
   {
     "id": "masters-portfolio",
@@ -168,15 +133,8 @@
     "image": "/images/masterspf.jpg",
     "link": "https://masters-portfolio.jbergs.eu/",
     "year": "2014-2015",
-    "categories": ["Experimental"]
-  },
-  {
-    "id": "tedx-stuttgart",
-    "title": "TEDxStuttgart",
-    "description": "Co-organised regular TEDx event series showcasing innovative ideas in technology, education and design from and for the city of Stuttgart and the land Baden-Württemberg. Events: Act. Change. Now., Post-X, Collaborate For Humanity, Re:Think – Re:Invent – Re:Create.",
-    "image": "/images/tedxstuttgartnexteveent.jpg",
-    "link": "https://www.tedxstuttgart.de/",
-    "year": "2011-2018",
-    "categories": ["Event Organisation", "Conference" ]
+    "categories": [
+      "Experimental"
+    ]
   }
 ]

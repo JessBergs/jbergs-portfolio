@@ -80,7 +80,6 @@ const Projects = () => {
   const projects = validateProjects(projectsData)
 
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
-  const [searchQuery, setSearchQuery] = useState<string>('')
 
   const allCategories = Array.from(
     new Set(projects.flatMap((p) => p.categories || []))
@@ -90,11 +89,7 @@ const Projects = () => {
     const matchesCategory =
       selectedCategories.length === 0 ||
       p.categories?.some((c) => selectedCategories.includes(c))
-    const matchesSearch =
-      searchQuery === '' ||
-      p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.description.toLowerCase().includes(searchQuery.toLowerCase())
-    return matchesCategory && matchesSearch
+    return matchesCategory
   })
 
   const toggleCategory = (category: string) => {
@@ -106,11 +101,11 @@ const Projects = () => {
   const isAllActive = selectedCategories.length === 0
 
   return (
-    <section id="work" className="relative z-10 py-12">
-      <h2 className="section-h2 mb-8">Selected Work</h2>
+    <section id="work" className="relative z-10">
+      <h2 className="section-h2 mb-5">Projects</h2>
 
-      <div className="mb-8 flex flex-col items-start gap-4">
-        <div className="flex flex-wrap gap-2">
+      <div className="mb-5 flex flex-col items-start gap-4">
+        <div className="flex flex-wrap gap-1.5">
           <button
             type="button"
             onClick={() => setSelectedCategories([])}
@@ -129,17 +124,9 @@ const Projects = () => {
             </button>
           ))}
         </div>
-        <input
-          type="text"
-          placeholder="Search…"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          aria-label="Search projects"
-          className="search-input"
-        />
       </div>
 
-      <ul className="grid list-none grid-cols-1 gap-6 p-0 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-2 lg:grid-cols-3">
         {filtered.map((p) => (
           <li key={p.id} className="m-0 p-0">
             <ProjectCard
