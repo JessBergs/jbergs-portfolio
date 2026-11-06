@@ -161,7 +161,7 @@ window.TILE_TALKS = [
   "place": "Copenhagen",
   "link": "https://luma.com/bpu4e3s4",
   "image": "../../../public/images/eurips.jpg",
-  "org": "UK AISI"
+  "org": "EurIPS"
  },
  {
   "title": "Public Design Conference 2025",
