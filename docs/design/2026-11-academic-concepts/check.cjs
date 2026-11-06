@@ -3,7 +3,7 @@ const path = require('path');
 const pw = require(process.env.PLAYWRIGHT_PKG || 'playwright');
 (async () => {
   const b = await pw.chromium.launch();
-  for (const v of ['a-column', 'b-sidebar', 'c-dated-band', 'd-typed-lists', 'e-year-gutter']) {
+  for (const v of ['a-column', 'b-sidebar', 'c-dated-band', 'd-typed-lists', 'e-year-gutter', 'b2-sidebar-site-theme']) {
     const page = await b.newPage();
     const errs = [];
     page.on('pageerror', (e) => errs.push('pageerror: ' + e.message));

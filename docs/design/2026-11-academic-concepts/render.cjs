@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const pw = require(process.env.PLAYWRIGHT_PKG || 'playwright');
 
-const all = ['a-column', 'b-sidebar', 'c-dated-band', 'd-typed-lists', 'e-year-gutter'];
+const all = ['a-column', 'b-sidebar', 'c-dated-band', 'd-typed-lists', 'e-year-gutter', 'b2-sidebar-site-theme'];
 const args = process.argv.slice(2);
 const live = args.includes('--live');
 const variants = args.filter((a) => a !== '--live').length ? args.filter((a) => a !== '--live') : all;

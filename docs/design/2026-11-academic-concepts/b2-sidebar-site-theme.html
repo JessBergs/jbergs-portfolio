@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jess Bergs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site-theme.css">
+<style>
+  /* B on the site's own theme. Identity pinned left; the page reads down the right in the
+     agreed order: about, upcoming, projects as tiles, past talks and conferences, mentoring. */
+  .wrap { max-width: 80rem; margin: 0 auto; padding: 0 2rem; }
+  .page { display: grid; grid-template-columns: 15rem minmax(0, 1fr); column-gap: 4rem; padding: 1.5rem 0 2rem; }
+  .side { position: sticky; top: 4rem; align-self: start; }
+  .side img.photo { width: 9rem; aspect-ratio: 1; height: auto; object-fit: cover; object-position: 50% 30%; border-radius: 50%; }
+  .side .hero-h1 { font-size: 2.1rem; margin-top: 1.1rem; }
+  .side .role { margin-top: .6rem; font-size: 1rem; line-height: 1.45; color: var(--color-ink-soft); }
+  .side ul { margin-top: 1rem; display: flex; flex-direction: column; gap: .6rem; color: var(--color-ink-mute); }
+  .side li { display: flex; align-items: center; gap: .5rem; line-height: 1; }
+  .side li a { font-size: .9rem; color: var(--color-ink); text-decoration: none; }
+  .side li a:hover { text-decoration: underline; }
+  .side svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+  main > section { padding: 2.4rem 0; }
+  main > section:first-child { padding-top: .5rem; }
+  .section-h2 { margin-bottom: 1.25rem; }
+  .about p { max-width: 46rem; font-size: .95rem; font-weight: 500; line-height: 1.65; color: #3a4050; }
+  .about p + p { margin-top: 1.1rem; }
+  .about a { font-weight: 600; text-decoration: underline; }
+  .about a:hover { text-decoration: none; }
+
+  /* dated rows: date in the gutter, optional square thumbnail, title and one line */
+  .row { display: grid; grid-template-columns: 6rem 1fr; column-gap: 1.2rem; align-items: start; padding: .6rem 0; border-top: 1px solid var(--color-line); max-width: 46rem; }
+  .row:first-child { border-top: 0; }
+  .row.pic { grid-template-columns: 6rem 3rem 1fr; }
+  .row .d { color: var(--color-ink-mute); font-size: .85rem; font-weight: 500; padding-top: .15rem; white-space: nowrap; }
+  .row figure { aspect-ratio: 1; overflow: hidden; border-radius: 8px; border: 1px solid var(--color-line); background: linear-gradient(135deg, #f4ecf7, #e6f0ff); }
+  .row figure img { width: 100%; height: 100%; object-fit: cover; }
+  .row .t { line-height: 1.4; min-width: 0; }
+  .row .ti { font-weight: 600; text-decoration: none; }
+  .row a.ti:hover { text-decoration: underline; }
+  .row .m { display: block; font-size: .88rem; font-weight: 500; color: var(--color-ink-mute); margin-top: .05rem; }
+  .row .m b { font-weight: 600; color: var(--color-ink-soft); }
+
+  .tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.1rem; }
+  .more { margin-top: 1.1rem; font-size: .9rem; }
+  .more a { color: var(--color-ink-mute); }
+
+  @media (max-width: 72rem) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 56rem) {
+    .page { grid-template-columns: 1fr; row-gap: 1.5rem; }
+    .side { position: static; display: grid; grid-template-columns: 6rem 1fr; column-gap: 1.2rem; align-items: center; }
+    .side img.photo { width: 6rem; grid-row: 1 / span 2; }
+    .side .hero-h1 { margin-top: 0; font-size: 1.8rem; grid-column: 2; align-self: end; }
+    .side .role { grid-column: 2; margin-top: .2rem; align-self: start; }
+    .side ul { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; gap: .5rem 1.2rem; }
+    .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 40rem) { .wrap { padding: 0 1.25rem; } .row, .row.pic { grid-template-columns: 1fr; row-gap: .2rem; } .row.pic figure { display: none; } .row .d { padding: 0; } }
+</style>
+</head>
+<body>
+<header class="site-header" id="hdr"><div class="wrap"><nav aria-label="Primary"><a href="#about">About</a><a href="#work">Work</a><a href="#contact">Contact</a></nav></div></header>
+<div class="wrap page">
+  <aside class="side">
+    <img class="photo" src="../../../public/images/profile.png" alt="Jess Bergs" width="462" height="456">
+    <h1 class="hero-h1">Jess Bergs</h1>
+    <p class="role">R&amp;D Engineering Lead<br>Human-AI Interaction @ UK AISI, Research Unit</p>
+    <ul>
+      <li><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:hello@jbergs.eu">hello@jbergs.eu</a></li>
+      <li><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/jbergs/">LinkedIn</a></li>
+      <li><svg viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg><a href="https://scholar.google.com/citations?user=jUpxHmsAAAAJ&hl=en">Google Scholar</a></li>
+      <li><svg viewBox="0 0 24 24"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg><a href="/coffee-chat">Let&rsquo;s have a coffee chat!</a></li>
+    </ul>
+  </aside>
+  <main>
+    <section id="about" class="about">
+      <h2 class="section-h2">Hi, there!</h2>
+      <p>I&rsquo;m an engineering lead at the <a href="https://www.aisi.gov.uk/">UK AI Security Institute</a> for our human-in-the-loop research tools, enabling our scientists to run their empirical research experiments at scale.</p>
+      <p>Currently, my independent research focuses on how we can design for effective scalable human oversight.</p>
+      <p>My career so far has been in R&amp;D and public sector innovation, from EU Horizon projects to Explainable AI at BBC R&amp;D and since 2024 technical AI safety in the British government.</p>
+      <p>I&rsquo;m mentoring at BlueDot Impact&rsquo;s <a href="https://bluedot.org/courses/technical-ai-safety-project">Technical AI Safety Project</a> programme and the <a href="https://sparai.org/">SPAR</a> and <a href="https://www.pivotal-research.org/mentors/profile/jess-bergs">Pivotal</a> research fellowships, and occasionally give career advice with <a href="https://80000hours.org/">80,000 Hours</a>.</p>
+      <p>I&rsquo;m a proud generalist and love bringing people together through events &amp; conferences I (co-)organise. Outside work, I design and playtest board games!</p>
+    </section>
+    <hr class="rule">
+    <section id="upcoming">
+      <h2 class="section-h2">Upcoming talks and events</h2>
+      <div id="up"></div>
+    </section>
+    <hr class="rule">
+    <section id="work">
+      <h2 class="section-h2">Projects</h2>
+      <div class="tiles" id="tiles"></div>
+    </section>
+    <hr class="rule">
+    <section id="talks">
+      <h2 class="section-h2">Past talks, conferences &amp; events</h2>
+      <div id="past"></div>
+    </section>
+  </main>
+</div>
+<div class="wrap"><footer class="site-footer" id="contact"><p>&copy; 2026 Jessica Bergs</p><p><a href="mailto:hello@jbergs.eu">Contact</a></p></footer></div>
+<span class="mock-label">B2 · sidebar, site theme</span>
+<script src="tiles.js"></script>
+<script>
+  const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const UP = [
+    { date: '12 Nov', title: 'Liftoff', role: 'Speaker', place: '', note: 'details to follow', href: '#' },
+    { date: '3 Dec', title: 'SASH', role: 'Speaker', place: '', href: '#' },
+    { date: '11 Dec', title: 'NeurIPS 2026', role: 'Panel speaker', place: 'Sydney', href: 'https://neurips.cc/' },
+    { date: '11 Dec', title: 'AI safety social at NeurIPS', role: 'Host', place: 'Sydney', tbc: true, href: '#' },
+    { date: 'Q1 2027', title: 'Pivotal AI Safety Fellowship', role: 'Research advisor', place: '', href: 'https://www.pivotal-research.org/mentors/profile/jess-bergs' },
+    { date: '16 Feb', title: 'Vrije Universiteit Brussel', role: 'Speaker', place: 'Brussels', href: 'https://www.vub.be/' },
+  ];
+  document.getElementById('up').innerHTML = UP.map((u) => `
+    <div class="row"><div class="d">${esc(u.date)}</div><div class="t"><a class="ti" href="${u.href}">${esc(u.title)}</a>${u.place ? ', ' + esc(u.place) : ''}<span class="m"><b>${esc(u.role)}</b>${u.tbc ? ', date to be confirmed' : ''}${u.note ? ', ' + esc(u.note) : ''}</span></div></div>`).join('');
+  document.getElementById('tiles').innerHTML = TILE_PROJECTS.map((p) => `
+    <a class="project-card" href="${p.link || '#'}" target="_blank" rel="noopener noreferrer">
+      <div class="project-card__media"><img src="${p.image}" alt="" loading="lazy"></div>
+      <div class="project-card__body"><h3 class="project-card__title">${esc(p.title)}</h3><p class="project-card__desc">${esc(p.description)}</p>
+        <div class="project-card__tags">${(p.categories || []).map((c) => `<span class="project-card__tag">${esc(c)}</span>`).join('')}</div></div>
+    </a>`).join('');
+  document.getElementById('past').innerHTML = TILE_TALKS.map((t) => `
+    <div class="row pic"><div class="d">${esc(t.when)}</div><figure><img src="${t.image}" alt="" loading="lazy"></figure><div class="t"><a class="ti" href="${t.link || '#'}">${esc(t.title)}</a><span class="m"><b>${esc(t.role)}</b>${t.place ? ', ' + esc(t.place) : ''}</span></div></div>`).join('');
+  const hdr = document.getElementById('hdr'); const onScroll = () => hdr.classList.toggle('is-scrolled', window.scrollY > 8); onScroll(); addEventListener('scroll', onScroll, { passive: true });
+</script>
+</body>
+</html>
