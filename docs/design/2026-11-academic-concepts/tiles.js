@@ -197,7 +197,7 @@ window.TILE_TALKS = [
   "place": "London",
   "link": "https://www.bbc.co.uk/programmes/articles/4BCZv12wbBYcsyKMbpyT574/bbc-tech-meetup",
   "image": "../../../public/images/bbctechmeetup.jpg",
-  "org": "BBC"
+  "org": ""
  },
  {
   "title": "TEDxStuttgart",
