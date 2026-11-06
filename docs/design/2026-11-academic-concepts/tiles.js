@@ -188,7 +188,7 @@ window.TILE_TALKS = [
   "place": "London",
   "link": "https://services.blog.gov.uk/2024/12/19/services-week-is-back-for-2025/",
   "image": "../../../public/images/servicesWeek2025.png",
-  "org": "UK government"
+  "org": "UK Civil Service"
  },
  {
   "title": "BBC Tech Meetup",
