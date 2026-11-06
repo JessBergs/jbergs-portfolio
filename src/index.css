@@ -377,6 +377,9 @@ body::before {
   object-fit: cover;
   object-position: 50% 30%;
   border-radius: 50%;
+  /* a touch less contrast and colour so the photo sits in the page rather than on it */
+  filter: saturate(0.82) contrast(0.9) brightness(1.04);
+  box-shadow: 0 0 0 1px var(--color-line), 0 0 0 6px rgba(254, 252, 249, 0.6);
 }
 .home__side .hero-h1 { font-size: 2.6rem; max-width: none; margin: 1.4rem 0 0.9rem; }
 .home__side .hero-role { font-size: 1.05rem; line-height: 1.5; }
