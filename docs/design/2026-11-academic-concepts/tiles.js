@@ -134,7 +134,7 @@ window.TILE_TALKS = [
   "place": "online",
   "link": "https://www.women4aisafety.com/",
   "image": "../../../public/images/women4aisafety-2026.jpg",
-  "org": "Women4AISafety"
+  "org": ""
  },
  {
   "title": "Lateral Workshop",
