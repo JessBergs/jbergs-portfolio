@@ -134,7 +134,7 @@ window.TILE_TALKS = [
  {
   "title": "Successif Women in AI Safety Retreat",
   "when": "Jun 2026",
-  "role": "Invitee",
+  "role": "Expert invitee",
   "place": "Pendley Manor",
   "link": "https://www.successif.org/womens-retreat",
   "image": "../../../public/images/successif-womens-retreat-2026.jpg"
