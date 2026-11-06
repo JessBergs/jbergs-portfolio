@@ -102,7 +102,7 @@ const Projects = () => {
 
   return (
     <section id="work" className="relative z-10">
-      <h2 className="section-h2 mb-5">Projects</h2>
+      <h2 className="section-h2 mb-5">Selected Work</h2>
 
       <div className="mb-5 flex flex-col items-start gap-4">
         <div className="flex flex-wrap gap-1.5">
