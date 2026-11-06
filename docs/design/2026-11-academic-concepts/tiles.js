@@ -1,6 +1,17 @@
 /* Original tile copy from src/data/projects.json, split into projects (tiles) and past talks (rows). Role suffixes are dropped from talk titles because the row carries the role. */
 window.TILE_PROJECTS = [
  {
+  "title": "Pivotal Research AI Safety Fellowship – Mentor",
+  "description": "Co-mentoring Pivotal Research's Q1 2027 AI Safety Fellowship. Current agent harness design is not human-centric, so our fellows will study effective oversight mechanisms for agents in automated R&D and AI control.",
+  "link": "https://www.pivotal-research.org/mentors/profile/jess-bergs",
+  "categories": [
+   "Mentorship",
+   "AI Security",
+   "Scalable Oversight"
+  ],
+  "image": "../../../public/images/pivotal-ais-fellowship-2027.jpg"
+ },
+ {
   "title": "AI and Political Knowledge – PNAS Nexus",
   "description": "UK AISI survey (n = 2,499) and randomised trials (n = 2,858) around the 2024 UK election. 13% of eligible voters used AI chatbots for political information, and chatbots raised political knowledge as effectively as internet search.",
   "link": "https://doi.org/10.1093/pnasnexus/pgag305",

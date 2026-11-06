@@ -106,14 +106,13 @@
   const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
   const UP = [
     { date: '12 Nov', title: 'Liftoff', role: 'Speaker', place: '', note: 'details to follow', href: '#' },
-    { date: '3 Dec', title: 'SASH', role: 'Speaker', place: '', href: '#' },
+    { date: '3 Dec', title: 'Singapore AI Safety Research Symposium', role: 'Speaker', org: 'SASH', place: 'Singapore', href: 'https://www.aisafety.sg/' },
     { date: '11 Dec', title: 'NeurIPS 2026', role: 'Panel speaker', place: 'Sydney', href: 'https://neurips.cc/' },
     { date: '11 Dec', title: 'AI safety social at NeurIPS', role: 'Host', place: 'Sydney', tbc: true, href: '#' },
-    { date: 'Q1 2027', title: 'Pivotal AI Safety Fellowship', role: 'Research advisor', place: '', href: 'https://www.pivotal-research.org/mentors/profile/jess-bergs' },
-    { date: '16 Feb', title: 'Vrije Universiteit Brussel', role: 'Speaker', place: 'Brussels', href: 'https://www.vub.be/' },
+    { date: '16 Feb', title: 'Ada Lovelace Algorithmic Lectures', role: 'Speaker', org: 'Vrije Universiteit Brussel', place: 'Brussels', href: 'https://data.research.vub.be/ada-lovelace-algorithmic-lectures' },
   ];
   document.getElementById('up').innerHTML = UP.map((u) => `
-    <div class="row"><div class="d">${esc(u.date)}</div><div class="t"><a class="ti" href="${u.href}">${esc(u.title)}</a>${u.place ? ', ' + esc(u.place) : ''}<span class="m"><b>${esc(u.role)}</b>${u.tbc ? ', date to be confirmed' : ''}${u.note ? ', ' + esc(u.note) : ''}</span></div></div>`).join('');
+    <div class="row"><div class="d">${esc(u.date)}</div><div class="t"><a class="ti" href="${u.href}">${esc(u.title)}</a>${u.place ? ', ' + esc(u.place) : ''}<span class="m"><b>${esc(u.role)}</b>${u.org ? ', ' + esc(u.org) : ''}${u.tbc ? ', date to be confirmed' : ''}${u.note ? ', ' + esc(u.note) : ''}</span></div></div>`).join('');
   document.getElementById('tiles').innerHTML = TILE_PROJECTS.map((p) => `
     <a class="project-card" href="${p.link || '#'}" target="_blank" rel="noopener noreferrer">
       <div class="project-card__media"><img src="${p.image}" alt="" loading="lazy"></div>
