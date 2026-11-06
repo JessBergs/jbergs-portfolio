@@ -124,7 +124,8 @@ window.TILE_TALKS = [
   "role": "Expert invitee",
   "place": "London",
   "link": "https://www.globalchallengesproject.org/",
-  "image": "../../../public/images/gcp-workshop-2026.jpg"
+  "image": "../../../public/images/gcp-workshop-2026.jpg",
+  "org": "Global Challenges Project"
  },
  {
   "title": "Women4AISafety",
@@ -132,7 +133,8 @@ window.TILE_TALKS = [
   "role": "Guest speaker",
   "place": "online",
   "link": "https://www.women4aisafety.com/",
-  "image": "../../../public/images/women4aisafety-2026.jpg"
+  "image": "../../../public/images/women4aisafety-2026.jpg",
+  "org": "Women4AISafety"
  },
  {
   "title": "Lateral Workshop",
@@ -140,7 +142,8 @@ window.TILE_TALKS = [
   "role": "Expert invitee",
   "place": "Berkeley, US",
   "link": "https://www.lateralworkshop.org/",
-  "image": "../../../public/images/lateral-workshop-2026.jpg"
+  "image": "../../../public/images/lateral-workshop-2026.jpg",
+  "org": "Lateral"
  },
  {
   "title": "Successif Women in AI Safety Retreat",
@@ -148,7 +151,8 @@ window.TILE_TALKS = [
   "role": "Expert invitee",
   "place": "Oxford",
   "link": "https://www.successif.org/womens-retreat",
-  "image": "../../../public/images/successif-womens-retreat-2026.jpg"
+  "image": "../../../public/images/successif-womens-retreat-2026.jpg",
+  "org": "Successif"
  },
  {
   "title": "AISI EurIPS 2025 Social",
@@ -156,7 +160,8 @@ window.TILE_TALKS = [
   "role": "Host",
   "place": "Copenhagen",
   "link": "https://luma.com/bpu4e3s4",
-  "image": "../../../public/images/eurips.jpg"
+  "image": "../../../public/images/eurips.jpg",
+  "org": "UK AISI"
  },
  {
   "title": "Public Design Conference 2025",
@@ -164,7 +169,8 @@ window.TILE_TALKS = [
   "role": "Co-organiser",
   "place": "London",
   "link": "https://publicpolicydesign.blog.gov.uk/2025/07/14/join-our-first-global-public-design-conference/",
-  "image": "../../../public/images/publicDesignConf.jpg"
+  "image": "../../../public/images/publicDesignConf.jpg",
+  "org": "World Design Congress"
  },
  {
   "title": "AISI HAI @ CHI 2025 STAIG Panel",
@@ -172,7 +178,8 @@ window.TILE_TALKS = [
   "role": "Panel speaker",
   "place": "Yokohama, Japan",
   "link": "https://chi-staig.github.io/",
-  "image": "../../../public/images/staig-chi.jpg"
+  "image": "../../../public/images/staig-chi.jpg",
+  "org": "CHI 2025 STAIG workshop"
  },
  {
   "title": "AISI HAI @ HMG Services Week",
@@ -180,7 +187,8 @@ window.TILE_TALKS = [
   "role": "Speaker",
   "place": "London",
   "link": "https://services.blog.gov.uk/2024/12/19/services-week-is-back-for-2025/",
-  "image": "../../../public/images/servicesWeek2025.png"
+  "image": "../../../public/images/servicesWeek2025.png",
+  "org": "UK government"
  },
  {
   "title": "BBC Tech Meetup",
@@ -188,7 +196,8 @@ window.TILE_TALKS = [
   "role": "Co-organiser",
   "place": "London",
   "link": "https://www.bbc.co.uk/programmes/articles/4BCZv12wbBYcsyKMbpyT574/bbc-tech-meetup",
-  "image": "../../../public/images/bbctechmeetup.jpg"
+  "image": "../../../public/images/bbctechmeetup.jpg",
+  "org": "BBC"
  },
  {
   "title": "TEDxStuttgart",
@@ -196,6 +205,7 @@ window.TILE_TALKS = [
   "role": "Co-organiser",
   "place": "Stuttgart",
   "link": "https://www.tedxstuttgart.de/",
-  "image": "../../../public/images/tedxstuttgartnexteveent.jpg"
+  "image": "../../../public/images/tedxstuttgartnexteveent.jpg",
+  "org": "TEDx"
  }
 ];

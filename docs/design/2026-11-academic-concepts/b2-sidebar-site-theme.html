@@ -112,7 +112,7 @@
     { date: '16 Feb', title: 'Ada Lovelace Algorithmic Lectures', role: 'Speaker', org: 'Vrije Universiteit Brussel', place: 'Brussels', href: 'https://data.research.vub.be/ada-lovelace-algorithmic-lectures' },
   ];
   document.getElementById('up').innerHTML = UP.map((u) => `
-    <div class="row"><div class="d">${esc(u.date)}</div><div class="t"><a class="ti" href="${u.href}">${esc(u.title)}</a>${u.place ? ', ' + esc(u.place) : ''}<span class="m"><b>${esc(u.role)}</b>${u.org ? ', ' + esc(u.org) : ''}${u.tbc ? ', date to be confirmed' : ''}${u.note ? ', ' + esc(u.note) : ''}</span></div></div>`).join('');
+    <div class="row"><div class="d">${esc(u.date)}</div><div class="t"><a class="ti" href="${u.href}">${esc(u.title)}</a><span class="m"><b>${esc(u.role)}</b>${u.org ? ', ' + esc(u.org) : ''}${u.place ? ', ' + esc(u.place) : ''}${u.tbc ? ', date to be confirmed' : ''}${u.note ? ', ' + esc(u.note) : ''}</span></div></div>`).join('');
   document.getElementById('tiles').innerHTML = TILE_PROJECTS.map((p) => `
     <a class="project-card" href="${p.link || '#'}" target="_blank" rel="noopener noreferrer">
       <div class="project-card__media"><img src="${p.image}" alt="" loading="lazy"></div>
@@ -120,7 +120,7 @@
         <div class="project-card__tags">${(p.categories || []).map((c) => `<span class="project-card__tag">${esc(c)}</span>`).join('')}</div></div>
     </a>`).join('');
   document.getElementById('past').innerHTML = TILE_TALKS.map((t) => `
-    <div class="row pic"><div class="d">${esc(t.when)}</div><figure><img src="${t.image}" alt="" loading="lazy"></figure><div class="t"><a class="ti" href="${t.link || '#'}">${esc(t.title)}</a><span class="m"><b>${esc(t.role)}</b>${t.place ? ', ' + esc(t.place) : ''}</span></div></div>`).join('');
+    <div class="row pic"><div class="d">${esc(t.when)}</div><figure><img src="${t.image}" alt="" loading="lazy"></figure><div class="t"><a class="ti" href="${t.link || '#'}">${esc(t.title)}</a><span class="m"><b>${esc(t.role)}</b>${t.org ? ', ' + esc(t.org) : ''}${t.place ? ', ' + esc(t.place) : ''}</span></div></div>`).join('');
   const hdr = document.getElementById('hdr'); const onScroll = () => hdr.classList.toggle('is-scrolled', window.scrollY > 8); onScroll(); addEventListener('scroll', onScroll, { passive: true });
 </script>
 </body>
