@@ -11,7 +11,7 @@ const Hero = () => {
           width={462}
           height={456}
         />
-        <h1 id="hero-title" className="hero-h1" style={{ marginBottom: 0 }}>
+        <h1 id="hero-title" className="hero-h1">
           Jess Bergs
         </h1>
 
@@ -25,7 +25,7 @@ const Hero = () => {
         </p>
 
         <ul
-          className="hero-links mt-2 flex list-none flex-col gap-3 p-0"
+          className="hero-links flex list-none flex-col gap-3 p-0"
           style={{ color: 'var(--color-ink-mute)' }}
         >
           <li className="flex items-center gap-2 leading-none">
