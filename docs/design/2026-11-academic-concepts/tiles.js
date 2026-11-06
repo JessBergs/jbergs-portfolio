@@ -108,6 +108,14 @@ window.TILE_PROJECTS = [
 ];
 window.TILE_TALKS = [
  {
+  "title": "Global Challenges Project workshop",
+  "when": "Nov 2026",
+  "role": "Expert invitee",
+  "place": "",
+  "link": "https://www.globalchallengesproject.org/",
+  "image": "../../../public/images/gcp-workshop-2026.jpg"
+ },
+ {
   "title": "Women4AISafety",
   "when": "Oct 2026",
   "role": "Guest speaker",
@@ -122,14 +130,6 @@ window.TILE_TALKS = [
   "place": "Berkeley",
   "link": "https://www.lateralworkshop.org/",
   "image": "../../../public/images/lateral-workshop-2026.jpg"
- },
- {
-  "title": "Global Challenges Project workshop",
-  "when": "2026",
-  "role": "Expert invitee",
-  "place": "",
-  "link": "https://www.globalchallengesproject.org/",
-  "image": "../../../public/images/gcp-workshop-2026.jpg"
  },
  {
   "title": "Successif Women in AI Safety Retreat",
