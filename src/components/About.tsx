@@ -1,3 +1,5 @@
+// The <noscript> block in index.html carries a text-only copy of this section.
+// Change both together (see AGENTS.md, "Conventions").
 const About = () => {
   return (
     <section id="about" className="relative isolate flex flex-col">

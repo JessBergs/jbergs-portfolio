@@ -51,3 +51,9 @@ chunk — keep everything Vite emits as-is.
   variables). Those are generated primitives — extend them through the
   wrappers in `src/components/`, and import via the `@/` aliases.
 - Routes are pages under `src/pages/`, wired up in `src/App.tsx`.
+- **The `<noscript>` block in `index.html` is a text-only copy of the visible
+  page** (hero line, About paragraphs, Selected Work list, contact). Crawlers and
+  no-JS readers see it, and a plain fetch of the site returns it. When the hero,
+  About copy or featured projects change, update the noscript block in the same
+  PR so the two never drift. Comments in `index.html` and `About.tsx` point at
+  each other.
