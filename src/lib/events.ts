@@ -5,8 +5,8 @@ const utc = (iso: string) => new Date(`${iso}T00:00:00Z`)
 /** Today as YYYY-MM-DD in UTC, so the server render and the browser agree. */
 export const todayIso = (now: Date = new Date()) => now.toISOString().slice(0, 10)
 
-/** An event is upcoming until the day after it (or its series) ends. */
-export const isUpcoming = (e: Event, today: string = todayIso()) => (e.endDate ?? e.date) >= today
+/** An event is upcoming until the day it starts; from then on it is listed as past. */
+export const isUpcoming = (e: Event, today: string = todayIso()) => e.date > today
 
 export const splitEvents = (events: Event[], today: string = todayIso()) => {
   const upcoming = events.filter((e) => isUpcoming(e, today)).sort((a, b) => a.date.localeCompare(b.date))
