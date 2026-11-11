@@ -5,7 +5,7 @@
     "role": "Advisor",
     "org": "LISA",
     "place": "London",
-    "date": "2026-11-12",
+    "date": "2026-11-11",
     "link": "https://www.joinliftoff.ai/"
   },
   {
@@ -41,6 +41,15 @@
     "place": "Sydney",
     "note": "venue to be confirmed",
     "date": "2026-12-12"
+  },
+  {
+    "id": "ai-evaluation-programme-2027",
+    "title": "International Programme on AI Evaluation: Capabilities & Safety",
+    "role": "Mentor",
+    "place": "online and Valencia, Spain",
+    "date": "2027-02-01",
+    "when": "Feb 2027",
+    "link": "https://ai-evaluation.org/apply"
   },
   {
     "id": "vub-ada-lovelace-lectures-2027",
