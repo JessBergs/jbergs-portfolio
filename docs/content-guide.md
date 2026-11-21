@@ -67,8 +67,8 @@ day it starts, then moves to **Past talks, conferences & events** by itself
   "org": "Organiser",
   "place": "City",
   "note": "venue to be confirmed",
-  "date": "2026-12-03",
-  "when": "Dec 2026",
+  "date": "2026-05-14",
+  "when": "May 2026",
   "link": "https://example.org/event",
   "image": "/images/event-name-2026.jpg"
 }
@@ -77,9 +77,9 @@ day it starts, then moves to **Past talks, conferences & events** by itself
 - Required: `id`, `title`, `role`, `date` (`YYYY-MM-DD`, the start day).
 - The line under the title reads: **role** `with …`, `org`, `place`, `note`.
   Only the role is bold.
-- The date label is automatic: "3 Dec" while upcoming, "Dec 2026" once past.
+- The date label is automatic: "14 May" while upcoming, "May 2026" once past.
   Set `when` only to override that, for example when the day is not fixed
-  (`"Feb 2027"`) or for a series (`"2012 - 2017"`).
+  (`"May 2026"`) or for a series (`"2019 - 2021"`).
 - `endDate` records when a series ended. It is not displayed and does not
   affect the Upcoming/Past split.
 - `link` makes the title a link. `image` is optional; most upcoming entries
@@ -102,7 +102,7 @@ Tiles and event thumbnails are both shown in a **16:9** box with
   such as title cards and logos, where JPEG rings around sharp edges.
 - **Weight:** aim for 150 KB or less.
 - **Name:** kebab-case, with the year where it helps:
-  `women4aisafety-2026.jpg`. Reference it as `/images/women4aisafety-2026.jpg`
+  `workshop-name-2026.jpg`. Reference it as `/images/workshop-name-2026.jpg`
   (leading slash, no `public`).
 - **Keep the subject clear of the edges**, and check that any logo or text on
   the image is still legible at tile size.
