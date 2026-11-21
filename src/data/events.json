@@ -84,6 +84,16 @@
     "image": "/images/women4aisafety-2026.jpg"
   },
   {
+    "id": "eag-nyc-women-in-ai-safety-2026",
+    "title": "Women in AI Safety @ EAG New York City",
+    "role": "Co-host",
+    "date": "2026-10-16",
+    "org": "EA Global",
+    "place": "New York City",
+    "note": "with Li-Lian Ang (BlueDot Impact)",
+    "link": "https://www.effectivealtruism.org/ea-global"
+  },
+  {
     "id": "lateral-workshop-2026",
     "title": "Lateral Workshop",
     "role": "Expert Invitee",
