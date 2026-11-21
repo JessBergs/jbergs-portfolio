@@ -23,6 +23,16 @@ Jess's private working context does not go in it:
 If a change only makes sense with private context, record the *decision* and
 leave the context out.
 
+## Adding or changing content
+
+Before adding a project tile, a talk or event, an image or a page, read
+[`docs/content-guide.md`](docs/content-guide.md). It is the step-by-step guide:
+which file each thing goes in, the fields, how to size and name an image, and
+what to check before opening a PR.
+
+This file is the only agent instructions file here. There is no `CLAUDE.md`;
+do not add one.
+
 ## Session start
 
 This repo keeps no feature-request log: do not create `docs/REQUESTS.md`.

@@ -22,7 +22,7 @@ try {
   if (!result.success) {
     console.error('❌ Validation failed!')
     console.error('\nErrors:')
-    result.error.errors.forEach((err) => {
+    result.error.issues.forEach((err) => {
       console.error(`  - ${err.path.join('.')}: ${err.message}`)
     })
     process.exit(1)
@@ -34,7 +34,7 @@ try {
   const events = EventsArraySchema.safeParse(JSON.parse(eventsRaw))
   if (!events.success) {
     console.error('❌ events.json validation failed!')
-    events.error.errors.forEach((err) => console.error(`  - ${err.path.join('.')}: ${err.message}`))
+    events.error.issues.forEach((err) => console.error(`  - ${err.path.join('.')}: ${err.message}`))
     process.exit(1)
   }
   console.log(`✅ ${events.data.length} events validated.`)
