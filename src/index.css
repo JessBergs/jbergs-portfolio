@@ -370,6 +370,7 @@ body::before {
 .home__side { position: sticky; top: 4rem; align-self: start; padding-top: 0.5rem; }
 .home__main > section { padding: 2.4rem 0; }
 .home__main > section:first-child { padding-top: 0.5rem; }
+.home__main > section.section--tight { padding: 1.5rem 0; }
 .hero-photo {
   width: 10rem;
   height: auto;
@@ -439,6 +440,14 @@ body::before {
 a.event-row__title:hover { text-decoration: underline; }
 .event-row__meta { display: block; font-size: 0.88rem; font-weight: 500; color: var(--color-ink-mute); margin-top: 0.05rem; }
 .event-row__meta b { font-weight: 600; color: var(--color-ink-soft); }
+/* Compact rows (Upcoming): one line per entry, role and place run on after the title,
+   type at the About copy's size, no hairlines between rows */
+.event-row--compact { padding: 0.2rem 0; border-top: 0; font-size: 0.95rem; align-items: baseline; }
+.event-row--compact .event-row__date { padding-top: 0; }
+.event-row--compact .event-row__text { line-height: 1.4; }
+.event-row--compact .event-row__meta { display: inline; margin: 0; }
+.event-row--compact .event-row__meta::before { content: "·"; margin: 0 0.4em; }
+.event-row--compact .event-row__meta b { font-weight: 500; color: inherit; }
 @media (max-width: 40rem) {
   .event-row, .event-row--media { grid-template-columns: 1fr; row-gap: 0.2rem; }
   .event-row__media { display: none; }
