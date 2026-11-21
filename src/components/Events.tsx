@@ -34,6 +34,7 @@ const EventRow = ({ event, upcoming }: { event: Event; upcoming: boolean }) => {
         {title}
         <span className="event-row__meta">
           <b>{event.role}</b>
+          {event.with ? ` with ${event.with}` : ''}
           {meta ? `, ${meta}` : ''}
         </span>
       </span>

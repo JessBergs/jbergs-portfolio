@@ -8,6 +8,8 @@ export const EventSchema = z.object({
   id: z.string().min(1, 'Event ID is required'),
   title: z.string().min(1, 'Event title is required'),
   role: z.string().min(1, 'Event role is required'),
+  // Who the role was shared with; shown after the role as "with …", not in bold.
+  with: z.string().optional(),
   org: z.string().optional(),
   place: z.string().optional(),
   note: z.string().optional(),

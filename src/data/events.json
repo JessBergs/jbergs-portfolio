@@ -86,7 +86,8 @@
   {
     "id": "eag-nyc-women-in-ai-safety-2026",
     "title": "Workshop: Women in AI Safety @ EAG NYC",
-    "role": "Co-host with Li-Lian Ang (BlueDot Impact)",
+    "role": "Co-host",
+    "with": "Li-Lian Ang (BlueDot Impact)",
     "date": "2026-10-16",
     "org": "EA Global",
     "place": "New York City",
