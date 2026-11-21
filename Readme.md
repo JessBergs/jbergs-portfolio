@@ -72,6 +72,10 @@ src/
 └── index.css          # Global styles with Tailwind
 ```
 
+## Adding content
+
+See [docs/content-guide.md](docs/content-guide.md) for how to add a project, an event, an image or a page.
+
 ## Customization
 
 - **Colors**: Tailwind CSS v4 theme configuration in [src/index.css](src/index.css)
